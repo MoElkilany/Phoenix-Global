@@ -14,7 +14,7 @@ const Services = () => {
         </svg>
       ),
       title: 'التطوير العقاري',
-      description: 'نقدم حلولاً شاملة للتطوير العقاري من بحث السوق واختيار الموقع مروراً بالتخطيط والتصميم والتنفيذ وصولاً التسليم النهائي. نضمن أعلى معايير الجودة والاستدامة مع تقديم مشاريع ذات قيمة حقيقية وعوائد قوية لعملائنا.',
+      description: 'نقدم حلولاً شاملة للتطوير العقاري من بحث السوق واختيار الموقع مروراً بالتخطيط والتصميم والتنفيذ وصولاً التسليم النهائي.',
     },
     {
       icon: (
@@ -27,7 +27,7 @@ const Services = () => {
         </svg>
       ),
       title: 'الوساطة العقارية',
-      description: 'نقدم خدمات وساطة عقارية عالية الجودة لمساعدة العملاء في شراء وبيع وتأجير العقارات بسهولة وشفافية. نعتمد على فهم عميق لاحتياجات العملاء وتحليل السوق لتقديم أفضل الخيارات المتاحة.',
+      description: 'نقدم خدمات وساطة عقارية عالية الجودة لمساعدة العملاء في شراء وبيع وتأجير العقارات بسهولة وشفافية.',
     },
     {
       icon: (
@@ -41,13 +41,13 @@ const Services = () => {
         </svg>
       ),
       title: 'التصميم الداخلي',
-      description: 'نقدم تصاميم داخلية مبتكرة تجمع بين الجمال والوظيفة. نحلل احتياجات العملاء وأسلوب حياتهم لخلق مساحات تعكس شخصيتهم وتوفر أقصى درجات الراحة.',
+      description: 'نقدم تصاميم داخلية مبتكرة تجمع بين الجمال والوظيفة لخلق مساحات تعكس شخصية عملائنا.',
     },
     {
       icon: (
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="6" y="6" width="52" height="52" rx="4" stroke="currentColor" strokeWidth="2.5"/>
-          <path d="M6 18H58" stroke="currentColor" strokeWidth="2"/>
+          <path d="M6 18H58" stroke="currentColor" strokeWidth="2.5"/>
           <circle cx="20" cy="38" r="6" stroke="currentColor" strokeWidth="2"/>
           <circle cx="44" cy="38" r="6" stroke="currentColor" strokeWidth="2"/>
           <path d="M14 50H26" stroke="currentColor" strokeWidth="2"/>
@@ -57,7 +57,7 @@ const Services = () => {
         </svg>
       ),
       title: 'التشطيب والديكور',
-      description: 'ننفذ أعمال التشطيب والديكور بأعلى مستويات الجودة باستخدام أفضل المواد وأحدث التقنيات، مع إشراف هندسي دقيق في جميع مراحل التنفيذ.',
+      description: 'ننفذ أعمال التشطيب والديكور بأعلى مستويات الجودة باستخدام أفضل المواد وأحدث التقنيات.',
     },
     {
       icon: (
@@ -72,7 +72,7 @@ const Services = () => {
         </svg>
       ),
       title: 'إدارة العقارات',
-      description: 'نقدم خدمات إدارة عقارية شاملة تهدف إلى الحفاظ على قيمة العقار وتعظيم العائد الاستثماري. تشمل خدماتنا إدارة التأجير والتحصيل الإيجاري والصيانة الدورية.',
+      description: 'نقدم خدمات إدارة عقارية شاملة تهدف إلى الحفاظ على قيمة العقار وتعظيم العائد الاستثماري.',
     },
   ];
 
@@ -97,92 +97,68 @@ const Services = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 lg:py-28 relative"
+      className="py-24 lg:py-32 relative section-spacing"
       id="services"
-      style={{ fontFamily: 'Cairo, sans-serif', backgroundColor: '#f8f9fa' }}
+      style={{ backgroundColor: '#030712' }}
     >
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+      <div className="content-container">
         <div className="text-center mb-16">
           <span 
             className="inline-block px-5 py-2 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full"
-            style={{ backgroundColor: '#2B2D4E', color: '#ffffff' }}
+            style={{ backgroundColor: '#d4a849', color: '#030712' }}
           >
             خدماتنا
           </span>
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#2B2D4E' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-cinzel" style={{ color: '#ffffff' }}>
             حلول عقارية شاملة
           </h2>
-          <p className="text-lg md:text-xl" style={{ color: '#666666' }}>
+          <p className="text-lg md:text-xl text-muted">
             خبرة احترافية في جميع جوانب العقار
           </p>
         </div>
         
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="service-card group"
+              className="service-card group luxury-card p-8 rounded-2xl cursor-pointer"
               style={{ 
-                animationDelay: `${index * 0.2}s`,
-                backgroundColor: '#ffffff',
-                borderRadius: '24px',
-                padding: '32px',
-                boxShadow: '0 4px 20px rgba(43, 45, 78, 0.08)',
-                transition: 'all 0.4s ease',
-                border: '1px solid #eeeeee',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '24px'
+                backgroundColor: '#111118',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
               }}
             >
               <div 
-                className="service-icon flex-shrink-0"
+                className="service-icon mb-5"
                 style={{ 
-                  width: '70px', 
-                  height: '70px',
+                  width: '64px', 
+                  height: '64px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: '#C0521A',
-                  borderRadius: '20px',
+                  background: '#d4a849',
+                  borderRadius: '16px',
                   transition: 'transform 0.4s ease',
-                  boxShadow: '0 8px 24px rgba(192, 82, 26, 0.3)'
+                  boxShadow: '0 8px 24px rgba(212,168,73,0.2)'
                 }}
               >
-                <div style={{ width: '36px', height: '36px', color: '#ffffff' }}>
+                <div style={{ width: '32px', height: '32px', color: '#030712' }}>
                   {service.icon}
                 </div>
               </div>
               
-              <div className="flex-1">
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#2B2D4E' }}>
+              <div>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#ffffff' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#666666', lineHeight: '1.8' }}>
+                <p className="text-sm leading-relaxed text-muted" style={{ lineHeight: '1.7' }}>
                   {service.description}
                 </p>
               </div>
 
               <style>{`
-                .service-card {
-                  opacity: 0;
-                  transform: translateX(-30px);
-                }
-                
-                .service-card.reveal {
-                  animation: revealSlide 0.7s ease forwards;
-                }
-                
-                @keyframes revealSlide {
-                  to {
-                    opacity: 1;
-                    transform: translateX(0);
-                  }
-                }
-                
                 .service-card:hover {
-                  box-shadow: 0 12px 40px rgba(43, 45, 78, 0.15) !important;
-                  transform: translateX(8px) !important;
+                  border-color: #d4a849 !important;
                 }
                 
                 .service-card:hover .service-icon {
@@ -190,7 +166,7 @@ const Services = () => {
                 }
                 
                 .service-icon svg {
-                  stroke: #ffffff !important;
+                  stroke: #030712 !important;
                   stroke-width: 2 !important;
                   fill: none;
                 }

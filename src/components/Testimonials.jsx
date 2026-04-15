@@ -6,35 +6,42 @@ const Testimonials = () => {
       role: 'مستثمر عقاري',
     },
     {
-      quote: 'Phoenix is the ideal choice لمن يبحث عن استثمار آمن ومربح. شفافية مطلقة في كل التعاملات.',
+      quote: 'فينيكس هي الخيار المثالي لمن يبحث عن استثمار آمن ومربح. شفافية مطلقة في كل التعاملات.',
       name: 'م. سارة جلال',
       role: 'سيدة أعمال',
     },
     {
-      quote: 'تصاميمهم عصرية جداً وتناسب الذوق الرفيع. I am very happy with purchasing my apartment in Phoenix project.',
+      quote: 'تصاميمهم عصرية جداً وتناسب الذوق الرفيع. سعيد جداً بشرائي لشقتي في مشروع فينيكس.',
       name: 'أ. خالد العتيبي',
       role: 'عميل سكني',
     },
   ];
 
   return (
-    <section className="py-24 bg-surface">
-      <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-4xl font-noto-serif text-center text-primary mb-16">ثقة شركائنا وعملائنا</h2>
+    <section className="py-24 lg:py-32 section-spacing" style={{ backgroundColor: '#030712' }}>
+      <div className="content-container">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-wider uppercase rounded-full" style={{ backgroundColor: '#d4a849', color: '#051125' }}>
+            آراء العملاء
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-cinzel" style={{ color: '#051125' }}>ثقة شركائنا وعملائنا</h2>
+        </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-8 bg-surface-container-low rounded-xl">
-              <div className="flex text-secondary mb-4" aria-label="التقييم: 5 نجوم">
+            <div key={index} className="p-8 rounded-2xl luxury-card cursor-pointer" style={{ backgroundColor: '#111118', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}>
+              <div className="flex mb-4" style={{ color: '#d4a849' }} aria-label="التقييم: 5 نجوم">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined" data-weight="fill">star</span>
                 ))}
               </div>
-              <p className="text-on-surface-variant mb-6 italic">"{testimonial.quote}"</p>
+              <p className="mb-6 italic leading-relaxed" style={{ color: '#475569' }}>"{testimonial.quote}"</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-slate-300" aria-hidden="true"></div>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: '#d4a849' }}>
+                  {testimonial.name.charAt(0)}
+                </div>
                 <div>
-                  <h5 className="font-bold text-primary">{testimonial.name}</h5>
-                  <span className="text-xs text-on-surface-variant">{testimonial.role}</span>
+                  <h5 className="font-bold" style={{ color: '#051125' }}>{testimonial.name}</h5>
+                  <span className="text-xs" style={{ color: '#64748b' }}>{testimonial.role}</span>
                 </div>
               </div>
             </div>

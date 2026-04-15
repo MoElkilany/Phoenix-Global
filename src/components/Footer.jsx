@@ -16,14 +16,15 @@ const Footer = () => {
   const socialIcons = ['share', 'public', 'camera_alt'];
 
   return (
-    <footer className="w-full py-12 px-6 md:px-12 border-t border-white/10 text-white" style={{ backgroundColor: '#2B2D4E' }}>
+    <footer className="w-full py-12 px-6 md:px-12" style={{ backgroundColor: '#030712' }}>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-8 mb-12">
-        <div className="text-xl font-bold" style={{ color: '#C0521A' }}>Phoenix Global</div>
-        <div className="flex flex-wrap gap-8">
+        <div className="text-xl font-bold font-cinzel" style={{ color: '#d4a849' }}>PHOENIX GLOBAL</div>
+        <div className="flex flex-wrap gap-6">
           {footerLinks.map((link, index) => (
             <a 
               key={index}
-              className="text-slate-400 hover:text-secondary-fixed-dim transition-opacity font-plus-jakarta text-sm tracking-wide"
+              className="text-sm tracking-wide transition-colors cursor-pointer"
+              style={{ color: 'rgba(255,255,255,0.6)' }}
               href={link.href}
             >
               {link.label}
@@ -34,7 +35,8 @@ const Footer = () => {
           {socialIcons.map((icon, index) => (
             <span 
               key={index}
-              className="material-symbols-outlined text-slate-400 hover:text-secondary cursor-pointer"
+              className="material-symbols-outlined cursor-pointer transition-colors"
+              style={{ color: 'rgba(255,255,255,0.6)' }}
               role="button"
               aria-label={icon}
             >
@@ -43,15 +45,16 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row justify-between items-center w-full border-t border-white/5 pt-8 gap-6">
-        <p className="font-plus-jakarta text-sm tracking-wide text-slate-400">
+      <div className="flex flex-col md:flex-row justify-between items-center w-full border-t border-white/10 pt-8 gap-6">
+        <p className="text-sm tracking-wide" style={{ color: 'rgba(255,255,255,0.5)' }}>
           © 2024 Phoenix Global Developments. All rights reserved.
         </p>
         <div className="flex gap-8">
           {legalLinks.map((link, index) => (
             <a 
               key={index}
-              className="text-slate-400 hover:text-secondary-fixed-dim text-sm"
+              className="text-sm transition-colors cursor-pointer"
+              style={{ color: 'rgba(255,255,255,0.5)' }}
               href={link.href}
             >
               {link.label}

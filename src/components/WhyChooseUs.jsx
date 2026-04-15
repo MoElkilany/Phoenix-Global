@@ -91,23 +91,23 @@ const WhyChooseUs = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 lg:py-28 relative overflow-hidden"
-      style={{ backgroundColor: '#2B2D4E' }}
+      className="py-24 lg:py-32 relative overflow-hidden section-spacing"
+      style={{ backgroundColor: '#0a0a0f' }}
     >
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 right-20 w-64 h-64 rounded-full" style={{ background: '#C0521A' }}></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" style={{ background: '#C0521A' }}></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 right-20 w-64 h-64 rounded-full" style={{ background: '#d4a849' }}></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full" style={{ background: '#d4a849' }}></div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+      <div className="content-container relative z-10">
         <div className="text-center mb-16">
           <span 
             className="inline-block px-5 py-2 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full"
-            style={{ backgroundColor: '#C0521A', color: '#ffffff' }}
+            style={{ backgroundColor: '#d4a849', color: '#051125' }}
           >
-            ليه فينيكس ؟
+            ليه فينيكس ?
           </span>
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#ffffff', fontFamily: 'Cairo, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-cinzel" style={{ color: '#ffffff' }}>
             نبني المستقبل بثقة
           </h2>
           <p className="text-lg md:text-xl" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -119,13 +119,9 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="feature-item group"
+              className="feature-item group p-6 rounded-2xl cursor-pointer"
               style={{ 
-                animationDelay: `${index * 0.15}s`,
                 backgroundColor: 'rgba(255,255,255,0.08)',
-                borderRadius: '20px',
-                padding: '28px 20px',
-                textAlign: 'center',
                 border: '1px solid rgba(255,255,255,0.1)',
                 transition: 'all 0.4s ease'
               }}
@@ -133,26 +129,26 @@ const WhyChooseUs = () => {
               <div 
                 className="feature-icon mx-auto mb-5"
                 style={{ 
-                  width: '64px', 
-                  height: '64px',
+                  width: '60px', 
+                  height: '60px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: '#C0521A',
-                  borderRadius: '18px',
+                  background: '#d4a849',
+                  borderRadius: '16px',
                   transition: 'transform 0.4s ease',
-                  boxShadow: '0 8px 24px rgba(192, 82, 26, 0.3)'
+                  boxShadow: '0 8px 24px rgba(212,168,73,0.3)'
                 }}
               >
-                <div style={{ width: '32px', height: '32px', color: '#ffffff' }}>
+                <div style={{ width: '28px', height: '28px', color: '#051125' }}>
                   {feature.icon}
                 </div>
               </div>
               
-              <h3 className="text-lg font-bold mb-3" style={{ color: '#ffffff', fontFamily: 'Cairo, sans-serif' }}>
+              <h3 className="text-lg font-bold mb-3 text-center" style={{ color: '#ffffff' }}>
                 {feature.title}
               </h3>
-              <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
+              <p className="text-sm text-center" style={{ color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
                 {feature.description}
               </p>
 
@@ -183,7 +179,7 @@ const WhyChooseUs = () => {
                 }
                 
                 .feature-icon svg {
-                  stroke: #ffffff !important;
+                  stroke: #051125 !important;
                   stroke-width: 2 !important;
                   fill: none;
                 }
