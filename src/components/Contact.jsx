@@ -1,7 +1,12 @@
+import { useState, useEffect, useRef } from 'react';
+
 const Contact = () => {
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
+
   const phones = [
-    { label: '', number: '01119031117' },
-    { label: '', number: '01116566604' },
+    { label: 'الخط الأول', number: '01119031117' },
+    { label: 'الخط الثاني', number: '01116566604' },
     { label: 'خط أرضي', number: '0220322217' },
   ];
 
@@ -17,123 +22,168 @@ const Contact = () => {
     window.open('https://www.google.com/maps?q=30.128553,31.644960', '_blank');
   };
 
-  return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#132036' }} id="contact">
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const ContactCard = ({ onClick, icon, label, value, subValue, delay }) => (
+    <button
+      onClick={onClick}
+      className="group w-full text-center relative overflow-hidden cursor-pointer"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(30px)',
+        transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`,
+      }}
+    >
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+        className="p-8 relative"
+        style={{
+          background: 'rgba(14, 24, 40, 0.6)',
+          border: '1px solid rgba(201, 168, 76, 0.08)',
+          backdropFilter: 'blur(10px)',
+          transition: 'all 0.4s ease',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.3)';
+          e.currentTarget.style.background = 'rgba(14, 24, 40, 0.9)';
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2), 0 0 30px rgba(201,168,76,0.04)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.08)';
+          e.currentTarget.style.background = 'rgba(14, 24, 40, 0.6)';
+          e.currentTarget.style.transform = 'translateY(0)';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+      >
+        <div
+          className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)' }}
+        />
+
+        <div
+          className="w-12 h-12 mx-auto mb-5 flex items-center justify-center transition-all duration-400 group-hover:scale-110"
+          style={{
+            background: 'rgba(201, 168, 76, 0.06)',
+            border: '1px solid rgba(201, 168, 76, 0.2)',
+          }}
+        >
+          <span className="material-symbols-outlined text-base" style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
+            {icon}
+          </span>
+        </div>
+
+        {label && (
+          <p className="text-xs mb-2 tracking-widest" style={{ color: 'rgba(201, 168, 76, 0.6)', fontFamily: 'Cairo, sans-serif', letterSpacing: '1px' }}>
+            {label}
+          </p>
+        )}
+        <p className="text-base font-bold" style={{ color: '#F0EAD8', fontFamily: 'Cairo, sans-serif' }} dir="rtl">
+          {value}
+        </p>
+        {subValue && (
+          <p className="text-xs mt-2" style={{ color: '#C9A84C', fontFamily: 'Cairo, sans-serif' }}>{subValue}</p>
+        )}
+      </div>
+    </button>
+  );
+
+  return (
+    <section
+      ref={sectionRef}
+      className="py-28 relative overflow-hidden"
+      style={{ backgroundColor: '#060B14' }}
+      id="contact"
+    >
+      <div
+        className="absolute top-0 left-0 w-full h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)' }}
+      />
+      <div
+        className="absolute -top-40 right-0 w-96 h-96 rounded-full opacity-[0.03]"
+        style={{ background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)' }}
       />
 
       <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
-        <div className="text-center mb-16">
-          <div
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
-          >
-            <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
-              call
-            </span>
-            <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>تواصل معنا</span>
+
+        {/* Header */}
+        <div
+          className={`text-center mb-20 transition-all duration-900 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <div className="section-badge mb-8" style={{ fontFamily: 'Cairo, sans-serif' }}>
+            <span className="material-symbols-outlined text-xs" style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 0, 'wght' 300" }}>call</span>
+            <span>تواصل معنا</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+          <h2
+            className="font-black mb-4"
+            style={{
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              color: '#F0EAD8',
+              fontFamily: 'Cairo, sans-serif',
+            }}
+          >
             نحن هنا{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}>
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #C9A84C, #E2C880)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
               لمساعدتك
             </span>
           </h2>
-          <p className="text-lg" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
+          <p className="text-lg" style={{ color: '#7A8898', fontFamily: 'Cairo, sans-serif' }}>
             فريقنا متاح للرد على استفساراتك على مدار الساعة
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Phone cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {phones.map((phone, index) => (
-            <button
+            <ContactCard
               key={index}
               onClick={() => handleCall(phone.number)}
-              className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
-              }}
-            >
-              <div
-                className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
-                }}
-              >
-                <span className="material-symbols-outlined text-gold">call</span>
-              </div>
-              {phone.label && (
-                <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                  {phone.label}
-                </p>
-              )}
-              <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                +20{phone.number}
-              </p>
-            </button>
+              icon="call"
+              label={phone.label}
+              value={`+20${phone.number}`}
+              delay={0.2 + index * 0.1}
+            />
           ))}
         </div>
 
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <button
+        {/* Email & Location */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <ContactCard
             onClick={handleEmail}
-            className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-            }}
-          >
-            <div
-              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-              style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
-              }}
-            >
-              <span className="material-symbols-outlined text-gold">mail</span>
-            </div>
-            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-              البريد الإلكتروني
-            </p>
-            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-              info@phonixglobal-eg.com
-            </p>
-          </button>
-
-          <button
+            icon="mail"
+            label="البريد الإلكتروني"
+            value="info@phonixglobal-eg.com"
+            delay={0.5}
+          />
+          <ContactCard
             onClick={handleLocation}
-            className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-            }}
-          >
-            <div
-              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-              style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
-              }}
-            >
-              <span className="material-symbols-outlined text-gold">location_on</span>
-            </div>
-            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-              الموقع
-            </p>
-            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-              78 شارع الفرعي - الشروق - القاهرة
-            </p>
-            <p className="text-sm mt-2" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              انقر للعرض على الخريطة
-            </p>
-          </button>
+            icon="location_on"
+            label="العنوان"
+            value="78 شارع الفرعي — الشروق — القاهرة"
+            subValue="انقر للعرض على الخريطة"
+            delay={0.6}
+          />
         </div>
       </div>
+
+      <div
+        className="absolute bottom-0 left-0 w-full h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)' }}
+      />
     </section>
   );
 };

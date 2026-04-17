@@ -8,7 +8,8 @@ const WhatsAppButton = () => {
       aria-label="تواصل عبر واتساب"
       style={{
         background: 'linear-gradient(135deg, #25D366, #128C7E)',
-        boxShadow: '0 8px 32px rgba(37, 211, 102, 0.3)',
+        boxShadow: '0 8px 32px rgba(37, 211, 102, 0.25)',
+        borderRadius: '2px',
       }}
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">

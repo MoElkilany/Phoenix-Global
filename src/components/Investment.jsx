@@ -1,267 +1,318 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Investment = () => {
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [visible, setVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const stats = [
-    { value: '12%', label: 'العائد السنوي', icon: 'trending_up' },
-    { value: '+150', label: 'مشروع مُسلم', icon: 'apartment' },
-    { value: '98%', label: 'رضا المستثمرين', icon: 'emoji_events' },
-    { value: '+10', label: 'سنوات خبرة', icon: 'calendar_today' },
+    { value: '12%', label: 'العائد السنوي', icon: 'trending_up', desc: 'نمو مستمر' },
+    { value: '+150', label: 'مشروع مُسلم', icon: 'apartment', desc: 'في مصر والعالم' },
+    { value: '98%', label: 'رضا المستثمرين', icon: 'emoji_events', desc: 'ثقة تامة' },
+    { value: '+10', label: 'سنوات خبرة', icon: 'calendar_today', desc: 'في السوق' },
   ];
 
   const benefits = [
     {
       icon: 'trending_up',
       title: 'نمو سنوي مستمر',
-      description: 'زيادة في قيمة العقار مدعومة بالبنية التحتية المتطورة.',
+      description: 'زيادة في قيمة العقار مدعومة بالبنية التحتية المتطورة والطلب المتصاعد.',
     },
     {
       icon: 'key',
       title: 'حلول تمليك مرنة',
-      description: 'خطط سداد ميسرة تتناسب مع أهدافك المالية.',
+      description: 'خطط سداد ميسرة تتناسب مع أهدافك المالية وتناسب جميع الميزانيات.',
     },
     {
       icon: 'savings',
       title: 'حماية من التضخم',
-      description: 'استثمار يحافظ على قيمته ويحقق عوائد حقيقية.',
+      description: 'استثمار يحافظ على قيمته ويحقق عوائد حقيقية في السوق المصري.',
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
-      className="relative py-24 overflow-hidden"
+      ref={sectionRef}
+      className="relative py-28 overflow-hidden"
       id="investment"
-      style={{
-        background: 'linear-gradient(160deg, #0D1526 0%, #1B2A4A 50%, #0D1526 100%)',
-      }}
+      style={{ backgroundColor: '#060B14' }}
     >
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at 25% 25%, rgba(192, 80, 26, 0.15) 1px, transparent 1px),
-              radial-gradient(circle at 75% 75%, rgba(192, 80, 26, 0.08) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
-            animation: 'investment-drift 20s linear infinite',
-          }}
-        />
-      </div>
-
+      {/* Background pattern */}
       <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(201, 168, 76, 1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201, 168, 76, 1) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px',
+        }}
       />
       <div
-        className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(-30%, 40%)' }}
+        className="absolute top-0 left-0 w-full h-full"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(6,11,20,0) 30%, rgba(6,11,20,0.95) 80%)',
+          pointerEvents: 'none',
+        }}
+      />
+      <div
+        className="absolute top-0 left-0 w-full h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)' }}
       />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <div
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.3)' }}
-          >
-            <span
-              className="material-symbols-outlined text-gold text-lg"
-              style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-            >
-              diamond
-            </span>
-            <span className="text-gold text-sm font-semibold tracking-wide" style={{ fontFamily: 'Cairo, sans-serif' }}>
-              فرص استثمارية حصرية
-            </span>
+
+        {/* Header */}
+        <div
+          className={`text-center mb-20 transition-all duration-900 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <div className="section-badge mb-8" style={{ fontFamily: 'Cairo, sans-serif' }}>
+            <span className="material-symbols-outlined text-xs" style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 1, 'wght' 400" }}>diamond</span>
+            <span>فرص استثمارية حصرية</span>
           </div>
 
           <h2
-            className="text-4xl md:text-6xl font-black mb-6 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            className="font-black mb-6 leading-tight"
+            style={{
+              fontSize: 'clamp(2.2rem, 5vw, 4rem)',
+              color: '#F0EAD8',
+              fontFamily: 'Cairo, sans-serif',
+            }}
           >
             استثمر بذكاء،{' '}
             <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A, #C0501A)' }}
+              style={{
+                background: 'linear-gradient(135deg, #C9A84C 0%, #E2C880 50%, #C9A84C 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
               احصد بعناية
             </span>
           </h2>
 
           <p
-            className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-            style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+            className="text-lg max-w-2xl mx-auto"
+            style={{ color: '#7A8898', fontFamily: 'Cairo, sans-serif', lineHeight: 1.9 }}
           >
-            نقدم عوائد استثمارية تصل إلى 12% سنوياً من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً. فريقنا الاستشاري يساعدك في بناء محفظة عقارية قوية ومستقرة.
+            نقدم عوائد استثمارية تصل إلى 12% سنوياً من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
+        {/* Stats */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group relative rounded-2xl p-6 text-center transition-all duration-500 cursor-pointer"
+              className="group cursor-pointer"
               style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
-                animation: `investment-fade-up 0.6s ease forwards ${index * 0.1}s`,
-                opacity: 0,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                e.currentTarget.style.borderColor = 'rgba(192, 80, 26, 0.3)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(192, 80, 26, 0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.06)';
-                e.currentTarget.style.boxShadow = 'none';
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1 + 0.2}s`,
               }}
             >
-              <span
-                className="material-symbols-outlined block mx-auto mb-3 text-2xl"
-                style={{ color: '#C0501A', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
+              <div
+                className="text-center p-8 rounded-sm relative overflow-hidden"
+                style={{
+                  background: 'rgba(14, 24, 40, 0.7)',
+                  border: '1px solid rgba(201, 168, 76, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  transition: 'all 0.4s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.3)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.3), 0 0 30px rgba(201,168,76,0.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
               >
-                {stat.icon}
-              </span>
-              <div className="text-3xl md:text-4xl font-black mb-1" style={{ color: '#F0F4FA', fontFamily: 'Cinzel, serif' }}>
-                {stat.value}
-              </div>
-              <div className="text-sm font-medium" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                {stat.label}
+                <div
+                  className="absolute top-0 left-4 right-4 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)' }}
+                />
+
+                <span
+                  className="material-symbols-outlined text-xl mb-4 block"
+                  style={{ color: 'rgba(201, 168, 76, 0.6)', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
+                >
+                  {stat.icon}
+                </span>
+                <div
+                  className="text-3xl md:text-4xl font-black mb-1"
+                  style={{
+                    background: 'linear-gradient(135deg, #C9A84C, #E2C880)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    fontFamily: 'Cinzel, serif',
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <div className="text-sm font-medium mb-1" style={{ color: '#F0EAD8', fontFamily: 'Cairo, sans-serif' }}>
+                  {stat.label}
+                </div>
+                <div className="text-xs" style={{ color: '#7A8898', fontFamily: 'Cairo, sans-serif' }}>
+                  {stat.desc}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {/* Benefits */}
+        <div className="grid md:grid-cols-3 gap-5 mb-12">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="relative rounded-2xl overflow-hidden transition-all duration-500 group cursor-pointer"
+              className="group cursor-pointer"
               style={{
-                animation: `investment-fade-up 0.6s ease forwards ${0.4 + index * 0.15}s`,
-                opacity: 0,
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(30px)',
+                transition: `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${0.5 + index * 0.15}s`,
               }}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
               <div
-                className="absolute inset-0 transition-opacity duration-500"
+                className="p-8 rounded-sm h-full relative"
                 style={{
-                  background: hoveredCard === index ? 'rgba(255, 255, 255, 0.06)' : 'rgba(255, 255, 255, 0.03)',
-                  backdropFilter: 'blur(12px)',
-                  border: `1px solid ${hoveredCard === index ? 'rgba(192, 80, 26, 0.3)' : 'rgba(255, 255, 255, 0.06)'}`,
+                  background: 'rgba(14, 24, 40, 0.5)',
+                  border: '1px solid rgba(201, 168, 76, 0.08)',
+                  transition: 'all 0.4s ease',
                 }}
-              />
-
-              <div
-                className="absolute top-0 left-0 right-0 h-px transition-all duration-500"
-                style={{
-                  background: hoveredCard === index
-                    ? 'linear-gradient(90deg, transparent, #C0501A, transparent)'
-                    : 'linear-gradient(90deg, transparent, rgba(192, 80, 26, 0.2), transparent)',
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.25)';
+                  e.currentTarget.style.background = 'rgba(14, 24, 40, 0.9)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
                 }}
-              />
-
-              <div className="relative p-8">
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.08)';
+                  e.currentTarget.style.background = 'rgba(14, 24, 40, 0.5)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                {/* Top accent line */}
                 <div
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-transform duration-500 group-hover:scale-110"
+                  className="absolute top-0 left-0 right-0 h-px opacity-50"
+                  style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)' }}
+                />
+
+                <div
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-sm mb-6 transition-transform duration-400 group-hover:scale-110"
                   style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.15), rgba(192, 80, 26, 0.05))',
-                     border: '1px solid rgba(192, 80, 26, 0.2)',
+                    background: 'rgba(201, 168, 76, 0.06)',
+                    border: '1px solid rgba(201, 168, 76, 0.2)',
                   }}
                 >
                   <span
-                    className="material-symbols-outlined text-2xl"
-style={{ color: '#C0501A', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
+                    className="material-symbols-outlined text-xl"
+                    style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
                   >
                     {benefit.icon}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                  {benefit.title}
-                </h3>
-
-                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: 1.8, fontFamily: 'Cairo, sans-serif' }}>
-                  {benefit.description}
-                </p>
+                <div dir="rtl">
+                  <h3 className="text-lg font-bold mb-3" style={{ color: '#F0EAD8', fontFamily: 'Cairo, sans-serif' }}>
+                    {benefit.title}
+                  </h3>
+                  <p className="text-sm" style={{ color: '#7A8898', lineHeight: 1.9, fontFamily: 'Cairo, sans-serif' }}>
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
+        {/* CTA Banner */}
         <div
-          className="relative rounded-2xl overflow-hidden"
-          style={{ animation: 'investment-fade-up 0.8s ease forwards 0.8s', opacity: 0 }}
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.9s',
+          }}
         >
           <div
-            className="absolute inset-0"
+            className="relative overflow-hidden"
             style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.08), rgba(192, 80, 26, 0.03))',
-               backdropFilter: 'blur(10px)',
-               border: '1px solid rgba(192, 80, 26, 0.15)',
+              background: 'rgba(14, 24, 40, 0.8)',
+              border: '1px solid rgba(201, 168, 76, 0.2)',
+              backdropFilter: 'blur(20px)',
             }}
-          />
+          >
+            {/* Accent lines */}
+            <div
+              className="absolute top-0 left-0 right-0 h-px"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent)' }}
+            />
+            <div
+              className="absolute bottom-0 left-0 right-0 h-px"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.2), transparent)' }}
+            />
 
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10">
-            <div className="flex items-center gap-4">
-              <div
-                className="flex items-center justify-center w-16 h-16 rounded-full"
-                style={{
-background: 'linear-gradient(135deg, #C0501A, #E8845A)',
-                   boxShadow: '0 8px 32px rgba(192, 80, 26, 0.3)',
-                 }}
-               >
-                 <span
-                   className="material-symbols-outlined text-3xl"
-                   style={{ color: '#FFFFFF', fontVariationSettings: "'FILL' 1, 'wght' 600" }}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10" dir="rtl">
+              <div className="flex items-center gap-6">
+                <div
+                  className="flex items-center justify-center w-14 h-14"
+                  style={{
+                    background: 'rgba(201, 168, 76, 0.08)',
+                    border: '1px solid rgba(201, 168, 76, 0.25)',
+                  }}
                 >
-                  trends_up
-                </span>
+                  <span
+                    className="material-symbols-outlined text-2xl"
+                    style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
+                  >
+                    trending_up
+                  </span>
+                </div>
+                <div>
+                  <h4 className="text-xl md:text-2xl font-bold mb-1" style={{ color: '#F0EAD8', fontFamily: 'Cairo, sans-serif' }}>
+                    ابدأ رحلتك الاستثمارية
+                  </h4>
+                  <p className="text-sm" style={{ color: '#7A8898', fontFamily: 'Cairo, sans-serif' }}>
+                    تواصل معنا اليوم للحصول على استشارة مجانية
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                  ابدأ رحلتك الاستثمارية
-                </h4>
-                <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                  تواصل معنا اليوم للحصول على استشارة مجانية
-                </p>
-              </div>
-            </div>
 
-            <a
-              href="#contact"
-              className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap"
-              style={{
-                background: 'linear-gradient(135deg, #C0501A, #A54215)',
-                color: '#FFFFFF',
-                boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
-                fontFamily: 'Cairo, sans-serif',
-              }}
-            >
-              <span>تواصل معنا الآن</span>
-              <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
-                arrow_back
-              </span>
-            </a>
+              <a
+                href="#contact"
+                className="flex items-center gap-3 px-8 py-4 font-bold text-base transition-all duration-400 hover:scale-105 cursor-pointer whitespace-nowrap"
+                style={{
+                  background: 'linear-gradient(135deg, #C9A84C, #9A7A35)',
+                  color: '#060B14',
+                  fontFamily: 'Cairo, sans-serif',
+                  boxShadow: '0 4px 24px rgba(201, 168, 76, 0.2)',
+                }}
+              >
+                <span>تواصل معنا الآن</span>
+                <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
+                  arrow_back
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <style>{`
-        @keyframes investment-drift {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(60px, 60px); }
-        }
-        @keyframes investment-fade-up {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
+      <div
+        className="absolute bottom-0 left-0 w-full h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)' }}
+      />
     </section>
   );
 };
