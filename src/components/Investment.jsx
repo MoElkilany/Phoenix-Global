@@ -33,7 +33,7 @@ const Investment = () => {
       className="relative py-24 overflow-hidden"
       id="investment"
       style={{
-        background: 'linear-gradient(160deg, #0C0A09 0%, #1C1917 50%, #0C0A09 100%)',
+        background: 'linear-gradient(160deg, #0D1526 0%, #1B2A4A 50%, #0D1526 100%)',
       }}
     >
       <div className="absolute inset-0 opacity-10">
@@ -41,8 +41,8 @@ const Investment = () => {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.15) 1px, transparent 1px),
-              radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.08) 1px, transparent 1px)
+              radial-gradient(circle at 25% 25%, rgba(192, 80, 26, 0.15) 1px, transparent 1px),
+              radial-gradient(circle at 75% 75%, rgba(192, 80, 26, 0.08) 1px, transparent 1px)
             `,
             backgroundSize: '60px 60px',
             animation: 'investment-drift 20s linear infinite',
@@ -52,18 +52,18 @@ const Investment = () => {
 
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
       />
       <div
         className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', transform: 'translate(-30%, 40%)' }}
+        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(-30%, 40%)' }}
       />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.3)' }}
+            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.3)' }}
           >
             <span
               className="material-symbols-outlined text-gold text-lg"
@@ -78,12 +78,12 @@ const Investment = () => {
 
           <h2
             className="text-4xl md:text-6xl font-black mb-6 leading-tight"
-            style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
           >
             استثمر بذكاء،{' '}
             <span
               className="bg-clip-text text-transparent"
-              style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3, #D4AF37)' }}
+              style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A, #C0501A)' }}
             >
               احصد بعناية
             </span>
@@ -91,7 +91,7 @@ const Investment = () => {
 
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-            style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+            style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
           >
             نقدم عوائد استثمارية تصل إلى 12% سنوياً من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً. فريقنا الاستشاري يساعدك في بناء محفظة عقارية قوية ومستقرة.
           </p>
@@ -111,8 +111,8 @@ const Investment = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(212, 175, 55, 0.1)';
+                e.currentTarget.style.borderColor = 'rgba(192, 80, 26, 0.3)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(192, 80, 26, 0.1)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
@@ -122,14 +122,14 @@ const Investment = () => {
             >
               <span
                 className="material-symbols-outlined block mx-auto mb-3 text-2xl"
-                style={{ color: '#D4AF37', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
+                style={{ color: '#C0501A', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
               >
                 {stat.icon}
               </span>
-              <div className="text-3xl md:text-4xl font-black mb-1" style={{ color: '#FAFAF9', fontFamily: 'Cinzel, serif' }}>
+              <div className="text-3xl md:text-4xl font-black mb-1" style={{ color: '#F0F4FA', fontFamily: 'Cinzel, serif' }}>
                 {stat.value}
               </div>
-              <div className="text-sm font-medium" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+              <div className="text-sm font-medium" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
                 {stat.label}
               </div>
             </div>
@@ -153,7 +153,7 @@ const Investment = () => {
                 style={{
                   background: hoveredCard === index ? 'rgba(255, 255, 255, 0.06)' : 'rgba(255, 255, 255, 0.03)',
                   backdropFilter: 'blur(12px)',
-                  border: `1px solid ${hoveredCard === index ? 'rgba(212, 175, 55, 0.3)' : 'rgba(255, 255, 255, 0.06)'}`,
+                  border: `1px solid ${hoveredCard === index ? 'rgba(192, 80, 26, 0.3)' : 'rgba(255, 255, 255, 0.06)'}`,
                 }}
               />
 
@@ -161,8 +161,8 @@ const Investment = () => {
                 className="absolute top-0 left-0 right-0 h-px transition-all duration-500"
                 style={{
                   background: hoveredCard === index
-                    ? 'linear-gradient(90deg, transparent, #D4AF37, transparent)'
-                    : 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent)',
+                    ? 'linear-gradient(90deg, transparent, #C0501A, transparent)'
+                    : 'linear-gradient(90deg, transparent, rgba(192, 80, 26, 0.2), transparent)',
                 }}
               />
 
@@ -170,23 +170,23 @@ const Investment = () => {
                 <div
                   className="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-transform duration-500 group-hover:scale-110"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05))',
-                    border: '1px solid rgba(212, 175, 55, 0.2)',
+background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.15), rgba(192, 80, 26, 0.05))',
+                     border: '1px solid rgba(192, 80, 26, 0.2)',
                   }}
                 >
                   <span
                     className="material-symbols-outlined text-2xl"
-                    style={{ color: '#D4AF37', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
+style={{ color: '#C0501A', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
                   >
                     {benefit.icon}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                   {benefit.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed" style={{ color: '#A8A29E', lineHeight: 1.8, fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: 1.8, fontFamily: 'Cairo, sans-serif' }}>
                   {benefit.description}
                 </p>
               </div>
@@ -201,9 +201,9 @@ const Investment = () => {
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.03))',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(212, 175, 55, 0.15)',
+background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.08), rgba(192, 80, 26, 0.03))',
+               backdropFilter: 'blur(10px)',
+               border: '1px solid rgba(192, 80, 26, 0.15)',
             }}
           />
 
@@ -212,22 +212,22 @@ const Investment = () => {
               <div
                 className="flex items-center justify-center w-16 h-16 rounded-full"
                 style={{
-                  background: 'linear-gradient(135deg, #D4AF37, #F5E6B3)',
-                  boxShadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
-                }}
-              >
-                <span
-                  className="material-symbols-outlined text-3xl"
-                  style={{ color: '#0C0A09', fontVariationSettings: "'FILL' 1, 'wght' 600" }}
+background: 'linear-gradient(135deg, #C0501A, #E8845A)',
+                   boxShadow: '0 8px 32px rgba(192, 80, 26, 0.3)',
+                 }}
+               >
+                 <span
+                   className="material-symbols-outlined text-3xl"
+                   style={{ color: '#FFFFFF', fontVariationSettings: "'FILL' 1, 'wght' 600" }}
                 >
                   trends_up
                 </span>
               </div>
               <div>
-                <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                   ابدأ رحلتك الاستثمارية
                 </h4>
-                <p className="text-sm" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
                   تواصل معنا اليوم للحصول على استشارة مجانية
                 </p>
               </div>
@@ -237,9 +237,9 @@ const Investment = () => {
               href="#contact"
               className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 cursor-pointer whitespace-nowrap"
               style={{
-                background: 'linear-gradient(135deg, #D4AF37, #CA8A04)',
-                color: '#0C0A09',
-                boxShadow: '0 4px 20px rgba(212, 175, 55, 0.3)',
+                background: 'linear-gradient(135deg, #C0501A, #A54215)',
+                color: '#FFFFFF',
+                boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
                 fontFamily: 'Cairo, sans-serif',
               }}
             >

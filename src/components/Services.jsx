@@ -92,12 +92,12 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden" id="services" style={{ backgroundColor: '#1C1917' }}>
+    <section ref={sectionRef} className="py-24 relative overflow-hidden" id="services" style={{ backgroundColor: '#132036' }}>
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
           >
             <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
               workspace_premium
@@ -105,13 +105,13 @@ const Services = () => {
             <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>خدماتنا</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
             حلول عقارية{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3)' }}>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}>
               شاملة
             </span>
           </h2>
-          <p className="text-lg md:text-xl" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+          <p className="text-lg md:text-xl" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
             خبرة احترافية في جميع جوانب العقار
           </p>
         </div>
@@ -141,27 +141,27 @@ const Services = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05))',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(212, 175, 55, 0.2)',
+background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+                   borderRadius: '16px',
+                   border: '1px solid rgba(192, 80, 26, 0.2)',
                   transition: 'transform 0.4s ease',
                 }}
               >
-                <div style={{ width: '32px', height: '32px', color: '#D4AF37' }}>{service.icon}</div>
+                <div style={{ width: '32px', height: '32px', color: '#C0501A' }}>{service.icon}</div>
               </div>
 
               <div className="flex-1">
-                <h3 className="text-xl font-bold mb-2" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#A8A29E', lineHeight: '1.8', fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: '1.8', fontFamily: 'Cairo, sans-serif' }}>
                   {service.description}
                 </p>
               </div>
 
               <span
                 className="material-symbols-outlined text-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"
-                style={{ color: '#D4AF37', fontVariationSettings: "'FILL' 0, 'wght' 400" }}
+                style={{ color: '#C0501A', fontVariationSettings: "'FILL' 0, 'wght' 400" }}
               >
                 arrow_back
               </span>
@@ -170,9 +170,9 @@ const Services = () => {
                 .service-card { opacity: 0; transform: translateX(-20px); }
                 .service-card.reveal { animation: revealSlide 0.6s ease forwards; }
                 @keyframes revealSlide { to { opacity: 1; transform: translateX(0); } }
-                .service-card:hover { background-color: rgba(255,255,255,0.06) !important; border-color: rgba(212, 175, 55, 0.2) !important; }
+                .service-card:hover { background-color: rgba(255,255,255,0.06) !important; border-color: rgba(192, 80, 26, 0.2) !important; }
                 .service-card:hover .flex-shrink-0 { transform: scale(1.05); }
-                .service-icon svg { stroke: #D4AF37 !important; }
+                .service-icon svg { stroke: #C0501A !important; }
               `}</style>
             </div>
           ))}

@@ -86,12 +86,12 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden" style={{ backgroundColor: '#0C0A09' }}>
+    <section ref={sectionRef} className="py-24 relative overflow-hidden" style={{ backgroundColor: '#0D1526' }}>
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
           >
             <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
              verified
@@ -99,13 +99,13 @@ const WhyChooseUs = () => {
             <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>لماذا فينيكس؟</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
             نبني المستقبل{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3)' }}>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}>
               بثقة
             </span>
           </h2>
-          <p className="text-lg md:text-xl" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+          <p className="text-lg md:text-xl" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
             نلتزم بأعلى معايير الجودة في كل مشروع
           </p>
         </div>
@@ -129,18 +129,18 @@ const WhyChooseUs = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05))',
-                  borderRadius: '14px',
-                  border: '1px solid rgba(212, 175, 55, 0.2)',
+background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.15), rgba(192, 80, 26, 0.05))',
+                   borderRadius: '14px',
+                   border: '1px solid rgba(192, 80, 26, 0.2)',
                 }}
               >
-                <div style={{ width: '28px', height: '28px', color: '#D4AF37' }}>{feature.icon}</div>
+                <div style={{ width: '28px', height: '28px', color: '#C0501A' }}>{feature.icon}</div>
               </div>
 
-              <h3 className="text-base font-bold mb-2" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+              <h3 className="text-base font-bold mb-2" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                 {feature.title}
               </h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#A8A29E', lineHeight: '1.7', fontFamily: 'Cairo, sans-serif' }}>
+              <p className="text-xs leading-relaxed" style={{ color: '#8E9BB5', lineHeight: '1.7', fontFamily: 'Cairo, sans-serif' }}>
                 {feature.description}
               </p>
 
@@ -148,8 +148,8 @@ const WhyChooseUs = () => {
                 .feature-item { opacity: 0; transform: translateY(20px); }
                 .feature-item.reveal { animation: revealFeature 0.6s ease forwards; }
                 @keyframes revealFeature { to { opacity: 1; transform: translateY(0); } }
-                .feature-item:hover { background-color: rgba(255,255,255,0.06) !important; border-color: rgba(212, 175, 55, 0.2) !important; transform: translateY(-4px) !important; }
-                .feature-icon svg { stroke: #D4AF37 !important; fill: none !important; }
+                .feature-item:hover { background-color: rgba(240,244,250,0.06) !important; border-color: rgba(192, 80, 26, 0.2) !important; transform: translateY(-4px) !important; }
+                .feature-icon svg { stroke: #C0501A !important; fill: none !important; }
               `}</style>
             </div>
           ))}

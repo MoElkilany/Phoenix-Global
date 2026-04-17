@@ -13,17 +13,17 @@ const About = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden" id="about" style={{ backgroundColor: '#0C0A09' }}>
+    <section className="py-24 relative overflow-hidden" id="about" style={{ backgroundColor: '#0D1526' }}>
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
-        style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+        style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
       />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+            style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
           >
             <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
               info
@@ -33,15 +33,15 @@ const About = () => {
 
           <h2
             className="text-4xl md:text-5xl font-black mb-6 leading-tight"
-            style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
           >
             رؤية تتجاوز{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3)' }}>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}>
               المباني
             </span>
           </h2>
 
-          <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif', lineHeight: 1.9 }}>
+          <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.9 }}>
             في فينيكس جلوبال، نؤمن أن العقار ليس مجرد جدران، بل مساحة لصنع الذكريات وفرصة ذهبية لتنمية الثروة.
           </p>
         </div>
@@ -62,17 +62,17 @@ const About = () => {
             </div>
             <div
               className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl -z-10"
-              style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+              style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
             />
           </div>
 
           <div>
             <ul className="space-y-4 mb-10">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                <li key={index} className="flex items-center gap-3" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                   <span
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{ background: 'rgba(212, 175, 55, 0.15)' }}
+                    style={{ background: 'rgba(192, 80, 26, 0.15)' }}
                   >
                     <span className="material-symbols-outlined text-gold text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
                       check_circle
@@ -86,10 +86,10 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
               {stats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-2xl md:text-3xl font-black" style={{ color: '#D4AF37', fontFamily: 'Cinzel, serif' }}>
+                  <div className="text-2xl md:text-3xl font-black" style={{ color: '#C0501A', fontFamily: 'Cinzel, serif' }}>
                     {stat.number}
                   </div>
-                  <div className="text-sm mt-1" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+                  <div className="text-sm mt-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
                     {stat.label}
                   </div>
                 </div>
