@@ -1,190 +1,178 @@
 import { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
-  const heroRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+  const [loaded, setLoaded] = useState(false);
+
   const slides = [
-    {
-      image: '/heroSection.png',
-      title: 'مشاريع سكنية فاخرة',
-      subtitle: 'أعلى معايير التصميم والتشطيب'
-    },
-    {
-      image: '/heroSection1.png',
-      subtitle: 'مساحات فاخرة بتصميم عصري'
-    },
-    {
-      image: '/heroSection2.png',
-      title: 'أبراج سكنية',
-      subtitle: 'إطلالات ساحرة على المدينة'
-    },
-    {
-      image: '/heroSection3.png',
-      title: 'مشاريع تجارية',
-      subtitle: 'فرص استثمارية مربحة'
-    },
-    {
-      image: '/heroSection4.png',
-      title: 'تصميم داخلي',
-      subtitle: 'لمسات فنية مميزة'
-    },
-    {
-      image: '/heroSection5.png',
-      title: 'تشطيبات فاخرة',
-      subtitle: 'جودة لا مثيل لها'
-    }
+    { image: '/heroSection.png', title: 'مشاريع سكنية فاخرة', subtitle: 'أعلى معايير التصميم والتشطيب' },
+    { image: '/heroSection1.png', subtitle: 'مساحات فاخرة بتصميم عصري' },
+    { image: '/heroSection2.png', title: 'أبراج سكنية', subtitle: 'إطلالات ساحرة على المدينة' },
+    { image: '/heroSection3.png', title: 'مشاريع تجارية', subtitle: 'فرص استثمارية مربحة' },
+    { image: '/heroSection4.png', title: 'تصميم داخلي', subtitle: 'لمسات فنية مميزة' },
+    { image: '/heroSection5.png', title: 'تشطيبات فاخرة', subtitle: 'جودة لا مثيل لها' },
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    setLoaded(true);
+    const interval = setInterval(() => setCurrentSlide((prev) => (prev + 1) % slides.length), 5000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
-    <section 
-      ref={heroRef}
-      className="relative w-full h-screen flex items-center overflow-hidden" 
-      id="hero"
-    >
+    <section className="relative w-full h-screen flex items-center overflow-hidden" id="hero">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
-          <div 
+          <div
             key={index}
-            className="absolute inset-0 transition-opacity duration-1000"
-            style={{ opacity: currentSlide === index ? 1 : 0 }}
+            className={`absolute inset-0 transition-all duration-[2000ms] ${
+              currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+            }`}
           >
-            <img 
-              className="w-full h-full"
-              alt={slide.title}
+            <img
+              className="w-full h-full object-cover"
+              alt={slide.title || 'Phoenix Global luxury real estate'}
               src={slide.image}
-              style={{ width: '100%', height: '100%', objectFit: 'fill', objectPosition: 'center' }}
             />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(43,45,78,0.7) 0%, rgba(43,45,78,0.3) 50%, rgba(43,45,78,0.8) 100%)' }}></div>
           </div>
         ))}
-      </div>
-
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className="w-3 h-3 rounded-full transition-all duration-300"
-            style={{ 
-              backgroundColor: currentSlide === index ? '#C0521A' : 'rgba(255,255,255,0.4)',
-              transform: currentSlide === index ? 'scale(1.3)' : 'scale(1)'
-            }}
-            aria-label={`Slide ${index + 1}`}
-          />
-        ))}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, rgba(12,10,9,0.7) 0%, rgba(12,10,9,0.3) 40%, rgba(12,10,9,0.5) 70%, rgba(12,10,9,0.95) 100%)',
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center justify-center h-full">
-        <div className="max-w-3xl text-center">
-          <span 
-            className="inline-block px-4 py-2 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full"
-            style={{ backgroundColor: '#C0521A', color: '#ffffff' }}
+        <div className="max-w-5xl text-center">
+          <div
+            className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            نخبة العقارات العالمية
-          </span>
-          
-          <h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight"
-            style={{ color: '#ffffff', fontFamily: 'Cairo, sans-serif' }}
+            <div
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full mb-8"
+              style={{
+                background: 'rgba(212, 175, 55, 0.1)',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+              }}
+            >
+              <span
+                className="material-symbols-outlined text-gold text-base"
+                style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
+              >
+                diamond
+              </span>
+              <span className="text-gold text-sm font-semibold tracking-wider" style={{ fontFamily: 'Cairo, sans-serif' }}>
+                نخبة العقارات العالمية
+              </span>
+            </div>
+          </div>
+
+          <h1
+            className={`text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight transition-all duration-1000 delay-200 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{
+              color: '#ffffff',
+              fontFamily: 'Cairo, sans-serif',
+              textShadow: '0 4px 40px rgba(0,0,0,0.6)',
+            }}
           >
             استثمر بثقة مع{' '}
-            <span style={{ color: '#C0521A' }}>فينيكس جلوبال</span>{' '}
-            للتطوير العقاري
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3, #D4AF37)' }}>
+              فينيكس جلوبال
+            </span>
           </h1>
-          
-          <div key={currentSlide} className="animate-fade">
-            <p className="text-lg md:text-xl mb-4" style={{ color: '#C0521A', fontWeight: '600' }}>
-              {slides[currentSlide].title}
-            </p>
-            <p className="text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed" style={{ color: '#ffffff', opacity: 0.9 }}>
+
+          <div
+            key={currentSlide}
+            className={`transition-all duration-700 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            {slides[currentSlide].title && (
+              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#D4AF37', fontFamily: 'Cairo, sans-serif' }}>
+                {slides[currentSlide].title}
+              </p>
+            )}
+            <p
+              className="text-xl md:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed"
+              style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo, sans-serif' }}
+            >
               {slides[currentSlide].subtitle}
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              className="px-8 py-4 font-bold rounded transition-all hover:scale-105"
-              style={{ backgroundColor: '#C0521A', color: '#ffffff' }}
+
+          <div
+            className={`flex gap-6 justify-center transition-all duration-1000 delay-700 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <a
+              href="#projects"
+              className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, #D4AF37, #CA8A04)',
+                color: '#0C0A09',
+                boxShadow: '0 8px 32px rgba(212, 175, 55, 0.3)',
+                fontFamily: 'Cairo, sans-serif',
+              }}
             >
               شاهد المشاريع
-            </button>
+            </a>
+            <a
+              href="#contact"
+              className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+              style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(10px)',
+                fontFamily: 'Cairo, sans-serif',
+              }}
+            >
+              تواصل معنا
+            </a>
           </div>
 
-          <div className="flex gap-8 mt-16 pt-8 border-t border-white/20 justify-center">
-            <div>
-              <h3 className="text-3xl font-bold" style={{ color: '#C0521A' }}>500+</h3>
-              <p className="text-white/70 text-sm">وحدة سكنية</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold" style={{ color: '#C0521A' }}>150+</h3>
-              <p className="text-white/70 text-sm">مشروع مكتمل</p>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold" style={{ color: '#C0521A' }}>15+</h3>
-              <p className="text-white/70 text-sm">سنوات خبرة</p>
-            </div>
+          <div
+            className={`flex gap-16 mt-24 pt-8 justify-center transition-all duration-1000 delay-1000 ${
+              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            {[
+              { value: '500+', label: 'وحدة سكنية' },
+              { value: '150+', label: 'مشروع مكتمل' },
+              { value: '15+', label: 'سنوات خبرة' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-4xl md:text-5xl font-black" style={{ color: '#D4AF37', fontFamily: 'Cinzel, serif' }}>
+                  {stat.value}
+                </div>
+                <p className="text-white/60 text-sm mt-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <style>{`
-        .reveal {
-          animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade {
-          animation: fadeSlide 0.5s ease;
-        }
-        
-        @keyframes fadeSlide {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      `}</style>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <div className="flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`transition-all duration-500 rounded-full cursor-pointer ${
+                currentSlide === index ? 'w-8 h-2' : 'w-2 h-2'
+              }`}
+              style={{
+                background: currentSlide === index ? '#D4AF37' : 'rgba(255,255,255,0.3)',
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

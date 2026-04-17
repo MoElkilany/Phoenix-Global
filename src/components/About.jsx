@@ -2,6 +2,8 @@ const About = () => {
   const stats = [
     { number: '500+', label: 'وحدة سكنية' },
     { number: '12', label: 'مشروع عملاق' },
+    { number: '15+', label: 'سنة خبرة' },
+    { number: '98%', label: 'رضا العملاء' },
   ];
 
   const features = [
@@ -11,41 +13,85 @@ const About = () => {
   ];
 
   return (
-    <section className="py-24" style={{ backgroundColor: '#f8f9fa' }} id="about">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <img 
-              className="w-full h-64 object-cover rounded-xl mt-12" 
-              alt="Phoenix Development project"
-              src="/SectionTwo-1.png"
-            />
-            <img 
-              className="w-full h-64 object-cover rounded-xl" 
-              alt="Phoenix interior design"
-              src="/SectionTwo-2.png"
+    <section className="py-24 relative overflow-hidden" id="about" style={{ backgroundColor: '#0C0A09' }}>
+      <div
+        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
+        style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+      />
+
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+        <div className="text-center mb-16">
+          <div
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
+            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+          >
+            <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
+              info
+            </span>
+            <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>من نحن</span>
+          </div>
+
+          <h2
+            className="text-4xl md:text-5xl font-black mb-6 leading-tight"
+            style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}
+          >
+            رؤية تتجاوز{' '}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3)' }}>
+              المباني
+            </span>
+          </h2>
+
+          <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif', lineHeight: 1.9 }}>
+            في فينيكس جلوبال، نؤمن أن العقار ليس مجرد جدران، بل مساحة لصنع الذكريات وفرصة ذهبية لتنمية الثروة.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4">
+              <img
+                className="w-full h-72 object-cover rounded-2xl mt-12"
+                alt="Phoenix Development project"
+                src="/SectionTwo-1.png"
+              />
+              <img
+                className="w-full h-72 object-cover rounded-2xl"
+                alt="Phoenix interior design"
+                src="/SectionTwo-2.png"
+              />
+            </div>
+            <div
+              className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl -z-10"
+              style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
             />
           </div>
+
           <div>
-            <h2 className="text-4xl font-black mb-6" style={{ color: '#2B2D4E', fontFamily: 'Cairo, sans-serif' }}>
-              رؤية تتجاوز المباني
-            </h2>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: '#666666' }}>
-              At Phoenix Global Developments, نؤمن أن العقار ليس مجرد جدران، بل مساحة لصنع الذكريات وفرصة ذهبية لتنمية الثروة. نجمع بين الخبرة العالمية والرؤية المحلية لتقديم مشاريع مستدامة وفاخرة.
-            </p>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 mb-10">
               {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-3 font-bold" style={{ color: '#2B2D4E' }}>
-                  <span className="material-symbols-outlined" style={{ color: '#C0521A' }}>verified</span>
-                  {feature}
+                <li key={index} className="flex items-center gap-3" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                  <span
+                    className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+                    style={{ background: 'rgba(212, 175, 55, 0.15)' }}
+                  >
+                    <span className="material-symbols-outlined text-gold text-lg" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
+                      check_circle
+                    </span>
+                  </span>
+                  <span className="font-medium">{feature}</span>
                 </li>
               ))}
             </ul>
-            <div className="flex gap-12 pt-8" style={{ borderTop: '1px solid #e0e0e0' }}>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
               {stats.map((stat, index) => (
                 <div key={index}>
-                  <div className="text-3xl font-black" style={{ color: '#C0521A' }}>{stat.number}</div>
-                  <div className="text-sm" style={{ color: '#666666' }}>{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-black" style={{ color: '#D4AF37', fontFamily: 'Cinzel, serif' }}>
+                    {stat.number}
+                  </div>
+                  <div className="text-sm mt-1" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>

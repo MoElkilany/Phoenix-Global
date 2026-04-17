@@ -1,7 +1,7 @@
 const Contact = () => {
   const phones = [
-    { label: 'خطوط محمولة', number: '01119031117' },
-    { label: 'خطوط محمولة', number: '01116566604' },
+    { label: '', number: '01119031117' },
+    { label: '', number: '01116566604' },
     { label: 'خط أرضي', number: '0220322217' },
   ];
 
@@ -18,78 +18,119 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#2B2D4E' }} id="contact">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#ffffff', fontFamily: 'Cairo, sans-serif' }}>
-            تواصل معنا
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1C1917' }} id="contact">
+      <div
+        className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
+        style={{ background: 'radial-gradient(circle, #D4AF37 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
+      />
+
+      <div className="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
+        <div className="text-center mb-16">
+          <div
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
+            style={{ background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)' }}
+          >
+            <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
+              call
+            </span>
+            <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>تواصل معنا</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+            نحن هنا{' '}
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #D4AF37, #F5E6B3)' }}>
+              لمساعدتك
+            </span>
           </h2>
-          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.7)' }}>
+          <p className="text-lg" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
             فريقنا متاح للرد على استفساراتك على مدار الساعة
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {phones.map((phone, index) => (
-            <button 
+            <button
               key={index}
               onClick={() => handleCall(phone.number)}
-              className="text-center p-6 rounded-2xl transition-all hover:scale-105 cursor-pointer"
-              style={{ 
-                backgroundColor: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.1)'
+              className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                border: '1px solid rgba(255, 255, 255, 0.06)',
               }}
             >
-              <div 
-                className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: '#C0521A' }}
+              <div
+                className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05))',
+                  border: '1px solid rgba(212, 175, 55, 0.3)',
+                }}
               >
-                <span className="material-symbols-outlined text-white">call</span>
+                <span className="material-symbols-outlined text-gold">call</span>
               </div>
-              <p className="text-sm mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>{phone.label}</p>
-              <p className="text-lg font-bold" style={{ color: '#ffffff' }}>+20{phone.number}</p>
+              {phone.label && (
+                <p className="text-sm mb-1" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+                  {phone.label}
+                </p>
+              )}
+              <p className="text-lg font-bold" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+                +20{phone.number}
+              </p>
             </button>
           ))}
         </div>
 
-        <div className="mt-6">
-          <button 
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <button
             onClick={handleEmail}
-            className="text-center p-6 rounded-2xl w-full transition-all hover:scale-105 cursor-pointer"
-            style={{ 
-              backgroundColor: 'rgba(255,255,255,0.08)',
-              border: '1px solid rgba(255,255,255,0.1)'
+            className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.06)',
             }}
           >
-            <div 
-              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: '#C0521A' }}
+            <div
+              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+              style={{
+                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05))',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+              }}
             >
-              <span className="material-symbols-outlined text-white">mail</span>
+              <span className="material-symbols-outlined text-gold">mail</span>
             </div>
-<p className="text-sm mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>البريد الإلكتروني</p>
-              <p className="text-lg font-bold" style={{ color: '#ffffff' }}>info@phonixglobal-eg.com</p>
+            <p className="text-sm mb-1" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+              البريد الإلكتروني
+            </p>
+            <p className="text-lg font-bold" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+              info@phonixglobal-eg.com
+            </p>
           </button>
-        </div>
 
-        <div className="mt-6">
-          <button 
+          <button
             onClick={handleLocation}
-            className="text-center p-6 rounded-2xl w-full transition-all hover:scale-105 cursor-pointer"
-            style={{ 
-              backgroundColor: 'rgba(255,255,255,0.08)',
-              border: '1px solid rgba(255,255,255,0.1)'
+            className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.03)',
+              border: '1px solid rgba(255, 255, 255, 0.06)',
             }}
           >
-            <div 
-              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: '#C0521A' }}
+            <div
+              className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+              style={{
+                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05))',
+                border: '1px solid rgba(212, 175, 55, 0.3)',
+              }}
             >
-              <span className="material-symbols-outlined text-white">location_on</span>
+              <span className="material-symbols-outlined text-gold">location_on</span>
             </div>
-<p className="text-sm mb-1" style={{ color: 'rgba(255,255,255,0.6)' }}>الموقع</p>
-              <p className="text-lg font-bold" style={{ color: '#ffffff' }}>78 شارع الفرعي - المغاورة 3 - الحي الثامن - الشروق - القاهرة</p>
-              <p className="text-sm mt-2" style={{ color: '#C0521A' }}>انقر للعرض على الخريطة</p>
+            <p className="text-sm mb-1" style={{ color: '#A8A29E', fontFamily: 'Cairo, sans-serif' }}>
+              الموقع
+            </p>
+            <p className="text-lg font-bold" style={{ color: '#FAFAF9', fontFamily: 'Cairo, sans-serif' }}>
+              78 شارع الفرعي - الشروق - القاهرة
+            </p>
+            <p className="text-sm mt-2" style={{ color: '#D4AF37', fontFamily: 'Cairo, sans-serif' }}>
+              انقر للعرض على الخريطة
+            </p>
           </button>
         </div>
       </div>
