@@ -1,0 +1,379 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "Phoenix Global PHOENIX GLOBAL" [ref=e6] [cursor=pointer]:
+        - /url: "#hero"
+        - img "Phoenix Global" [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9]: PHOENIX
+          - generic [ref=e10]: GLOBAL
+      - generic [ref=e11]:
+        - link "الرئيسية" [ref=e12] [cursor=pointer]:
+          - /url: "#hero"
+        - link "من نحن" [ref=e13] [cursor=pointer]:
+          - /url: "#about"
+        - link "خدماتنا" [ref=e14] [cursor=pointer]:
+          - /url: "#services"
+        - link "مشاريعنا" [ref=e15] [cursor=pointer]:
+          - /url: "#projects"
+        - link "الاستثمار" [ref=e16] [cursor=pointer]:
+          - /url: "#investment"
+        - link "اتصل بنا" [ref=e17] [cursor=pointer]:
+          - /url: "#contact"
+      - link "call تواصل معنا" [ref=e18] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e19]: call
+        - generic [ref=e20]: تواصل معنا
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - img "مشاريع سكنية فاخرة" [ref=e25]
+        - img "Phoenix Global" [ref=e27]
+        - img "أبراج سكنية" [ref=e29]
+        - img "مشاريع تجارية" [ref=e31]
+        - img "تصميم داخلي" [ref=e33]
+        - img "تشطيبات فاخرة" [ref=e35]
+      - generic [ref=e39]:
+        - generic [ref=e41]: نخبة العقارات العالمية
+        - heading "استثمر بثقة مع فينيكس جلوبال" [level=1] [ref=e42]
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: مشاريع سكنية فاخرة
+          - paragraph [ref=e45]: أعلى معايير التصميم والتشطيب
+        - generic [ref=e46]:
+          - link "شاهد المشاريع arrow_back" [ref=e47] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e48]: شاهد المشاريع
+            - generic [ref=e49]: arrow_back
+          - link "تواصل معنا" [ref=e50] [cursor=pointer]:
+            - /url: "#contact"
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: 500+
+          - paragraph [ref=e56]: وحدة سكنية
+        - generic [ref=e57]:
+          - generic [ref=e58]: 150+
+          - paragraph [ref=e59]: مشروع مكتمل
+        - generic [ref=e60]:
+          - generic [ref=e61]: 15+
+          - paragraph [ref=e62]: سنوات خبرة
+      - generic [ref=e63]:
+        - button [ref=e64] [cursor=pointer]
+        - button [ref=e65] [cursor=pointer]
+        - button [ref=e66] [cursor=pointer]
+        - button [ref=e67] [cursor=pointer]
+        - button [ref=e68] [cursor=pointer]
+        - button [ref=e69] [cursor=pointer]
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: diamond
+          - generic [ref=e76]: من نحن
+        - heading "رؤية تتجاوز المباني" [level=2] [ref=e77]
+        - paragraph [ref=e78]: في فينيكس جلوبال، نؤمن أن العقار ليس مجرد جدران، بل مساحة لصنع الذكريات وفرصة ذهبية لتنمية الثروة.
+      - generic [ref=e79]:
+        - generic [ref=e81]:
+          - img "Phoenix project" [ref=e83]
+          - img "Phoenix interior" [ref=e85]
+        - generic [ref=e86]:
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - generic [ref=e90]: check
+              - generic [ref=e91]: أكثر من 15 عاماً من الخبرة في السوق
+            - listitem [ref=e92]:
+              - generic [ref=e94]: check
+              - generic [ref=e95]: التزام كامل بمواعيد التسليم
+            - listitem [ref=e96]:
+              - generic [ref=e98]: check
+              - generic [ref=e99]: أعلى معايير الجودة الدولية في البناء
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - generic [ref=e103]: 500+
+              - generic [ref=e104]: وحدة سكنية
+            - generic [ref=e105]:
+              - generic [ref=e106]: "12"
+              - generic [ref=e107]: مشروع عملاق
+            - generic [ref=e108]:
+              - generic [ref=e109]: 15+
+              - generic [ref=e110]: سنة خبرة
+            - generic [ref=e111]:
+              - generic [ref=e112]: 98%
+              - generic [ref=e113]: رضا العملاء
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: workspace_premium
+            - generic [ref=e122]: خدماتنا
+          - heading "حلول عقارية شاملة" [level=2] [ref=e123]
+        - paragraph [ref=e125]: خبرة احترافية في جميع جوانب العقار — من التطوير والتصميم إلى الإدارة والاستثمار.
+      - generic [ref=e126]:
+        - generic [ref=e128] [cursor=pointer]:
+          - generic [ref=e130]: "01"
+          - generic [ref=e132]: apartment
+          - heading "التطوير العقاري" [level=3] [ref=e133]
+          - paragraph [ref=e134]: نقدم حلولاً شاملة للتطوير العقاري من بحث السوق واختيار الموقع مروراً بالتخطيط والتصميم والتنفيذ وصولاً التسليم النهائي. نضمن أعلى معايير الجودة والاستدامة.
+          - generic [ref=e135]:
+            - generic [ref=e136]: اقرأ المزيد
+            - generic [ref=e137]: arrow_back
+        - generic [ref=e139] [cursor=pointer]:
+          - generic [ref=e141]: "02"
+          - generic [ref=e143]: handshake
+          - heading "الوساطة العقارية" [level=3] [ref=e144]
+          - paragraph [ref=e145]: نقدم خدمات وساطة عقارية عالية الجودة لمساعدة العملاء في شراء وبيع وتأجير العقارات بسهولة وشفافية، مع تحليل دقيق لاحتياجاتهم.
+          - generic [ref=e146]:
+            - generic [ref=e147]: اقرأ المزيد
+            - generic [ref=e148]: arrow_back
+        - generic [ref=e150] [cursor=pointer]:
+          - generic [ref=e152]: "03"
+          - generic [ref=e154]: interior_design
+          - heading "التصميم الداخلي" [level=3] [ref=e155]
+          - paragraph [ref=e156]: نقدم تصاميم داخلية مبتكرة تجمع بين الجمال والوظيفة. نحلل احتياجات العملاء لخلق مساحات تعكس شخصيتهم وتوفر أقصى درجات الراحة.
+          - generic [ref=e157]:
+            - generic [ref=e158]: اقرأ المزيد
+            - generic [ref=e159]: arrow_back
+        - generic [ref=e161] [cursor=pointer]:
+          - generic [ref=e163]: "04"
+          - generic [ref=e165]: palette
+          - heading "التشطيب والديكور" [level=3] [ref=e166]
+          - paragraph [ref=e167]: ننفذ أعمال التشطيب والديكور بأعلى مستويات الجودة باستخدام أفضل المواد وأحدث التقنيات، مع إشراف هندسي دقيق في جميع مراحل التنفيذ.
+          - generic [ref=e168]:
+            - generic [ref=e169]: اقرأ المزيد
+            - generic [ref=e170]: arrow_back
+        - generic [ref=e172] [cursor=pointer]:
+          - generic [ref=e174]: "05"
+          - generic [ref=e176]: admin_panel_settings
+          - heading "إدارة العقارات" [level=3] [ref=e177]
+          - paragraph [ref=e178]: نقدم خدمات إدارة عقارية شاملة تهدف إلى الحفاظ على قيمة العقار وتعظيم العائد الاستثماري، تشمل إدارة التأجير والصيانة الدورية.
+          - generic [ref=e179]:
+            - generic [ref=e180]: اقرأ المزيد
+            - generic [ref=e181]: arrow_back
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - generic [ref=e188]: verified
+          - generic [ref=e189]: لماذا فينيكس؟
+        - heading "نبني المستقبل بثقة" [level=2] [ref=e190]
+        - paragraph [ref=e191]: نلتزم بأعلى معايير الجودة في كل مشروع
+      - generic [ref=e192]:
+        - generic [ref=e194] [cursor=pointer]:
+          - generic [ref=e197]: verified_user
+          - heading "جودة متميزة" [level=3] [ref=e198]
+          - paragraph [ref=e199]: نلتزم بأعلى معايير الجودة في كل تفاصيل المشروع
+        - generic [ref=e201] [cursor=pointer]:
+          - generic [ref=e204]: schedule
+          - heading "تسليم في الوقت" [level=3] [ref=e205]
+          - paragraph [ref=e206]: نلتزم بمواعيد التسليم المتفق عليها دون تأخير
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e211]: payments
+          - heading "أسعار تنافسية" [level=3] [ref=e212]
+          - paragraph [ref=e213]: أسعار خاصة ومناسبة لجميع الميزانيات
+        - generic [ref=e215] [cursor=pointer]:
+          - generic [ref=e218]: security
+          - heading "استثمار آمن" [level=3] [ref=e219]
+          - paragraph [ref=e220]: حماية كاملة للاستثمارات مع عوائد مجزية ومضمونة
+        - generic [ref=e222] [cursor=pointer]:
+          - generic [ref=e225]: architecture
+          - heading "تصاميم عصرية" [level=3] [ref=e226]
+          - paragraph [ref=e227]: أحدث التصاميم المعمارية المبتكرة والمميزة
+    - generic [ref=e231]:
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - generic [ref=e234]: apartment
+          - generic [ref=e235]: مشاريعنا
+        - heading "مشاريع مميزة" [level=2] [ref=e236]
+        - paragraph [ref=e237]: روائع معمارية تجسد الفخامة
+      - generic [ref=e239] [cursor=pointer]:
+        - img "Phoenix Villa" [ref=e240]
+        - generic [ref=e243]:
+          - generic [ref=e246]: مشروع مميز
+          - heading "Phoenix Villa" [level=3] [ref=e247]
+          - paragraph [ref=e248]: فيلات فاخرة مع إطلالات بانورامية على أفق المدينة مع خدمات فندقية متكاملة.
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - generic [ref=e251]: النوع
+              - generic [ref=e252]: فيلات سكنية
+            - generic [ref=e253]:
+              - generic [ref=e254]: الموقع
+              - generic [ref=e255]: القاهرة الجديدة
+            - generic [ref=e256]:
+              - generic [ref=e257]: الحالة
+              - generic [ref=e258]: قيد التنفيذ
+          - button "استكشف المشروع arrow_back" [ref=e259]:
+            - generic [ref=e260]: استكشف المشروع
+            - generic [ref=e261]: arrow_back
+        - button "favorite" [ref=e262]:
+          - generic [ref=e263]: favorite
+    - generic [ref=e268]:
+      - generic [ref=e269]:
+        - generic [ref=e270]:
+          - generic [ref=e271]: diamond
+          - generic [ref=e272]: فرص استثمارية حصرية
+        - heading "استثمر بذكاء، احصد بعناية" [level=2] [ref=e273]
+        - paragraph [ref=e274]: نقدم عوائد استثمارية تصل إلى 12% سنوياً من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً.
+      - generic [ref=e275]:
+        - generic [ref=e277] [cursor=pointer]:
+          - generic [ref=e279]: trending_up
+          - generic [ref=e280]: 12%
+          - generic [ref=e281]: العائد السنوي
+          - generic [ref=e282]: نمو مستمر
+        - generic [ref=e284] [cursor=pointer]:
+          - generic [ref=e286]: apartment
+          - generic [ref=e287]: "+150"
+          - generic [ref=e288]: مشروع مُسلم
+          - generic [ref=e289]: في مصر والعالم
+        - generic [ref=e291] [cursor=pointer]:
+          - generic [ref=e293]: emoji_events
+          - generic [ref=e294]: 98%
+          - generic [ref=e295]: رضا المستثمرين
+          - generic [ref=e296]: ثقة تامة
+        - generic [ref=e298] [cursor=pointer]:
+          - generic [ref=e300]: calendar_today
+          - generic [ref=e301]: "+10"
+          - generic [ref=e302]: سنوات خبرة
+          - generic [ref=e303]: في السوق
+      - generic [ref=e304]:
+        - generic [ref=e306] [cursor=pointer]:
+          - generic [ref=e308]: trending_up
+          - heading "نمو سنوي مستمر" [level=3] [ref=e309]
+          - paragraph [ref=e310]: زيادة في قيمة العقار مدعومة بالبنية التحتية المتطورة والطلب المتصاعد.
+        - generic [ref=e312] [cursor=pointer]:
+          - generic [ref=e314]: key
+          - heading "حلول تمليك مرنة" [level=3] [ref=e315]
+          - paragraph [ref=e316]: خطط سداد ميسرة تتناسب مع أهدافك المالية وتناسب جميع الميزانيات.
+        - generic [ref=e318] [cursor=pointer]:
+          - generic [ref=e320]: savings
+          - heading "حماية من التضخم" [level=3] [ref=e321]
+          - paragraph [ref=e322]: استثمار يحافظ على قيمته ويحقق عوائد حقيقية في السوق المصري.
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e328]: trending_up
+          - generic [ref=e329]:
+            - heading "ابدأ رحلتك الاستثمارية" [level=4] [ref=e330]
+            - paragraph [ref=e331]: تواصل معنا اليوم للحصول على استشارة مجانية
+        - link "تواصل معنا الآن arrow_back" [ref=e332] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e333]: تواصل معنا الآن
+          - generic [ref=e334]: arrow_back
+    - generic [ref=e338]:
+      - generic [ref=e339]:
+        - generic [ref=e340]:
+          - generic [ref=e341]: format_quote
+          - generic [ref=e342]: آراء العملاء
+        - heading "ثقة شركائنا" [level=2] [ref=e343]
+      - generic [ref=e344]:
+        - generic [ref=e346] [cursor=pointer]:
+          - generic [ref=e347]: "\""
+          - generic [ref=e348]:
+            - generic [ref=e349]: star
+            - generic [ref=e350]: star
+            - generic [ref=e351]: star
+            - generic [ref=e352]: star
+            - generic [ref=e353]: star
+          - paragraph [ref=e354]: "\"تجربة رائعة من البداية حتى تسلم المفاتيح. دقة في المواعيد وجودة تشطيب فاقت توقعاتي.\""
+          - generic [ref=e355]:
+            - generic [ref=e356]: أ
+            - generic [ref=e357]:
+              - heading "د. أحمد المنصور" [level=5] [ref=e358]
+              - text: مستثمر عقاري
+        - generic [ref=e360] [cursor=pointer]:
+          - generic [ref=e361]: "\""
+          - generic [ref=e362]:
+            - generic [ref=e363]: star
+            - generic [ref=e364]: star
+            - generic [ref=e365]: star
+            - generic [ref=e366]: star
+            - generic [ref=e367]: star
+          - paragraph [ref=e368]: "\"Phoenix هو الاختيار الأمثل لمن يبحث عن استثمار آمن ومربح. شفافية مطلقة في كل التعاملات.\""
+          - generic [ref=e369]:
+            - generic [ref=e370]: س
+            - generic [ref=e371]:
+              - heading "م. سارة جلال" [level=5] [ref=e372]
+              - text: سيدة أعمال
+        - generic [ref=e374] [cursor=pointer]:
+          - generic [ref=e375]: "\""
+          - generic [ref=e376]:
+            - generic [ref=e377]: star
+            - generic [ref=e378]: star
+            - generic [ref=e379]: star
+            - generic [ref=e380]: star
+            - generic [ref=e381]: star
+          - paragraph [ref=e382]: "\"تصاميمهم عصرية جداً وتناسب الذوق الرفيع. سعيد جداً باختياري لشقتي في مشروع فينيكس.\""
+          - generic [ref=e383]:
+            - generic [ref=e384]: خ
+            - generic [ref=e385]:
+              - heading "أ. خالد العتيبي" [level=5] [ref=e386]
+              - text: عميل سكني
+    - generic [ref=e390]:
+      - generic [ref=e391]:
+        - generic [ref=e392]:
+          - generic [ref=e393]: call
+          - generic [ref=e394]: تواصل معنا
+        - heading "نحن هنا لمساعدتك" [level=2] [ref=e395]
+        - paragraph [ref=e396]: فريقنا متاح للرد على استفساراتك على مدار الساعة
+      - generic [ref=e397]:
+        - button "call الخط الأول +2001119031117" [ref=e398] [cursor=pointer]:
+          - generic [ref=e399]:
+            - generic [ref=e402]: call
+            - paragraph [ref=e403]: الخط الأول
+            - paragraph [ref=e404]: "+2001119031117"
+        - button "call الخط الثاني +2001116566604" [ref=e405] [cursor=pointer]:
+          - generic [ref=e406]:
+            - generic [ref=e409]: call
+            - paragraph [ref=e410]: الخط الثاني
+            - paragraph [ref=e411]: "+2001116566604"
+        - button "call خط أرضي +200220322217" [ref=e412] [cursor=pointer]:
+          - generic [ref=e413]:
+            - generic [ref=e416]: call
+            - paragraph [ref=e417]: خط أرضي
+            - paragraph [ref=e418]: "+200220322217"
+      - generic [ref=e419]:
+        - button "mail البريد الإلكتروني info@phonixglobal-eg.com" [ref=e420] [cursor=pointer]:
+          - generic [ref=e421]:
+            - generic [ref=e424]: mail
+            - paragraph [ref=e425]: البريد الإلكتروني
+            - paragraph [ref=e426]: info@phonixglobal-eg.com
+        - button "location_on العنوان 78 شارع الفرعي — الشروق — القاهرة انقر للعرض على الخريطة" [ref=e427] [cursor=pointer]:
+          - generic [ref=e428]:
+            - generic [ref=e431]: location_on
+            - paragraph [ref=e432]: العنوان
+            - paragraph [ref=e433]: 78 شارع الفرعي — الشروق — القاهرة
+            - paragraph [ref=e434]: انقر للعرض على الخريطة
+  - link "تواصل عبر واتساب" [ref=e436] [cursor=pointer]:
+    - /url: https://wa.me/201119031117
+    - img [ref=e437]
+  - contentinfo [ref=e439]:
+    - generic [ref=e440]:
+      - generic [ref=e441]:
+        - link "Phoenix Global PHOENIX GLOBAL" [ref=e442] [cursor=pointer]:
+          - /url: "#hero"
+          - img "Phoenix Global" [ref=e443]
+          - generic [ref=e444]:
+            - generic [ref=e445]: PHOENIX
+            - generic [ref=e446]: GLOBAL
+        - generic [ref=e447]:
+          - link "الرئيسية" [ref=e448] [cursor=pointer]:
+            - /url: "#hero"
+          - link "المشاريع" [ref=e449] [cursor=pointer]:
+            - /url: "#projects"
+          - link "من نحن" [ref=e450] [cursor=pointer]:
+            - /url: "#about"
+          - link "الاستثمار" [ref=e451] [cursor=pointer]:
+            - /url: "#investment"
+          - link "تواصل معنا" [ref=e452] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e453]:
+          - button "Facebook" [ref=e454] [cursor=pointer]:
+            - generic [ref=e455]: share
+          - button "Website" [ref=e456] [cursor=pointer]:
+            - generic [ref=e457]: public
+          - button "Instagram" [ref=e458] [cursor=pointer]:
+            - generic [ref=e459]: camera_alt
+      - generic [ref=e461]:
+        - paragraph [ref=e462]: © 2024 Phoenix Global Developments. All rights reserved.
+        - generic [ref=e463]:
+          - link "الشروط والأحكام" [ref=e464] [cursor=pointer]:
+            - /url: "#"
+          - link "سياسة الخصوصية" [ref=e465] [cursor=pointer]:
+            - /url: "#"
+          - link "خريطة الموقع" [ref=e466] [cursor=pointer]:
+            - /url: "#"

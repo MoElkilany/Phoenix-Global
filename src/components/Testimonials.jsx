@@ -1,183 +1,65 @@
 import { useState, useEffect, useRef } from 'react';
+import { useCardTilt } from '../hooks/useCardTilt';
 
 const Testimonials = () => {
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { handleMouseMove, handleMouseLeave } = useCardTilt(4, 0.08);
 
   const testimonials = [
-    {
-      quote: 'تجربة رائعة من البداية حتى تسلم المفاتيح. دقة في المواعيد وجودة تشطيب فاقت توقعاتي.',
-      name: 'د. أحمد المنصور',
-      role: 'مستثمر عقاري',
-      initials: 'أ',
-    },
-    {
-      quote: 'Phoenix هو الاختيار الأمثل لمن يبحث عن استثمار آمن ومربح. شفافية مطلقة في كل التعاملات.',
-      name: 'م. سارة جلال',
-      role: 'سيدة أعمال',
-      initials: 'س',
-    },
-    {
-      quote: 'تصاميمهم عصرية جداً وتناسب الذوق الرفيع. سعيد جداً باختياري لشقتي في مشروع فينيكس.',
-      name: 'أ. خالد العتيبي',
-      role: 'عميل سكني',
-      initials: 'خ',
-    },
+    { quote: 'تجربة رائعة من البداية حتى تسلم المفاتيح. دقة في المواعيد وجودة تشطيب فاقت توقعاتي.', name: 'د. أحمد المنصور', role: 'مستثمر عقاري', initials: 'أ' },
+    { quote: 'Phoenix هو الاختيار الأمثل لمن يبحث عن استثمار آمن ومربح. شفافية مطلقة في كل التعاملات.', name: 'م. سارة جلال', role: 'سيدة أعمال', initials: 'س' },
+    { quote: 'تصاميمهم عصرية جداً وتناسب الذوق الرفيع. سعيد جداً باختياري لشقتي في مشروع فينيكس.', name: 'أ. خالد العتيبي', role: 'عميل سكني', initials: 'خ' },
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.15 }
-    );
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.15 });
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-28 relative overflow-hidden"
-      style={{ backgroundColor: '#0A1220' }}
-    >
-      <div
-        className="absolute top-0 left-0 w-full h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.15), transparent)' }}
-      />
-      <div
-        className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full opacity-[0.03]"
-        style={{ background: 'radial-gradient(circle, #C9A84C 0%, transparent 70%)' }}
-      />
-
-      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-
-        {/* Header */}
-        <div
-          className={`text-center mb-20 transition-all duration-900 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-        >
-          <div className="section-badge mb-8" style={{ fontFamily: 'Cairo, sans-serif' }}>
-            <span className="material-symbols-outlined text-xs" style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 1, 'wght' 400" }}>format_quote</span>
+    <section ref={sectionRef} className="py-32 relative overflow-hidden" style={{ background: 'var(--color-surface-subtle)' }}>
+      <div className="absolute top-0 left-0 w-full h-px section-divider" />
+      
+      <div className="mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+        <div className={`text-center mb-20 transition-all duration-[var(--duration-cinematic)] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="section-badge mb-8">
+            <span className="material-symbols-outlined text-xs filled" style={{ color: 'var(--color-terracotta-500)' }}>format_quote</span>
             <span>آراء العملاء</span>
           </div>
 
-          <h2
-            className="font-black"
-            style={{
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              color: '#F0EAD8',
-              fontFamily: 'Cairo, sans-serif',
-            }}
-          >
-            ثقة{' '}
-            <span
-              style={{
-                background: 'linear-gradient(135deg, #C9A84C, #E2C880)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              شركائنا
-            </span>
+          <h2 className="font-black" style={{ fontSize: 'var(--text-h2)', fontFamily: 'var(--font-heading)', color: 'var(--color-charcoal-900)' }}>
+            ثقة <span className="text-gradient-terracotta">شركائنا</span>
           </h2>
         </div>
 
-        {/* Testimonials grid */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="group cursor-pointer"
-              style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? 'translateY(0)' : 'translateY(40px)',
-                transition: `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15 + 0.2}s`,
-              }}
-            >
-              <div
-                className="p-8 h-full flex flex-col relative overflow-hidden"
-                style={{
-                  background: 'rgba(14, 24, 40, 0.6)',
-                  border: '1px solid rgba(201, 168, 76, 0.08)',
-                  backdropFilter: 'blur(10px)',
-                  transition: 'all 0.4s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.25)';
-                  e.currentTarget.style.background = 'rgba(14, 24, 40, 0.9)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.08)';
-                  e.currentTarget.style.background = 'rgba(14, 24, 40, 0.6)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-                dir="rtl"
-              >
-                {/* Top accent */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-px opacity-60"
-                  style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)' }}
-                />
+            <div key={index} className="group cursor-pointer" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(40px)', transition: `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15 + 0.2}s` }}>
+              <div className="p-8 h-full flex flex-col relative overflow-hidden card-elevated tilt-card" dir="rtl" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+                <div className="absolute top-4 left-6 text-7xl leading-none select-none" style={{ color: 'var(--color-sand-200)', fontFamily: 'var(--font-display)', lineHeight: 1 }}>"</div>
 
-                {/* Large quote mark */}
-                <div
-                  className="absolute top-4 left-6 text-7xl leading-none select-none"
-                  style={{
-                    color: 'rgba(201, 168, 76, 0.06)',
-                    fontFamily: 'Cinzel, serif',
-                    lineHeight: 1,
-                  }}
-                >
-                  "
-                </div>
+                <div className="tilt-glare" />
 
-                {/* Stars */}
                 <div className="flex gap-0.5 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className="material-symbols-outlined text-base"
-                      style={{ color: '#C9A84C', fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-                    >
-                      star
-                    </span>
+                    <span key={i} className="material-symbols-outlined text-base filled" style={{ color: 'var(--color-bronze-500)' }}>star</span>
                   ))}
                 </div>
 
-                {/* Quote */}
-                <p
-                  className="text-base mb-8 flex-1 leading-relaxed"
-                  style={{ color: 'rgba(240, 234, 216, 0.75)', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
-                >
+                <p className="text-base mb-8 flex-1 leading-relaxed" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-arabic)', lineHeight: '2', opacity: 0.8 }}>
                   "{testimonial.quote}"
                 </p>
 
-                {/* Author */}
-                <div
-                  className="flex items-center gap-4 pt-6"
-                  style={{ borderTop: '1px solid rgba(201, 168, 76, 0.08)' }}
-                >
-                  <div
-                    className="w-11 h-11 flex items-center justify-center flex-shrink-0 text-base font-bold"
-                    style={{
-                      background: 'rgba(201, 168, 76, 0.08)',
-                      border: '1px solid rgba(201, 168, 76, 0.2)',
-                      color: '#C9A84C',
-                      fontFamily: 'Cairo, sans-serif',
-                    }}
-                  >
+                <div className="flex items-center gap-4 pt-6" style={{ borderTop: '1px solid var(--color-border-subtle)' }}>
+                  <div className="w-11 h-11 flex items-center justify-center shrink-0 text-base font-bold rounded-full"
+                    style={{ background: 'var(--color-terracotta-100)', border: '1px solid var(--color-terracotta-200)', color: 'var(--color-terracotta-600)', fontFamily: 'var(--font-heading)' }}>
                     {testimonial.initials}
                   </div>
                   <div>
-                    <h5 className="font-bold text-sm" style={{ color: '#F0EAD8', fontFamily: 'Cairo, sans-serif' }}>
-                      {testimonial.name}
-                    </h5>
-                    <span className="text-xs" style={{ color: '#7A8898', fontFamily: 'Cairo, sans-serif' }}>
-                      {testimonial.role}
-                    </span>
+                    <h5 className="font-bold text-sm" style={{ color: 'var(--color-text-primary)', fontFamily: 'var(--font-heading)' }}>{testimonial.name}</h5>
+                    <span className="text-xs" style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-arabic)' }}>{testimonial.role}</span>
                   </div>
                 </div>
               </div>
@@ -186,10 +68,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div
-        className="absolute bottom-0 left-0 w-full h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.12), transparent)' }}
-      />
+      <div className="absolute bottom-0 left-0 w-full h-px section-divider" />
     </section>
   );
 };
