@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-3' : 'py-5'
+        scrolled ? 'py-7' : 'py-10'
       }`}
       style={{
         background: scrolled ? 'rgba(13, 21, 38, 0.95)' : 'transparent',
@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-3 flex-shrink-0">
-            <img src={logo} alt="Phoenix Global logo" className="w-16 h-16 object-contain" />
+            <img src={logo} alt="Phoenix Global logo" className="w-32 h-32 object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
           </a>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -42,7 +42,7 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group cursor-pointer"
+                className="relative px-5 py-3 text-base font-medium transition-all duration-300 rounded-lg group cursor-pointer"
                 style={{ color: 'rgba(240, 244, 250, 0.7)', fontFamily: 'Cairo, sans-serif' }}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -56,7 +56,7 @@ const Navbar = () => {
 
           <a
             href="#contact"
-            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="hidden lg:inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer"
             style={{
               background: 'linear-gradient(135deg, #d44000, #A54215)',
               color: '#FFFFFF',

@@ -52,8 +52,8 @@ const Hero = () => {
             <div
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full mb-8"
               style={{
-                background: 'rgba(192, 80, 26, 0.1)',
-                border: '1px solid rgba(192, 80, 26, 0.3)',
+                background: 'rgba(212, 64, 0, 0.1)',
+                border: '1px solid rgba(212, 64, 0, 0.3)',
               }}
             >
               <span
@@ -79,7 +79,7 @@ const Hero = () => {
             }}
           >
             استثمر بثقة مع{' '}
-<span style={{ color: '#C0501A' }}>
+<span style={{ color: '#d44000' }}>
                 فينيكس جلوبال
             </span>
           </h1>
@@ -89,7 +89,7 @@ const Hero = () => {
             className={`transition-all duration-700 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             {slides[currentSlide].title && (
-              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
+              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#d44000', fontFamily: 'Cairo, sans-serif' }}>
                 {slides[currentSlide].title}
               </p>
             )}
@@ -110,9 +110,9 @@ const Hero = () => {
               href="#projects"
               className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
               style={{
-                background: 'linear-gradient(135deg, #C0501A, #A54215)',
+                background: 'linear-gradient(135deg, #d44000, #A54215)',
                 color: '#FFFFFF',
-                boxShadow: '0 8px 32px rgba(192, 80, 26, 0.3)',
+                boxShadow: '0 8px 32px rgba(212, 64, 0, 0.3)',
                 fontFamily: 'Cairo, sans-serif',
               }}
             >
@@ -145,7 +145,7 @@ const Hero = () => {
               { value: '15+', label: 'سنوات خبرة' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-black" style={{ color: '#C0501A', fontFamily: 'Cinzel, serif' }}>
+                <div className="text-4xl md:text-5xl font-black" style={{ color: '#d44000', fontFamily: 'Cinzel, serif' }}>
                   {stat.value}
                 </div>
                 <p className="text-white/60 text-sm mt-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
@@ -167,7 +167,7 @@ const Hero = () => {
                 currentSlide === index ? 'w-8 h-2' : 'w-2 h-2'
               }`}
               style={{
-                background: currentSlide === index ? '#C0501A' : 'rgba(240,244,250,0.3)',
+                background: currentSlide === index ? '#d44000' : 'rgba(240,244,250,0.3)',
               }}
             />
           ))}

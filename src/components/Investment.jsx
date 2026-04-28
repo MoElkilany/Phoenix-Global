@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import logo from '../assets/logo.png';
 
 const Investment = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -94,8 +93,7 @@ const Investment = () => {
             className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
           >
-            نقدم عوائد استثمارية تصل إلى 12% سنوياً من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً. فريقنا الاستشاري يساعدك في بناء محفظة عقارية قوية ومستقرة.
-          </p>
+نقدم لك فرصاً استثمارية مميزة من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً، مع دعم فريقنا الاستشاري لمساعدتك في بناء محفظة عقارية قوية ومستقرة.          </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
@@ -209,24 +207,13 @@ background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.08), rgba(212, 64, 0, 0.
           />
 
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10">
-<div className="flex items-center gap-4">
-              <div
-                className="flex items-center justify-center w-16 h-16 rounded-full overflow-hidden"
-                style={{
-                   background: 'linear-gradient(135deg, #d44000, #E8845A)',
-                   boxShadow: '0 8px 32px rgba(212, 64, 0, 0.3)',
-                  }}
-               >
-                <img src={logo} alt="Phoenix Logo" className="w-10 h-10 object-contain" />
-              </div>
-              <div>
-                <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                  ابدأ رحلتك الاستثمارية
-                </h4>
-                <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                  تواصل معنا اليوم للحصول على استشارة مجانية
-                </p>
-              </div>
+            <div>
+              <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+                ابدأ رحلتك الاستثمارية
+              </h4>
+              <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
+                تواصل معنا اليوم للحصول على استشارة مجانية
+              </p>
             </div>
 
             <a
