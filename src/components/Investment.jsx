@@ -3,13 +3,6 @@ import { useState } from 'react';
 const Investment = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  const stats = [
-    { value: '12%', label: 'العائد السنوي', icon: 'trending_up' },
-    { value: '+150', label: 'مشروع مُسلم', icon: 'apartment' },
-    { value: '98%', label: 'رضا المستثمرين', icon: 'emoji_events' },
-    { value: '+10', label: 'سنوات خبرة', icon: 'calendar_today' },
-  ];
-
   const benefits = [
     {
       icon: 'trending_up',
@@ -30,7 +23,7 @@ const Investment = () => {
 
   return (
     <section
-      className="relative py-24 overflow-hidden"
+      className="relative py-28 overflow-hidden"
       id="investment"
       style={{
         background: 'linear-gradient(160deg, #0D1526 0%, #1B2A4A 50%, #0D1526 100%)',
@@ -94,45 +87,6 @@ const Investment = () => {
             style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
           >
 نقدم لك فرصاً استثمارية مميزة من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً، مع دعم فريقنا الاستشاري لمساعدتك في بناء محفظة عقارية قوية ومستقرة.          </p>
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="group relative rounded-2xl p-6 text-center transition-all duration-500 cursor-pointer"
-              style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.06)',
-                animation: `investment-fade-up 0.6s ease forwards ${index * 0.1}s`,
-                opacity: 0,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                e.currentTarget.style.borderColor = 'rgba(212, 64, 0, 0.3)';
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(212, 64, 0, 0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.06)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <span
-                className="material-symbols-outlined block mx-auto mb-3 text-2xl"
-                style={{ color: '#d44000', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
-              >
-                {stat.icon}
-              </span>
-              <div className="text-3xl md:text-4xl font-black mb-1" style={{ color: '#F0F4FA', fontFamily: 'Cinzel, serif' }}>
-                {stat.value}
-              </div>
-              <div className="text-sm font-medium" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">

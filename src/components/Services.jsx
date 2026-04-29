@@ -71,7 +71,7 @@ const Services = () => {
           <path d="M18 44H34M30 44H46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
-      title: 'إدارة العقارات',
+      title: 'إدارة المشاريع العقارية',
       description: 'نقدم خدمات إدارة عقارية شاملة تهدف إلى الحفاظ على قيمة العقار وتعظيم العائد الاستثماري. تشمل خدماتنا إدارة التأجير والتحصيل الإيجاري والصيانة الدورية.',
     },
   ];
@@ -92,7 +92,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden" id="services" style={{ backgroundColor: '#132036' }}>
+    <section ref={sectionRef} className="py-28 relative overflow-hidden" id="services" style={{ backgroundColor: '#132036' }}>
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="text-center mb-16">
           <div
@@ -154,7 +154,7 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
                 <h3 className="text-xl font-bold mb-2" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: '1.8', fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-xl leading-relaxed" style={{ color: '#8E9BB5', lineHeight: '2', fontFamily: 'Cairo, sans-serif' }}>
                   {service.description}
                 </p>
               </div>

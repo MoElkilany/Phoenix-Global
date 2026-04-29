@@ -1,12 +1,13 @@
 const Contact = () => {
   const phones = [
-    { label: '', number: '01119031117' },
-    { label: '', number: '01116566604' },
-    { label: 'خط أرضي', number: '0220322217' },
+    { label: 'خط أرضي', number: '+20 2 20322217' },
+    { label: '', number: '+20 1116566604' },
+    { label: '', number: '+20 1119031117' },
   ];
 
   const handleCall = (number) => {
-    window.open(`tel:+20${number}`, '_self');
+    const digits = number.replace(/\s/g, '');
+    window.open(`tel:${digits}`, '_self');
   };
 
   const handleEmail = () => {
@@ -18,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#132036' }} id="contact">
+    <section className="py-28 relative overflow-hidden" style={{ backgroundColor: '#132036' }} id="contact">
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5"
         style={{ background: 'radial-gradient(circle, #C0501A 0%, transparent 70%)', transform: 'translate(30%, -40%)' }}
@@ -72,8 +73,8 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
                   {phone.label}
                 </p>
               )}
-              <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                +20{phone.number}
+              <p className="text-lg font-bold" dir="ltr" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+                {phone.number}
               </p>
             </button>
           ))}
