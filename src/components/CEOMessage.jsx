@@ -24,6 +24,7 @@ const CEOMessage = () => {
 
   return (
     <section
+      id="ceo-message"
       ref={sectionRef}
       className="py-28 relative overflow-hidden"
       dir="rtl"

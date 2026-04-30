@@ -8,6 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { href: '#hero', label: 'الرئيسية' },
     { href: '#about', label: 'من نحن' },
+    { href: '#ceo-message', label: 'رسالة المدير' },
     { href: '#services', label: 'خدماتنا' },
     { href: '#projects', label: 'مشاريعنا' },
     { href: '#investment', label: 'الاستثمار' },

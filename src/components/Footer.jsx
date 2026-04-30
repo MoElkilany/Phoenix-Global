@@ -5,6 +5,7 @@ const Footer = () => {
     { href: '#hero', label: 'الرئيسية' },
     { href: '#projects', label: 'المشاريع' },
     { href: '#about', label: 'من نحن' },
+    { href: '#ceo-message', label: 'رسالة المدير' },
     { href: '#investment', label: 'الاستثمار' },
     { href: '#contact', label: 'تواصل معنا' },
   ];

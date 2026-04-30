@@ -11,6 +11,18 @@ const Hero = () => {
     { image: '/heroSection3.png', title: 'مشاريع تجارية', subtitle: 'فرص استثمارية مربحة' },
     { image: '/heroSection4.png', title: 'تصميم داخلي', subtitle: 'لمسات فنية مميزة' },
     { image: '/heroSection5.png', title: 'تشطيبات فاخرة', subtitle: 'جودة لا مثيل لها' },
+    { image: '/heroSection6.jpeg', title: 'وحدات سكنية', subtitle: 'تصاميم عصرية بأعلى جودة' },
+    { image: '/heroSection7.jpeg', title: 'فلل فاخرة', subtitle: 'رقي وجمال في كل تفصيلة' },
+    { image: '/heroSection8.jpeg', title: 'مجمعات سكنية', subtitle: 'مجتمعات متكاملة' },
+    { image: '/heroSection9.jpeg', title: 'مشاريع عقارية', subtitle: 'استثمارات آمنة ومضمونة' },
+    { image: '/heroSection10.jpeg', title: 'شقق سكنية', subtitle: 'راحة وأمان لعائلتك' },
+    { image: '/heroSection11.jpeg', title: 'تطوير عقاري', subtitle: 'خبرة في السوق العقاري' },
+    { image: '/heroSection12.jpeg', title: 'عقارات استثمارية', subtitle: 'عوائد ممتازة على الاستثمار' },
+    { image: '/heroSection13.jpeg', title: 'واجهات مميزة', subtitle: 'تصميم هندسي رائع' },
+    { image: '/heroSection14.jpeg', title: 'مساحات خضراء', subtitle: 'بيئة صحية ومريحة' },
+    { image: '/heroSection15.jpeg', title: 'مرافق حديثة', subtitle: 'خدمات متكاملة' },
+    { image: '/heroSection16.jpeg', title: 'مواقع متميزة', subtitle: 'في أرقى الأحياء' },
+    { image: '/heroSection17.jpeg', title: 'جودة البناء', subtitle: 'معايير عالمية في البناء' },
   ];
 
   useEffect(() => {
@@ -46,28 +58,6 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex items-center justify-center h-full">
         <div className="max-w-5xl text-center">
-          <div
-            className={`transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
-            <div
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full mb-8"
-              style={{
-                background: 'rgba(212, 64, 0, 0.1)',
-                border: '1px solid rgba(212, 64, 0, 0.3)',
-              }}
-            >
-              <span
-                className="material-symbols-outlined text-gold text-base"
-                style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-              >
-                diamond
-              </span>
-              <span className="text-gold text-sm font-semibold tracking-wider" style={{ fontFamily: 'Cairo, sans-serif' }}>
-                نخبة العقارات العالمية
-              </span>
-            </div>
-          </div>
-
           <h1
             className={`text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight transition-all duration-1000 delay-200 ${
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -140,15 +130,15 @@ const Hero = () => {
             style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
           >
             {[
-              { value: '500+', label: 'وحدة سكنية' },
-              { value: '150+', label: 'مشروع مكتمل' },
-              { value: '15+', label: 'سنوات خبرة' },
+              { value: '200+', label: 'وحدة سكنية' },
+              { value: '50+', label: 'مشروع مكتمل' },
+              { value: '13+', label: 'سنوات خبرة' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-black" style={{ color: '#d44000', fontFamily: 'Cinzel, serif' }}>
+                <div className="text-4xl md:text-5xl font-black" style={{ color: '#d44000', fontFamily: 'Cairo, serif' }}>
                   {stat.value}
                 </div>
-                <p className="text-white/60 text-sm mt-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
+                <p  className="text-white/60 text-lg mt-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
                   {stat.label}
                 </p>
               </div>
