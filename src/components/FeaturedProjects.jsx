@@ -1,77 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { projects } from '../data/projects';
+import ProjectCarousel from './ProjectCarousel';
 
 const FeaturedProjects = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
   const cardRefs = useRef({});
-
-  const projects = [
-    {
-      id: 1,
-      name: 'Phoenix Villa',
-      nameAr: 'فيلات فينيكس',
-      location: 'القاهرة الجديدة، التجمع الخامس',
-      image: '/heroSection.png',
-      features: ['فيلا مستقلة', '٤٥٠ م²', 'حديقة خاصة', 'تشطيب سوبر لوكس'],
-      description: 'فيلات فاخرة مع إطلالات بانورامية على أفق المدينة مع خدمات فندقية متكاملة',
-      tag: 'PREMIUM',
-      tagColor: '#C0501A',
-    },
-    {
-      id: 2,
-      name: 'Phoenix Heights',
-      nameAr: 'برج فينيكس',
-      location: 'القاهرة الجديدة، مويلح',
-      image: '/heroSection.png',
-      features: ['شقق فاخرة', '١٧٥ م²', 'بلكونة', 'إطلالة بانورامية'],
-      description: 'أبراج سكنية راقية بتصاميم عصرية ومرافق ترفيهية متكاملة',
-      tag: 'LUXURY',
-      tagColor: '#E8845A',
-    },
-    {
-      id: 3,
-      name: 'Phoenix Gardens',
-      nameAr: 'حدائق فينيكس',
-      location: 'العبور، المنطقة الأولى',
-      image: '/heroSection.png',
-      features: ['تاونهاوس', '٣٢٠ م²', 'حديقة خاصة', 'موقف سيارات'],
-      description: 'مجمع سكني عائلي بحدائق خضراء ومرافق ترفيهية مميزة',
-      tag: 'FAMILY',
-      tagColor: '#8C3A12',
-    },
-    {
-      id: 4,
-      name: 'Phoenix Royal',
-      nameAr: 'فينيكس رويال',
-      location: 'القاهرة الجديدة، التجمع الأول',
-      image: '/heroSection.png',
-      features: ['دوبلكس فاخر', '٥٢٠ م²', 'حمام سباحة', 'خدمة كونسيرج'],
-      description: 'دوبلكسات فاخرة بتصاميم ملكية وخدمات فندقية على أعلى مستوى',
-      tag: 'ROYAL',
-      tagColor: '#C0501A',
-    },
-    {
-      id: 5,
-      name: 'Phoenix Pearl',
-      nameAr: 'لؤلؤة فينيكس',
-      location: 'الساحل، المنطقة الثالثة',
-      image: '/heroSection.png',
-      features: ['شقق بنتهاوس', '٢٤٠ م²', 'تراس خاص', 'أمن ٢٤ ساعة'],
-      description: 'بنتهاوس راقي بإطلالات بحرية ساحرة وخصوصية تامة',
-      tag: 'EXCLUSIVE',
-      tagColor: '#E8845A',
-    },
-    {
-      id: 6,
-      name: 'Phoenix Green',
-      nameAr: 'فينيكس جرين',
-      location: 'العاصمة الإدارية، R7',
-      image: '/heroSection.png',
-      features: ['شاليه مودرن', '١٨٠ م²', 'تصميم أخضر', 'صالة رياضية'],
-      description: 'وحدات سكنية صديقة للبيئة بتصاميم عصرية ومرافق صحية متكاملة',
-      tag: 'ECO',
-      tagColor: '#8C3A12',
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -147,20 +80,20 @@ const FeaturedProjects = () => {
           {projects.map((project, index) => {
             const isVisible = visibleCards.has(String(project.id));
             const isEven = index % 2 === 0;
+            const hasPdfs = project.pdfs && project.pdfs.length > 0;
 
             return (
               <div
                 key={project.id}
                 ref={(el) => (cardRefs.current[project.id] = el)}
                 data-project-id={project.id}
-                className="group cursor-pointer"
+                className="group"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
                   transition: 'opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1)',
                   transitionDelay: `${isVisible ? '0.05s' : '0s'}`,
                 }}
-                onClick={() => handleExplore('/building.pdf')}
               >
                 <div
                   className="rounded-2xl overflow-hidden relative"
@@ -181,38 +114,9 @@ const FeaturedProjects = () => {
                   <div className="flex flex-col md:flex-row">
                     <div
                       className={`md:w-[50%] relative overflow-hidden ${isEven ? 'md:order-1' : 'md:order-2'}`}
-                      style={{ minHeight: '280px' }}
+                      style={{ background: '#132036' }}
                     >
-                      <img
-                        className="w-full h-full object-cover"
-                        style={{
-                          transition: 'transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1)',
-                        }}
-                        alt={project.nameAr}
-                        src={project.image}
-                        loading="lazy"
-                      />
-                      <div
-                        className="absolute inset-0"
-                        style={{
-                          background: 'linear-gradient(180deg, rgba(13,21,38,0) 0%, rgba(13,21,38,0.4) 50%, rgba(13,21,38,0.8) 100%)',
-                        }}
-                      />
-                      <div
-                        className="absolute top-4 right-4 px-3 py-1.5 rounded-full"
-                        style={{
-                          background: 'rgba(13, 21, 38, 0.6)',
-                          backdropFilter: 'blur(8px)',
-                          border: `1px solid ${project.tagColor}`,
-                        }}
-                      >
-                        <span
-                          className="text-[10px] font-bold tracking-wider"
-                          style={{ color: project.tagColor, fontFamily: 'Cinzel, serif', letterSpacing: '0.15em' }}
-                        >
-                          {project.tag}
-                        </span>
-                      </div>
+                      <ProjectCarousel images={project.images} alt={project.nameAr} />
                     </div>
 
                     <div
@@ -234,57 +138,87 @@ const FeaturedProjects = () => {
                         </h3>
                       </div>
 
-                      <div className="flex items-center gap-2 mt-3 mb-4">
+                      <div className="flex items-start gap-2 mt-3 mb-4">
                         <span
-                          className="material-symbols-outlined"
+                          className="material-symbols-outlined flex-shrink-0 mt-0.5"
                           style={{ color: '#E8845A', fontVariationSettings: "'FILL' 1, 'wght' 400", fontSize: '18px' }}
                         >
                           location_on
                         </span>
-                        <span className="text-sm font-semibold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                          {project.location}
+                        <span className="text-sm font-semibold leading-relaxed" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+                          {project.locationDetail}
                         </span>
                       </div>
 
-                      <p
-                        className="text-sm mb-5"
-                        style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.9 }}
-                      >
-                        {project.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {project.features.map((feature, i) => (
+                      {project.images.length > 0 && (
+                        <div className="flex items-center gap-2 mb-5">
                           <span
-                            key={i}
-                            className="px-3 py-1.5 rounded-lg text-xs font-semibold"
+                            className="material-symbols-outlined"
+                            style={{ color: '#8E9BB5', fontVariationSettings: "'FILL' 0, 'wght' 400", fontSize: '16px' }}
+                          >
+                            photo_library
+                          </span>
+                          <span className="text-xs" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
+                            {project.images.length} صورة
+                          </span>
+                        </div>
+                      )}
+
+                      <div className="flex flex-wrap gap-3">
+                        {hasPdfs && (
+                          <button
+                            onClick={() => handleExplore(project.pdfs[0])}
+                            className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
                             style={{
-                              background: 'rgba(192, 80, 26, 0.08)',
-                              border: '1px solid rgba(192, 80, 26, 0.15)',
-                              color: '#C8D3E6',
+                              background: 'linear-gradient(135deg, #C0501A, #8C3A12)',
+                              color: '#FFFFFF',
+                              boxShadow: '0 4px 16px rgba(192, 80, 26, 0.25)',
                               fontFamily: 'Cairo, sans-serif',
+                              transition: 'all 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'translateY(-1px)';
+                              e.currentTarget.style.boxShadow = '0 6px 20px rgba(192, 80, 26, 0.35)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'translateY(0)';
+                              e.currentTarget.style.boxShadow = '0 4px 16px rgba(192, 80, 26, 0.25)';
                             }}
                           >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
+                            <span className="text-sm">{project.id === 2 ? 'استكشف المشروع' : 'معاينة التصميم'}</span>
+                            <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
+                              {project.id === 2 ? 'explore' : 'picture_as_pdf'}
+                            </span>
+                          </button>
+                        )}
 
-                      <button
-                        className="self-start flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
-                        style={{
-                          background: 'linear-gradient(135deg, #C0501A, #8C3A12)',
-                          color: '#FFFFFF',
-                          boxShadow: '0 4px 16px rgba(192, 80, 26, 0.25)',
-                          fontFamily: 'Cairo, sans-serif',
-                          transition: 'all 0.3s ease',
-                        }}
-                      >
-                        <span className="text-sm">استكشف المشروع</span>
-                        <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
-                          arrow_back
-                        </span>
-                      </button>
+                        {hasPdfs && project.pdfs.length > 1 && (
+                          <button
+                            onClick={() => handleExplore(project.pdfs[1])}
+                            className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
+                            style={{
+                              background: 'transparent',
+                              color: '#C0501A',
+                              border: '1px solid rgba(192, 80, 26, 0.4)',
+                              fontFamily: 'Cairo, sans-serif',
+                              transition: 'all 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.background = 'rgba(192, 80, 26, 0.08)';
+                              e.currentTarget.style.borderColor = '#C0501A';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.background = 'transparent';
+                              e.currentTarget.style.borderColor = 'rgba(192, 80, 26, 0.4)';
+                            }}
+                          >
+                            <span className="text-sm">{project.id === 2 ? 'استكشف مدخل الفيلا' : 'تصميم آخر'}</span>
+                            <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
+                              {project.id === 2 ? 'door_front' : 'description'}
+                            </span>
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

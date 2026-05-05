@@ -127,7 +127,7 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
               الموقع
             </p>
             <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-              78 شارع الفرعي - الشروق - القاهرة
+              78 شارع الفارابي - الشروق - القاهرة
             </p>
             <p className="text-sm mt-2" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
               انقر للعرض على الخريطة

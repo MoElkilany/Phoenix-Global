@@ -34,15 +34,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between" dir="rtl">
-          <a href="#contact" className="hidden lg:inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer" style={{
-            background: 'linear-gradient(135deg, #d44000, #A54215)',
-            color: '#FFFFFF',
-            fontFamily: 'Cairo, sans-serif',
-          }}>
-            <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
-              call
-            </span>
-            <span>تواصل معنا</span>
+          <a href="#hero" className="flex items-center flex-shrink-0">
+            <img src={redWhiteLogo} alt="Phoenix Global logo" className="h-10 w-auto object-contain" />
           </a>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -62,8 +55,15 @@ const Navbar = () => {
             ))}
           </div>
 
-          <a href="#hero" className="flex items-center flex-shrink-0">
-            <img src={redWhiteLogo} alt="Phoenix Global logo" className="h-14 w-auto object-contain" />
+          <a href="#contact" className="hidden lg:inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer" style={{
+            background: 'linear-gradient(135deg, #d44000, #A54215)',
+            color: '#FFFFFF',
+            fontFamily: 'Cairo, sans-serif',
+          }}>
+            <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
+              call
+            </span>
+            <span>تواصل معنا</span>
           </a>
 
           <button

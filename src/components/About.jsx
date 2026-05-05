@@ -196,14 +196,14 @@ const About = () => {
               className="text-2xl md:text-3xl font-bold mb-6 leading-relaxed"
               style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
             >
-              اليوم، لا نقدّم شركة جديدة…
+              في فينيكس جلوبال، نحن لا نبيع وعودًا — نحن نبني على
               <br />
-              بل نقدّم كيانًا وُلد وهو يمتلك بالفعل{' '}
+               تاريخ من الالتزام، الجودة، والقدرة على التنفيذ تحت أصعب الظروف.{' '}
               <span
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
               >
-                خبرة السنين.
+              
               </span>
             </p>
 
@@ -212,19 +212,6 @@ const About = () => {
               style={{ background: 'linear-gradient(90deg, transparent, #C0501A, transparent)' }}
             />
 
-            <p
-              className="text-xl md:text-2xl font-semibold leading-relaxed"
-              style={{ color: 'rgba(240, 244, 250, 0.85)', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
-            >
-              في فينيكس جلوبال، نحن لا نبيع وعودًا — نحن نبني على{' '}
-              <span style={{ color: '#C0501A' }}>تاريخ</span>.
-            </p>
-            <p
-              className="text-lg mt-3"
-              style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
-            >
-              تاريخ من الالتزام، الجودة، والقدرة على التنفيذ تحت أصعب الظروف.
-            </p>
           </div>
         </div>
 
@@ -236,8 +223,7 @@ const About = () => {
           <p
             className="text-lg md:text-xl max-w-3xl mx-auto mb-10"
             style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
-          >
-            نجمع بين قوة الخبرة الإقليمية في السوق السعودي، وعمق الفهم العملي للسوق المصري، لنقدّم خدمات قائمة على:
+          > نجمع بين قوة الخبرة الإقليمية في السوق السعودي، وعمق الفهم العملي للسوق المصري، لنقدّم خدمات قائمة على:
           </p>
         </div>
 

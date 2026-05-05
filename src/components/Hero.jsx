@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded] = useState(true);
 
   const slides = [
     { image: '/heroSection.png', title: 'مشاريع سكنية فاخرة', subtitle: 'أعلى معايير التصميم والتشطيب' },
@@ -26,7 +26,6 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    setLoaded(true);
     const interval = setInterval(() => setCurrentSlide((prev) => (prev + 1) % slides.length), 5000);
     return () => clearInterval(interval);
   }, [slides.length]);

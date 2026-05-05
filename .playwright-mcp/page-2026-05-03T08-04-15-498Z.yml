@@ -1,0 +1,486 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - link "call تواصل معنا" [ref=e6] [cursor=pointer]:
+        - /url: "#contact"
+        - generic [ref=e7]: call
+        - generic [ref=e8]: تواصل معنا
+      - generic [ref=e9]:
+        - link "الرئيسية" [ref=e10] [cursor=pointer]:
+          - /url: "#hero"
+          - text: الرئيسية
+        - link "من نحن" [ref=e11] [cursor=pointer]:
+          - /url: "#about"
+          - text: من نحن
+        - link "رسالة المدير" [ref=e12] [cursor=pointer]:
+          - /url: "#ceo-message"
+          - text: رسالة المدير
+        - link "خدماتنا" [ref=e13] [cursor=pointer]:
+          - /url: "#services"
+          - text: خدماتنا
+        - link "مشاريعنا" [ref=e14] [cursor=pointer]:
+          - /url: "#projects"
+          - text: مشاريعنا
+        - link "الاستثمار" [ref=e15] [cursor=pointer]:
+          - /url: "#investment"
+          - text: الاستثمار
+        - link "اتصل بنا" [ref=e16] [cursor=pointer]:
+          - /url: "#contact"
+          - text: اتصل بنا
+      - link "Phoenix Global logo" [ref=e17] [cursor=pointer]:
+        - /url: "#hero"
+        - img "Phoenix Global logo" [ref=e18]
+  - main [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img "مشاريع سكنية فاخرة" [ref=e23]
+        - img "Phoenix Global luxury real estate" [ref=e25]
+        - img "أبراج سكنية" [ref=e27]
+        - img "مشاريع تجارية" [ref=e29]
+        - img "تصميم داخلي" [ref=e31]
+        - img "تشطيبات فاخرة" [ref=e33]
+        - img "وحدات سكنية" [ref=e35]
+        - img "فلل فاخرة" [ref=e37]
+        - img "مجمعات سكنية" [ref=e39]
+        - img "مشاريع عقارية" [ref=e41]
+        - img "شقق سكنية" [ref=e43]
+        - img "تطوير عقاري" [ref=e45]
+        - img "عقارات استثمارية" [ref=e47]
+        - img "واجهات مميزة" [ref=e49]
+        - img "مساحات خضراء" [ref=e51]
+        - img "مرافق حديثة" [ref=e53]
+        - img "مواقع متميزة" [ref=e55]
+        - img "جودة البناء" [ref=e57]
+      - generic [ref=e60]:
+        - heading "استثمر بثقة مع فينيكس جلوبال" [level=1] [ref=e61]
+        - generic [ref=e62]:
+          - paragraph [ref=e63]: مشاريع سكنية فاخرة
+          - paragraph [ref=e64]: أعلى معايير التصميم والتشطيب
+        - generic [ref=e65]:
+          - link "شاهد المشاريع" [ref=e66] [cursor=pointer]:
+            - /url: "#projects"
+          - link "تواصل معنا" [ref=e67] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e70]: 200+
+            - paragraph [ref=e71]: وحدة سكنية
+          - generic [ref=e72]:
+            - generic [ref=e73]: 50+
+            - paragraph [ref=e74]: مشروع مكتمل
+          - generic [ref=e75]:
+            - generic [ref=e76]: 13+
+            - paragraph [ref=e77]: سنوات خبرة
+      - generic [ref=e79]:
+        - button [ref=e80] [cursor=pointer]
+        - button [ref=e81] [cursor=pointer]
+        - button [ref=e82] [cursor=pointer]
+        - button [ref=e83] [cursor=pointer]
+        - button [ref=e84] [cursor=pointer]
+        - button [ref=e85] [cursor=pointer]
+        - button [ref=e86] [cursor=pointer]
+        - button [ref=e87] [cursor=pointer]
+        - button [ref=e88] [cursor=pointer]
+        - button [ref=e89] [cursor=pointer]
+        - button [ref=e90] [cursor=pointer]
+        - button [ref=e91] [cursor=pointer]
+        - button [ref=e92] [cursor=pointer]
+        - button [ref=e93] [cursor=pointer]
+        - button [ref=e94] [cursor=pointer]
+        - button [ref=e95] [cursor=pointer]
+        - button [ref=e96] [cursor=pointer]
+        - button [ref=e97] [cursor=pointer]
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]: info
+          - generic [ref=e105]: من نحن
+        - heading "فينيكس جلوبال ليست بداية… بل هي نتيجة." [level=2] [ref=e106]:
+          - text: فينيكس جلوبال ليست بداية…
+          - text: بل هي نتيجة.
+        - paragraph [ref=e107]: نتيجة سنوات من العمل الحقيقي على الأرض، وخلاصة خبرات تراكمت عبر شركتين صنعتا اسمًا وثقة في سوق المقاولات والتوريدات.
+      - paragraph [ref=e109]: انبثقت فينيكس جلوبال من كيانين قويين
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - generic [ref=e113]:
+            - generic [ref=e115]: domain
+            - generic [ref=e116]:
+              - generic [ref=e117]:
+                - heading "بلدنج ستون" [level=3] [ref=e118]
+                - generic [ref=e119]: 🇸🇦
+              - generic [ref=e120]: Building Stone — منذ 2013 — السوق السعودي
+          - paragraph [ref=e121]: أثبتت حضورها في السوق السعودي منذ عام 2013، وشاركت في تنفيذ أعمال داخل مشاريع كبرى، من بينها مشروعات في جامعة جازان، إلى جانب التعاون مع كيانات بحجم مجموعة بن لادن السعودية — أحد أكبر الأسماء في قطاع المقاولات بالمنطقة.
+        - generic [ref=e122]:
+          - generic [ref=e124]:
+            - generic [ref=e126]: engineering
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - heading "ماتريكس" [level=3] [ref=e129]
+                - generic [ref=e130]: 🇪🇬
+              - generic [ref=e131]: Matrix — منذ 2018 — السوق المصري
+          - paragraph [ref=e132]: عملت داخل السوق المصري جنبًا إلى جنب مع كبرى شركات المقاولات، مثل أجواء مصر للمقاولات، والنور للمقاولات، وديليلز للمقاولات، واسبيس للمقاولات، مما أكسبها خبرة واسعة في التعامل مع مختلف أنواع المشاريع والتحديات التنفيذية.
+      - generic [ref=e134]:
+        - paragraph [ref=e135]:
+          - text: اليوم، لا نقدّم شركة جديدة…
+          - text: بل نقدّم كيانًا وُلد وهو يمتلك بالفعل خبرة السنين.
+        - paragraph [ref=e137]: في فينيكس جلوبال، نحن لا نبيع وعودًا — نحن نبني على تاريخ.
+        - paragraph [ref=e138]: تاريخ من الالتزام، الجودة، والقدرة على التنفيذ تحت أصعب الظروف.
+      - paragraph [ref=e140]: "نجمع بين قوة الخبرة الإقليمية في السوق السعودي، وعمق الفهم العملي للسوق المصري، لنقدّم خدمات قائمة على:"
+      - generic [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e144]: precision_manufacturing
+          - heading "تنفيذ دقيق" [level=4] [ref=e145]
+        - generic [ref=e146]:
+          - generic [ref=e148]: verified
+          - heading "جودة لا تقبل التنازل" [level=4] [ref=e149]
+        - generic [ref=e150]:
+          - generic [ref=e152]: handshake
+          - heading "شراكات مبنية على الثقة" [level=4] [ref=e153]
+      - generic [ref=e154]:
+        - paragraph [ref=e156]:
+          - text: هدفنا ليس فقط تنفيذ المشاريع…
+          - text: بل أن نكون جزءًا من نجاحها.
+        - generic [ref=e157]:
+          - paragraph [ref=e158]: لأن الثقة تُبنى على الأدلة… يمكنك الاطلاع على سجل أعمالنا ومشاريعنا السابقة.
+          - link "استكشف خبراتنا arrow_back" [ref=e159] [cursor=pointer]:
+            - /url: "#projects"
+            - generic [ref=e160]: استكشف خبراتنا
+            - generic [ref=e161]: arrow_back
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - generic [ref=e173]: format_quote
+          - generic [ref=e174]: رسالة قيادية
+        - heading "كلمة المدير التنفيذي" [level=2] [ref=e175]
+      - generic [ref=e176]:
+        - generic [ref=e177]: format_quote
+        - generic [ref=e178]:
+          - generic [ref=e180]:
+            - paragraph [ref=e181]: فينيكس جلوبال لم تبدأ من الصفر… بل وُلدت قوية.
+            - paragraph [ref=e182]: هي نتاج خبرات حقيقية تراكمت عبر بيلدنج ستون في السوق السعودي وماتريكس في السوق المصري — خبرات صُنعت داخل مشاريع كبرى وبشراكات مع أسماء لها وزنها.
+            - paragraph [ref=e183]: نحن لا نقدّم وعودًا… نحن نقدّم سجلًا من التنفيذ. ولا نبحث عن مشاريع… بل نصنع قيمة في كل مشروع ندخله.
+          - paragraph [ref=e185]: "هدفنا واضح: أن نكون الخيار الأول لمن لا يقبل إلا بالجودة، والسرعة، والالتزام."
+          - generic [ref=e186]:
+            - generic [ref=e187]: م
+            - generic [ref=e188]:
+              - heading "مهندس محمد نبيه" [level=5] [ref=e189]
+              - text: المدير التنفيذي - فينيكس جلوبال
+            - generic [ref=e191]: diamond
+        - generic [ref=e192]: format_quote
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e196]:
+          - generic [ref=e197]: workspace_premium
+          - generic [ref=e198]: خدماتنا
+        - heading "حلول عقارية شاملة" [level=2] [ref=e199]
+        - paragraph [ref=e200]: خبرة احترافية في جميع جوانب العقار
+      - generic [ref=e201]:
+        - generic [ref=e202] [cursor=pointer]:
+          - img [ref=e205]
+          - generic [ref=e209]:
+            - heading "التطوير العقاري" [level=3] [ref=e210]
+            - paragraph [ref=e211]: نقدم حلولاً شاملة للتطوير العقاري من بحث السوق واختيار الموقع مروراً بالتخطيط والتصميم والتنفيذ وصولاً التسليم النهائي. نضمن أعلى معايير الجودة والاستدامة مع تقديم مشاريع ذات قيمة حقيقية وعوائد قوية لعملائنا.
+          - generic [ref=e212]: arrow_back
+        - generic [ref=e213] [cursor=pointer]:
+          - img [ref=e216]
+          - generic [ref=e221]:
+            - heading "الوساطة العقارية" [level=3] [ref=e222]
+            - paragraph [ref=e223]: نقدم خدمات وساطة عقارية عالية الجودة لمساعدة العملاء في شراء وبيع وتأجير العقارات بسهولة وشفافية. نعتمد على فهم عميق لاحتياجات العملاء وتحليل السوق لتقديم أفضل الخيارات المتاحة.
+          - generic [ref=e224]: arrow_back
+        - generic [ref=e225] [cursor=pointer]:
+          - img [ref=e228]
+          - generic [ref=e233]:
+            - heading "التصميم الداخلي" [level=3] [ref=e234]
+            - paragraph [ref=e235]: نقدم تصاميم داخلية مبتكرة تجمع بين الجمال والوظيفة. نحلل احتياجات العملاء وأسلوب حياتهم لخلق مساحات تعكس شخصيتهم وتوفر أقصى درجات الراحة.
+          - generic [ref=e236]: arrow_back
+        - generic [ref=e237] [cursor=pointer]:
+          - img [ref=e240]
+          - generic [ref=e246]:
+            - heading "التشطيب والديكور" [level=3] [ref=e247]
+            - paragraph [ref=e248]: ننفذ أعمال التشطيب والديكور بأعلى مستويات الجودة باستخدام أفضل المواد وأحدث التقنيات، مع إشراف هندسي دقيق في جميع مراحل التنفيذ.
+          - generic [ref=e249]: arrow_back
+        - generic [ref=e250] [cursor=pointer]:
+          - img [ref=e253]
+          - generic [ref=e258]:
+            - heading "إدارة المشاريع العقارية" [level=3] [ref=e259]
+            - paragraph [ref=e260]: نقدم خدمات إدارة عقارية شاملة تهدف إلى الحفاظ على قيمة العقار وتعظيم العائد الاستثماري. تشمل خدماتنا إدارة التأجير والتحصيل الإيجاري والصيانة الدورية.
+          - generic [ref=e261]: arrow_back
+    - generic [ref=e265]:
+      - generic [ref=e266]:
+        - generic [ref=e267]:
+          - generic [ref=e268]: verified
+          - generic [ref=e269]: لماذا فينيكس؟
+        - heading "لأننا لا نبدأ من الصفر… بل ننطلق من خبرة حقيقية." [level=2] [ref=e270]:
+          - text: لأننا لا نبدأ من الصفر…
+          - text: بل ننطلق من خبرة حقيقية.
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - generic [ref=e274]: dual_screen
+          - heading "خبرة مزدوجة قوية" [level=3] [ref=e275]
+          - paragraph [ref=e276]: ناتجون عن كيانين لهما سجل أعمال في السوقين السعودي والمصري، بخبرة تمتد لأكثر من عقد.
+        - generic [ref=e277]:
+          - generic [ref=e279]: verified
+          - heading "سجل مشاريع موثوق" [level=3] [ref=e280]
+          - paragraph [ref=e281]: مشاركات فعلية في مشاريع كبرى والتعاون مع شركات رائدة، مما يعكس قدرتنا على التنفيذ في بيئات مختلفة وبمعايير عالية.
+        - generic [ref=e282]:
+          - generic [ref=e284]: insights
+          - heading "فهم عميق للسوق" [level=3] [ref=e285]
+          - paragraph [ref=e286]: نجمع بين الخبرة الإقليمية في السعودية والمعرفة العملية بتفاصيل السوق المصري.
+        - generic [ref=e287]:
+          - generic [ref=e289]: precision_manufacturing
+          - heading "تنفيذ يعتمد عليه" [level=3] [ref=e290]
+          - paragraph [ref=e291]: نركز على الدقة، الالتزام، وتسليم المشاريع بنفس الجودة المتفق عليها — بدون تنازلات.
+        - generic [ref=e292]:
+          - generic [ref=e294]: handshake
+          - heading "شراكة طويلة المدى" [level=3] [ref=e295]
+          - paragraph [ref=e296]: لا ننفذ فقط… بل نبني علاقات قائمة على الثقة والاستمرارية.
+        - generic [ref=e297]:
+          - generic [ref=e299]: hub
+          - heading "حلول متكاملة من البداية للنهاية" [level=3] [ref=e300]
+          - paragraph [ref=e301]: نقدّم منظومة عمل متكاملة تشمل التخطيط، التنفيذ، والإشراف، لضمان تجربة سلسة ونتائج دقيقة دون الحاجة لتعدد الأطراف أو تعقيد الإجراءات.
+    - generic [ref=e303]:
+      - generic [ref=e304]:
+        - generic [ref=e305]:
+          - generic [ref=e306]: apartment
+          - generic [ref=e307]: مشاريعنا
+        - heading "مشاريع مميزة" [level=2] [ref=e308]
+        - paragraph [ref=e309]: روائع معمارية تجسد الفخامة والعصرية في أفخم المواقع
+      - generic [ref=e310]:
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - generic [ref=e316]:
+                - img "فيلا ١٥٩ - 1" [ref=e318]
+                - img "فيلا ١٥٩ - 2" [ref=e321]
+                - img "فيلا ١٥٩ - 3" [ref=e324]
+                - img "فيلا ١٥٩ - 4" [ref=e327]
+                - img "فيلا ١٥٩ - 5" [ref=e330]
+                - img "فيلا ١٥٩ - 6" [ref=e333]
+                - img "فيلا ١٥٩ - 7" [ref=e336]
+                - img "فيلا ١٥٩ - 8" [ref=e339]
+                - img "فيلا ١٥٩ - 9" [ref=e342]
+                - img "فيلا ١٥٩ - 10" [ref=e345]
+                - img "فيلا ١٥٩ - 11" [ref=e348]
+                - img "فيلا ١٥٩ - 12" [ref=e351]
+                - img "فيلا ١٥٩ - 13" [ref=e354]
+                - img "فيلا ١٥٩ - 14" [ref=e357]
+                - img "فيلا ١٥٩ - 15" [ref=e360]
+                - img "فيلا ١٥٩ - 16" [ref=e363]
+                - img "فيلا ١٥٩ - 17" [ref=e366]
+                - img "فيلا ١٥٩ - 18" [ref=e369]
+                - img "فيلا ١٥٩ - 19" [ref=e372]
+                - img "فيلا ١٥٩ - 20" [ref=e375]
+                - img "فيلا ١٥٩ - 21" [ref=e378]
+                - img "فيلا ١٥٩ - 22" [ref=e381]
+              - button "Previous image" [ref=e383] [cursor=pointer]:
+                - generic [ref=e384]: chevron_right
+              - button "Next image" [ref=e385] [cursor=pointer]:
+                - generic [ref=e386]: chevron_left
+              - generic [ref=e387]:
+                - button "Go to image 1" [ref=e388] [cursor=pointer]
+                - button "Go to image 2" [ref=e389] [cursor=pointer]
+                - button "Go to image 3" [ref=e390] [cursor=pointer]
+                - button "Go to image 4" [ref=e391] [cursor=pointer]
+                - button "Go to image 5" [ref=e392] [cursor=pointer]
+                - button "Go to image 6" [ref=e393] [cursor=pointer]
+                - button "Go to image 7" [ref=e394] [cursor=pointer]
+                - button "Go to image 8" [ref=e395] [cursor=pointer]
+                - button "Go to image 9" [ref=e396] [cursor=pointer]
+                - button "Go to image 10" [ref=e397] [cursor=pointer]
+                - button "Go to image 11" [ref=e398] [cursor=pointer]
+                - button "Go to image 12" [ref=e399] [cursor=pointer]
+                - button "Go to image 13" [ref=e400] [cursor=pointer]
+                - button "Go to image 14" [ref=e401] [cursor=pointer]
+                - button "Go to image 15" [ref=e402] [cursor=pointer]
+                - button "Go to image 16" [ref=e403] [cursor=pointer]
+                - button "Go to image 17" [ref=e404] [cursor=pointer]
+                - button "Go to image 18" [ref=e405] [cursor=pointer]
+                - button "Go to image 19" [ref=e406] [cursor=pointer]
+                - button "Go to image 20" [ref=e407] [cursor=pointer]
+                - button "Go to image 21" [ref=e408] [cursor=pointer]
+                - button "Go to image 22" [ref=e409] [cursor=pointer]
+              - generic [ref=e410]: 1 / 22
+            - generic [ref=e411]: PREMIUM
+          - generic [ref=e412]:
+            - generic [ref=e413]:
+              - paragraph [ref=e414]: Villa 159
+              - heading "فيلا ١٥٩" [level=3] [ref=e415]
+            - generic [ref=e416]:
+              - generic [ref=e417]: location_on
+              - generic [ref=e418]: فيلا ١٥٩ تقع في أميز احياء مدينة الشروق والأكثر نسبة اشغال وخدمات الحي الثاني شرق بالقرب من نادي جرين هيلز والدون تاون وكمبوند جنة ودار مصر
+            - generic [ref=e419]:
+              - generic [ref=e420]: photo_library
+              - generic [ref=e421]: 22 صورة
+            - generic [ref=e423]:
+              - generic [ref=e425]: schedule
+        - generic [ref=e428]:
+          - generic [ref=e429]:
+            - generic [ref=e430]:
+              - generic [ref=e431]:
+                - img "فيلا ٨٠ - 1" [ref=e433]
+                - img "فيلا ٨٠ - 2" [ref=e436]
+                - img "فيلا ٨٠ - 3" [ref=e439]
+                - img "فيلا ٨٠ - 4" [ref=e442]
+                - img "فيلا ٨٠ - 5" [ref=e445]
+                - img "فيلا ٨٠ - 6" [ref=e448]
+                - img "فيلا ٨٠ - 7" [ref=e451]
+                - img "فيلا ٨٠ - 8" [ref=e454]
+                - img "فيلا ٨٠ - 9" [ref=e457]
+              - button "Previous image" [ref=e459] [cursor=pointer]:
+                - generic [ref=e460]: chevron_right
+              - button "Next image" [ref=e461] [cursor=pointer]:
+                - generic [ref=e462]: chevron_left
+              - generic [ref=e463]:
+                - button "Go to image 1" [ref=e464] [cursor=pointer]
+                - button "Go to image 2" [ref=e465] [cursor=pointer]
+                - button "Go to image 3" [ref=e466] [cursor=pointer]
+                - button "Go to image 4" [ref=e467] [cursor=pointer]
+                - button "Go to image 5" [ref=e468] [cursor=pointer]
+                - button "Go to image 6" [ref=e469] [cursor=pointer]
+                - button "Go to image 7" [ref=e470] [cursor=pointer]
+                - button "Go to image 8" [ref=e471] [cursor=pointer]
+                - button "Go to image 9" [ref=e472] [cursor=pointer]
+              - generic [ref=e473]: 1 / 9
+            - generic [ref=e474]: DISTINCTIVE
+          - generic [ref=e475]:
+            - generic [ref=e476]:
+              - paragraph [ref=e477]: Villa 80
+              - heading "فيلا ٨٠" [level=3] [ref=e478]
+            - generic [ref=e479]:
+              - generic [ref=e480]: location_on
+              - generic [ref=e481]: فيلا ٨٠ الحي الثالث شرق لوكشن مميز قريب من طريق الحرية
+            - generic [ref=e482]:
+              - generic [ref=e483]: photo_library
+              - generic [ref=e484]: 9 صورة
+            - generic [ref=e485]:
+              - button "معاينة التصميم picture_as_pdf" [ref=e486] [cursor=pointer]:
+                - generic [ref=e487]: معاينة التصميم
+                - generic [ref=e488]: picture_as_pdf
+              - button "تصميم آخر description" [ref=e489] [cursor=pointer]:
+                - generic [ref=e490]: تصميم آخر
+                - generic [ref=e491]: description
+        - generic [ref=e494]:
+          - generic [ref=e495]:
+            - generic [ref=e496]:
+              - generic [ref=e497]:
+                - img "فيلا ١١٣ - 1" [ref=e499]
+                - img "فيلا ١١٣ - 2" [ref=e502]
+                - img "فيلا ١١٣ - 3" [ref=e505]
+                - img "فيلا ١١٣ - 4" [ref=e508]
+                - img "فيلا ١١٣ - 5" [ref=e511]
+                - img "فيلا ١١٣ - 6" [ref=e514]
+                - img "فيلا ١١٣ - 7" [ref=e517]
+                - img "فيلا ١١٣ - 8" [ref=e520]
+                - img "فيلا ١١٣ - 9" [ref=e523]
+                - img "فيلا ١١٣ - 10" [ref=e526]
+              - button "Previous image" [ref=e528] [cursor=pointer]:
+                - generic [ref=e529]: chevron_right
+              - button "Next image" [ref=e530] [cursor=pointer]:
+                - generic [ref=e531]: chevron_left
+              - generic [ref=e532]:
+                - button "Go to image 1" [ref=e533] [cursor=pointer]
+                - button "Go to image 2" [ref=e534] [cursor=pointer]
+                - button "Go to image 3" [ref=e535] [cursor=pointer]
+                - button "Go to image 4" [ref=e536] [cursor=pointer]
+                - button "Go to image 5" [ref=e537] [cursor=pointer]
+                - button "Go to image 6" [ref=e538] [cursor=pointer]
+                - button "Go to image 7" [ref=e539] [cursor=pointer]
+                - button "Go to image 8" [ref=e540] [cursor=pointer]
+                - button "Go to image 9" [ref=e541] [cursor=pointer]
+                - button "Go to image 10" [ref=e542] [cursor=pointer]
+              - generic [ref=e543]: 1 / 10
+            - generic [ref=e544]: EXCLUSIVE
+          - generic [ref=e545]:
+            - generic [ref=e546]:
+              - paragraph [ref=e547]: Villa 113
+              - heading "فيلا ١١٣" [level=3] [ref=e548]
+            - generic [ref=e549]:
+              - generic [ref=e550]: location_on
+              - generic [ref=e551]: فيلا ١١٣ الحي الثاني شرق مجاورة الثالثة ثاني نمرة من طريق السادات وشارع الشباب وميدان النهضة
+            - generic [ref=e552]:
+              - generic [ref=e553]: photo_library
+              - generic [ref=e554]: 10 صورة
+            - button "معاينة التصميم picture_as_pdf" [ref=e556] [cursor=pointer]:
+              - generic [ref=e557]: معاينة التصميم
+              - generic [ref=e558]: picture_as_pdf
+    - generic [ref=e564]:
+      - generic [ref=e565]:
+        - generic [ref=e566]:
+          - generic [ref=e567]: diamond
+          - generic [ref=e568]: فرص استثمارية حصرية
+        - heading "استثمر بذكاء، احصد بعناية" [level=2] [ref=e569]
+        - paragraph [ref=e570]: نقدم لك فرصاً استثمارية مميزة من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً، مع دعم فريقنا الاستشاري لمساعدتك في بناء محفظة عقارية قوية ومستقرة.
+      - generic [ref=e571]:
+        - generic [ref=e575] [cursor=pointer]:
+          - generic [ref=e577]: trending_up
+          - heading "نمو سنوي مستمر" [level=3] [ref=e578]
+          - paragraph [ref=e579]: زيادة في قيمة العقار مدعومة بالبنية التحتية المتطورة.
+        - generic [ref=e583] [cursor=pointer]:
+          - generic [ref=e585]: key
+          - heading "حلول تمليك مرنة" [level=3] [ref=e586]
+          - paragraph [ref=e587]: خطط سداد ميسرة تتناسب مع أهدافك المالية.
+        - generic [ref=e591] [cursor=pointer]:
+          - generic [ref=e593]: savings
+          - heading "حماية من التضخم" [level=3] [ref=e594]
+          - paragraph [ref=e595]: استثمار يحافظ على قيمته ويحقق عوائد حقيقية.
+      - generic [ref=e598]:
+        - generic [ref=e599]:
+          - heading "ابدأ رحلتك الاستثمارية" [level=4] [ref=e600]
+          - paragraph [ref=e601]: تواصل معنا اليوم للحصول على استشارة مجانية
+        - link "تواصل معنا الآن arrow_back" [ref=e602] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e603]: تواصل معنا الآن
+          - generic [ref=e604]: arrow_back
+    - generic [ref=e607]:
+      - generic [ref=e608]:
+        - generic [ref=e609]:
+          - generic [ref=e610]: call
+          - generic [ref=e611]: تواصل معنا
+        - heading "نحن هنا لمساعدتك" [level=2] [ref=e612]
+        - paragraph [ref=e613]: فريقنا متاح للرد على استفساراتك على مدار الساعة
+      - generic [ref=e614]:
+        - button "call خط أرضي +20 2 20322217" [ref=e615] [cursor=pointer]:
+          - generic [ref=e617]: call
+          - paragraph [ref=e618]: خط أرضي
+          - paragraph [ref=e619]: +20 2 20322217
+        - button "call +20 1116566604" [ref=e620] [cursor=pointer]:
+          - generic [ref=e622]: call
+          - paragraph [ref=e623]: +20 1116566604
+        - button "call +20 1119031117" [ref=e624] [cursor=pointer]:
+          - generic [ref=e626]: call
+          - paragraph [ref=e627]: +20 1119031117
+      - generic [ref=e628]:
+        - button "mail البريد الإلكتروني info@phonixglobal-eg.com" [ref=e629] [cursor=pointer]:
+          - generic [ref=e631]: mail
+          - paragraph [ref=e632]: البريد الإلكتروني
+          - paragraph [ref=e633]: info@phonixglobal-eg.com
+        - button "location_on الموقع 78 شارع الفرعي - الشروق - القاهرة انقر للعرض على الخريطة" [ref=e634] [cursor=pointer]:
+          - generic [ref=e636]: location_on
+          - paragraph [ref=e637]: الموقع
+          - paragraph [ref=e638]: 78 شارع الفرعي - الشروق - القاهرة
+          - paragraph [ref=e639]: انقر للعرض على الخريطة
+  - link "تواصل عبر واتساب" [ref=e640] [cursor=pointer]:
+    - /url: https://wa.me/201119031117
+    - img [ref=e641]
+  - contentinfo [ref=e643]:
+    - generic [ref=e644]:
+      - generic [ref=e645]:
+        - img "Phoenix Global logo" [ref=e647]
+        - generic [ref=e648]:
+          - link "الرئيسية" [ref=e649] [cursor=pointer]:
+            - /url: "#hero"
+          - link "المشاريع" [ref=e650] [cursor=pointer]:
+            - /url: "#projects"
+          - link "من نحن" [ref=e651] [cursor=pointer]:
+            - /url: "#about"
+          - link "رسالة المدير" [ref=e652] [cursor=pointer]:
+            - /url: "#ceo-message"
+          - link "الاستثمار" [ref=e653] [cursor=pointer]:
+            - /url: "#investment"
+          - link "تواصل معنا" [ref=e654] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e655]:
+          - button "share" [ref=e656] [cursor=pointer]
+          - button "public" [ref=e657] [cursor=pointer]
+          - button "camera_alt" [ref=e658] [cursor=pointer]
+      - paragraph [ref=e660]: © 2024 فينيكس جلوبال للتطوير. جميع الحقوق محفوظة.
