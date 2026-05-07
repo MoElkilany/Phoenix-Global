@@ -1,52 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import heroBg from '../assets/Hero-BG.png';
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded] = useState(true);
-
-  const slides = [
-    { image: '/heroSection.png', title: 'مشاريع سكنية فاخرة', subtitle: 'أعلى معايير التصميم والتشطيب' },
-    { image: '/heroSection1.png', subtitle: 'مساحات فاخرة بتصميم عصري' },
-    { image: '/heroSection2.png', title: 'أبراج سكنية', subtitle: 'إطلالات ساحرة على المدينة' },
-    { image: '/heroSection3.png', title: 'مشاريع تجارية', subtitle: 'فرص استثمارية مربحة' },
-    { image: '/heroSection4.png', title: 'تصميم داخلي', subtitle: 'لمسات فنية مميزة' },
-    { image: '/heroSection5.png', title: 'تشطيبات فاخرة', subtitle: 'جودة لا مثيل لها' },
-    { image: '/heroSection6.jpeg', title: 'وحدات سكنية', subtitle: 'تصاميم عصرية بأعلى جودة' },
-    { image: '/heroSection7.jpeg', title: 'فلل فاخرة', subtitle: 'رقي وجمال في كل تفصيلة' },
-    { image: '/heroSection8.jpeg', title: 'مجمعات سكنية', subtitle: 'مجتمعات متكاملة' },
-    { image: '/heroSection9.jpeg', title: 'مشاريع عقارية', subtitle: 'استثمارات آمنة ومضمونة' },
-    { image: '/heroSection10.jpeg', title: 'شقق سكنية', subtitle: 'راحة وأمان لعائلتك' },
-    { image: '/heroSection11.jpeg', title: 'تطوير عقاري', subtitle: 'خبرة في السوق العقاري' },
-    { image: '/heroSection12.jpeg', title: 'عقارات استثمارية', subtitle: 'عوائد ممتازة على الاستثمار' },
-    { image: '/heroSection13.jpeg', title: 'واجهات مميزة', subtitle: 'تصميم هندسي رائع' },
-    { image: '/heroSection14.jpeg', title: 'مساحات خضراء', subtitle: 'بيئة صحية ومريحة' },
-    { image: '/heroSection15.jpeg', title: 'مرافق حديثة', subtitle: 'خدمات متكاملة' },
-    { image: '/heroSection16.jpeg', title: 'مواقع متميزة', subtitle: 'في أرقى الأحياء' },
-    { image: '/heroSection17.jpeg', title: 'جودة البناء', subtitle: 'معايير عالمية في البناء' },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => setCurrentSlide((prev) => (prev + 1) % slides.length), 5000);
-    return () => clearInterval(interval);
-  }, [slides.length]);
 
   return (
     <section className="relative w-full h-screen flex items-center overflow-hidden" id="hero">
       <div className="absolute inset-0 z-0">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-[2000ms] ${
-              currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-            }`}
-          >
-            <img
-              className="w-full h-full object-cover"
-              alt={slide.title || 'Phoenix Global luxury real estate'}
-              src={slide.image}
-            />
-          </div>
-        ))}
+        <img
+          className="w-full h-full object-cover"
+          alt="Phoenix Global luxury real estate"
+          src={heroBg}
+        />
         <div
           className="absolute inset-0"
           style={{
@@ -64,7 +29,6 @@ const Hero = () => {
             style={{
               color: '#ffffff',
               fontFamily: 'Cairo, sans-serif',
-              textShadow: '0 4px 40px rgba(0,0,0,0.6)',
             }}
           >
             استثمر بثقة مع{' '}
@@ -74,19 +38,13 @@ const Hero = () => {
           </h1>
 
           <div
-            key={currentSlide}
             className={`transition-all duration-700 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            {slides[currentSlide].title && (
-              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#d44000', fontFamily: 'Cairo, sans-serif' }}>
-                {slides[currentSlide].title}
-              </p>
-            )}
             <p
-              className="text-xl md:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed"
+              className="text-2xl md:text-4xl mb-14 max-w-4xl mx-auto leading-relaxed"
               style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'Cairo, sans-serif' }}
             >
-              {slides[currentSlide].subtitle}
+              نُحقق أحلامك العقارية بأعلى معايير الجودة والاحترافية
             </p>
           </div>
 
@@ -134,7 +92,7 @@ const Hero = () => {
               { value: '13+', label: 'سنوات خبرة' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-black" style={{ color: '#d44000', fontFamily: 'Cairo, serif' }}>
+                <div className="text-4xl md:text-5xl font-black" style={{ color: '#ffffff', fontFamily: 'Cairo, serif' }}>
                   {stat.value}
                 </div>
                 <p  className="text-white/60 text-lg mt-2" style={{ fontFamily: 'Cairo, sans-serif' }}>
@@ -146,22 +104,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="flex gap-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`transition-all duration-500 rounded-full cursor-pointer ${
-                currentSlide === index ? 'w-8 h-2' : 'w-2 h-2'
-              }`}
-              style={{
-                background: currentSlide === index ? '#d44000' : 'rgba(240,244,250,0.3)',
-              }}
-            />
-          ))}
-        </div>
-      </div>
+      
     </section>
   );
 };
