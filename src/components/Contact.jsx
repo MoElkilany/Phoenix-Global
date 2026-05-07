@@ -48,7 +48,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {phones.map((phone, index) => (
             <button
               key={index}
@@ -62,7 +62,7 @@ const Contact = () => {
               <div
                 className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                 style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+                background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
                  border: '1px solid rgba(192, 80, 26, 0.3)',
                 }}
               >
@@ -80,7 +80,7 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
           ))}
         </div>
 
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
+<div className="mt-6 grid md:grid-cols-2 gap-6">
           <button
             onClick={handleEmail}
             className="text-center p-8 rounded-2xl transition-all duration-300 cursor-pointer group"
@@ -92,8 +92,8 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
             <div
               className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
               style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
+              background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+               border: '1px solid rgba(192, 80, 26, 0.3)',
               }}
             >
               <span className="material-symbols-outlined text-gold">mail</span>
@@ -117,8 +117,8 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
             <div
               className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
               style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
+              background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+               border: '1px solid rgba(192, 80, 26, 0.3)',
               }}
             >
               <span className="material-symbols-outlined text-gold">location_on</span>

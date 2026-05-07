@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import heroBg from '../assets/Hero-BG.png';
+import ShapeButton from './ShapeButton';
 
 const Hero = () => {
   const [loaded] = useState(true);
@@ -53,18 +54,9 @@ const Hero = () => {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <a
-              href="#projects"
-              className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
-              style={{
-                background: 'linear-gradient(135deg, #d44000, #A54215)',
-                color: '#FFFFFF',
-                boxShadow: '0 8px 32px rgba(212, 64, 0, 0.3)',
-                fontFamily: 'Cairo, sans-serif',
-              }}
-            >
+            <ShapeButton href="#projects">
               شاهد المشاريع
-            </a>
+            </ShapeButton>
             <a
               href="#contact"
               className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"

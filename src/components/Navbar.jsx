@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import redWhiteLogo from '../assets/redWhiteLogo.png';
+import ShapeButton from './ShapeButton';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,16 +56,12 @@ const Navbar = () => {
             ))}
           </div>
 
-          <a href="#contact" className="hidden lg:inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer" style={{
-            background: 'linear-gradient(135deg, #d44000, #A54215)',
-            color: '#FFFFFF',
-            fontFamily: 'Cairo, sans-serif',
-          }}>
+          <ShapeButton href="#contact" className="hidden lg:inline-flex items-center gap-2">
             <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
               call
             </span>
             <span>تواصل معنا</span>
-          </a>
+          </ShapeButton>
 
           <button
             className="lg:hidden relative w-10 h-10 flex items-center justify-center cursor-pointer"

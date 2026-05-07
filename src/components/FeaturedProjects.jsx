@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { projects } from '../data/projects';
 import ProjectCarousel from './ProjectCarousel';
+import ShapeButton from './ShapeButton';
 
 const FeaturedProjects = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
@@ -166,30 +167,15 @@ const FeaturedProjects = () => {
 
                       <div className="flex flex-wrap gap-3">
                         {hasPdfs && (
-                          <button
+                          <ShapeButton
                             onClick={() => handleExplore(project.pdfs[0])}
-                            className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
-                            style={{
-                              background: 'linear-gradient(135deg, #C0501A, #8C3A12)',
-                              color: '#FFFFFF',
-                              boxShadow: '0 4px 16px rgba(192, 80, 26, 0.25)',
-                              fontFamily: 'Cairo, sans-serif',
-                              transition: 'all 0.3s ease',
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.transform = 'translateY(-1px)';
-                              e.currentTarget.style.boxShadow = '0 6px 20px rgba(192, 80, 26, 0.35)';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.transform = 'translateY(0)';
-                              e.currentTarget.style.boxShadow = '0 4px 16px rgba(192, 80, 26, 0.25)';
-                            }}
+                            className="flex items-center gap-2"
                           >
                             <span className="text-sm">{project.id === 2 ? 'استكشف المشروع' : 'معاينة التصميم'}</span>
                             <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
                               {project.id === 2 ? 'explore' : 'picture_as_pdf'}
                             </span>
-                          </button>
+                          </ShapeButton>
                         )}
 
                         {hasPdfs && project.pdfs.length > 1 && (

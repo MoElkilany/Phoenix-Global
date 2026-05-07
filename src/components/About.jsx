@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import ShapeButton from './ShapeButton';
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -299,22 +300,12 @@ const About = () => {
             >
               لأن الثقة تُبنى على الأدلة… يمكنك الاطلاع على سجل أعمالنا ومشاريعنا السابقة.
             </p>
-            <a
-              href="#projects"
-              onClick={(e) => { e.preventDefault(); window.open('/ProfileCompany.pdf', '_blank'); }}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer"
-              style={{
-                background: 'linear-gradient(135deg, #C0501A, #A54215)',
-                color: '#FFFFFF',
-                fontFamily: 'Cairo, sans-serif',
-                boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
-              }}
-            >
+<ShapeButton href="#services" className="inline-flex items-center gap-2">
               <span>استكشف خبراتنا</span>
               <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
                 arrow_back
               </span>
-            </a>
+            </ShapeButton>
           </div>
         </div>
       </div>
