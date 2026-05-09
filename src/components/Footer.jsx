@@ -51,11 +51,11 @@ const Footer = () => {
           </div>
         </div>
 
-       <div className="flex flex-col md:flex-row justify-center items-center pt-8 gap-4" style={{ borderTop: '1px solid rgba(240,244,250,0.06)' }}>
-   <p className="text-sm text-center" style={{ color: '#5E6F8A', fontFamily: 'Cairo, sans-serif' }}>
-     © 2026 فينيكس جلوبال للتطوير. جميع الحقوق محفوظة.
-   </p>
-</div>
+<div className="flex flex-col md:flex-row justify-center items-center pt-8 gap-4" style={{ borderTop: '1px solid rgba(240,244,250,0.06)' }}>
+          <p className="text-sm text-center" style={{ color: '#5E6F8A', fontFamily: 'Cairo, sans-serif' }}>
+            © 2026 فينيكس جلوبال للتطوير. جميع الحقوق محفوظة.
+          </p>
+        </div>
       </div>
     </footer>
   );

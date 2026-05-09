@@ -194,22 +194,10 @@ const CEOMessage = () => {
               </p>
             </div>
 
-            <div
+<div
               className="flex items-center gap-5 pt-8"
               style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}
             >
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold relative overflow-hidden"
-                style={{
-                  background: 'linear-gradient(135deg, #C0501A, #A54215)',
-                  color: '#FFFFFF',
-                  fontFamily: 'Cinzel, serif',
-                  boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
-                }}
-              >
-م
-              </div>
-
               <div className="flex-1">
                 <h5
                   className="text-xl font-bold mb-1"
@@ -222,18 +210,6 @@ const CEOMessage = () => {
                   style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}
                 >
                   المدير التنفيذي - فينيكس جلوبال
-                </span>
-              </div>
-
-              <div
-                className="hidden md:flex items-center gap-2 opacity-30"
-                style={{ color: '#C0501A' }}
-              >
-                <span
-                  className="material-symbols-outlined text-3xl"
-                  style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}
-                >
-                  diamond
                 </span>
               </div>
             </div>
