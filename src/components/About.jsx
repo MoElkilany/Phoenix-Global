@@ -300,12 +300,12 @@ const About = () => {
             >
               لأن الثقة تُبنى على الأدلة… يمكنك الاطلاع على سجل أعمالنا ومشاريعنا السابقة.
             </p>
-<ShapeButton href="#services" className="inline-flex items-center gap-2">
+<a href="/ProfileCompany.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 bg-[#775a19] text-white rounded-lg font-semibold transition-all duration-300 hover:bg-[#5a4614] hover:shadow-lg">
               <span>استكشف خبراتنا</span>
               <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
                 arrow_back
               </span>
-            </ShapeButton>
+            </a>
           </div>
         </div>
       </div>
