@@ -16,8 +16,7 @@ export const translations = {
       english: 'English',
     },
     hero: {
-      titlePrefix: 'استثمر بثقة مع',
-      titleBrand: 'فينيكس جلوبال',
+      title: 'نصنع ما يبقى',
       ctaProjects: 'شاهد المشاريع',
       ctaContact: 'تواصل معنا',
       stats: {
@@ -209,8 +208,7 @@ export const translations = {
       english: 'English',
     },
     hero: {
-      titlePrefix: 'Invest with Confidence in',
-      titleBrand: 'Phoenix Global',
+      title: 'We Build What Lasts',
       ctaProjects: 'View Projects',
       ctaContact: 'Contact Us',
       stats: {

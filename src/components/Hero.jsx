@@ -77,13 +77,12 @@ const Hero = () => {
               loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              color: '#ffffff',
+              color: '#fdf8f0',
               fontFamily: 'var(--font-current)',
             }}
           >
-            {t('hero.titlePrefix')}{' '}
-            <span style={{ color: '#d44000' }}>
-              {t('hero.titleBrand')}
+            <span style={{ color: '#fdf8f0' }}>
+              {t('hero.title')}
             </span>
           </h1>
 
@@ -92,13 +91,14 @@ const Hero = () => {
             className={`transition-all duration-700 delay-500 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             {slides[currentSlide].title && (
-              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#d44000', fontFamily: 'var(--font-current)' }}>
+              <p className="text-2xl md:text-3xl mb-4 font-bold" style={{ color: '#fdf8f0', fontFamily: 'var(--font-current)' }}
+              >
                 {slides[currentSlide].title}
               </p>
             )}
             <p
               className="text-xl md:text-2xl mb-14 max-w-2xl mx-auto leading-relaxed"
-              style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'var(--font-current)' }}
+              style={{ color: '#fdf8f0', fontFamily: 'var(--font-current)' }}
             >
               {slides[currentSlide].subtitle}
             </p>
@@ -114,7 +114,7 @@ const Hero = () => {
               className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
               style={{
                 background: 'linear-gradient(135deg, #d44000, #A54215)',
-                color: '#FFFFFF',
+                color: '#fdf8f0',
                 boxShadow: '0 8px 32px rgba(212, 64, 0, 0.3)',
                 fontFamily: 'var(--font-current)',
               }}
@@ -126,7 +126,7 @@ const Hero = () => {
               className="px-10 py-5 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-105 cursor-pointer"
               style={{
                 background: 'rgba(255, 255, 255, 0.05)',
-                color: '#ffffff',
+                color: '#fdf8f0',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 backdropFilter: 'blur(10px)',
                 fontFamily: 'var(--font-current)',
@@ -144,10 +144,10 @@ const Hero = () => {
           >
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-black" style={{ color: '#d44000', fontFamily: 'var(--font-current)' }}>
+                <div className="text-4xl md:text-5xl font-black" style={{ color: '#fdf8f0', fontFamily: 'var(--font-current)' }}>
                   {stat.value}
                 </div>
-                <p className="text-white/60 text-lg mt-2" style={{ fontFamily: 'var(--font-current)' }}>
+                <p className="text-lg mt-2" style={{ color: '#fdf8f0', fontFamily: 'var(--font-current)' }}>
                   {stat.label}
                 </p>
               </div>
