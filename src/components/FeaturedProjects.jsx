@@ -4,6 +4,7 @@ import ProjectCarousel from './ProjectCarousel';
 
 const FeaturedProjects = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
+  const [pdfModal, setPdfModal] = useState({ isOpen: false, pdfUrl: '', title: '' });
   const cardRefs = useRef({});
 
   useEffect(() => {
@@ -25,8 +26,12 @@ const FeaturedProjects = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleExplore = (pdfUrl) => {
-    window.open(pdfUrl, '_blank');
+  const handleExplore = (pdfUrl, title = '') => {
+    setPdfModal({ isOpen: true, pdfUrl, title });
+  };
+
+  const closePdfModal = () => {
+    setPdfModal({ isOpen: false, pdfUrl: '', title: '' });
   };
 
   return (
@@ -167,7 +172,7 @@ const FeaturedProjects = () => {
                       <div className="flex flex-wrap gap-3">
                         {hasPdfs && (
                           <button
-                            onClick={() => handleExplore(project.pdfs[0])}
+                            onClick={() => handleExplore(project.pdfs[0], project.id === 2 ? 'المشروع' : 'التصميم')}
                             className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
                             style={{
                               background: 'linear-gradient(135deg, #C0501A, #8C3A12)',
@@ -194,7 +199,7 @@ const FeaturedProjects = () => {
 
                         {hasPdfs && project.pdfs.length > 1 && (
                           <button
-                            onClick={() => handleExplore(project.pdfs[1])}
+                            onClick={() => handleExplore(project.pdfs[1], project.id === 2 ? 'مدخل الفيلا' : 'تصميم آخر')}
                             className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
                             style={{
                               background: 'transparent',
@@ -227,6 +232,47 @@ const FeaturedProjects = () => {
           })}
         </div>
       </div>
+
+      {/* PDF Viewer Modal */}
+      {pdfModal.isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)' }}
+          onClick={closePdfModal}
+          dir="rtl"
+        >
+          <div
+            className="relative w-full max-w-4xl h-[80vh] rounded-2xl overflow-hidden"
+            style={{ backgroundColor: '#1a1a2e' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="flex items-center justify-between px-4 py-3"
+              style={{ backgroundColor: 'rgba(192, 80, 26, 0.2)', borderBottom: '1px solid rgba(192, 80, 26, 0.3)' }}
+            >
+              <span
+                className="text-lg font-bold"
+                style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+              >
+                {pdfModal.title}
+              </span>
+              <button
+                onClick={closePdfModal}
+                className="w-8 h-8 flex items-center justify-center rounded-full hover:opacity-80"
+                style={{ backgroundColor: 'rgba(192, 80, 26, 0.9)', color: '#fff' }}
+              >
+                <span className="material-symbols-outlined text-sm">close</span>
+              </button>
+            </div>
+            <iframe
+              src={pdfModal.pdfUrl}
+              className="w-full"
+              style={{ height: 'calc(80vh - 60px)' }}
+              title={pdfModal.title || 'PDF Viewer'}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

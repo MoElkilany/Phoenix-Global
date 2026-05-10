@@ -7,6 +7,7 @@ import WhyChooseUs from './components/WhyChooseUs'
 import FeaturedProjects from './components/FeaturedProjects'
 import Investment from './components/Investment'
 import Contact from './components/Contact'
+// import OurLocation from './components/OurLocation'
 import WhatsAppButton from './components/WhatsAppButton'
 import Footer from './components/Footer'
 
@@ -23,6 +24,7 @@ function App() {
         <FeaturedProjects />
         <Investment />
         <Contact />
+        {/* <OurLocation /> */}
       </main>
       <WhatsAppButton />
       <Footer />

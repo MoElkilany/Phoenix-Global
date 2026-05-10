@@ -169,6 +169,17 @@ const CEOMessage = () => {
                   lineHeight: 2,
                 }}
               >
+                أثبتت حضورها في السوق السعودي منذ عام 2013، وشاركت في تنفيذ أعمال داخل مشاريع كبرى، من بينها مشروعات في جامعة جازان، جامعه الملك سعود، إلى جانب التعاون مع كيانات بحجم مجموعة بن لادن السعودية — أحد أكبر الأسماء في قطاع المقاولات بالمنطقة.
+              </p>
+
+              <p
+                className="text-lg md:text-xl mb-6 relative z-10"
+                style={{
+                  color: 'rgba(240, 244, 250, 0.85)',
+                  fontFamily: 'Cairo, sans-serif',
+                  lineHeight: 2,
+                }}
+              >
                 نحن لا نكتفي بتقديم{' '}
                 <span style={{ color: '#C0501A', fontWeight: 600 }}>وعود</span>، بل نمتلك{' '}
                 <span style={{ color: '#C0501A', fontWeight: 600 }}>سجلًا حافلًا بالإنجازات</span>. لا نبحث عن المشاريع، بل نصنع قيمة مضافة في كل مشروع نشارك فيه.
@@ -194,21 +205,19 @@ const CEOMessage = () => {
               </p>
             </div>
 
-            <div
+<div
               className="flex items-center gap-5 pt-8"
               style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}
             >
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold relative overflow-hidden"
+              <img
+                src="/src/assets/Ceo-Image.jpeg"
+                alt="المدير التنفيذي"
+                className="w-16 h-16 rounded-2xl object-cover"
                 style={{
-                  background: 'linear-gradient(135deg, #C0501A, #A54215)',
-                  color: '#FFFFFF',
-                  fontFamily: 'Cinzel, serif',
                   boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
                 }}
-              >
-م
-              </div>
+              />
+
 
               <div className="flex-1">
                 <h5
