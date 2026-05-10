@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700;800;900&family=Proxima+Nova:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -33,6 +33,16 @@
   --font-heading: 'Cinzel', serif;
   --font-body: 'Josefin Sans', sans-serif;
   --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Plus Jakarta Sans', 'Josefin Sans', sans-serif;
+  --font-current: 'Cairo', sans-serif;
+}
+
+html[lang="en"] {
+  --font-current: 'Proxima Nova', 'Josefin Sans', sans-serif;
+}
+
+html[lang="ar"] {
+  --font-current: 'Cairo', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -58,7 +68,7 @@ html {
 body {
   background-color: var(--color-surface);
   color: var(--color-text-primary);
-  font-family: var(--font-arabic);
+  font-family: var(--font-current);
   overflow-x: hidden;
 }
 

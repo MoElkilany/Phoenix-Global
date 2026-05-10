@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import { projects } from '../data/projects';
 import ProjectCarousel from './ProjectCarousel';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const FeaturedProjects = () => {
   const [visibleCards, setVisibleCards] = useState(new Set());
   const [pdfModal, setPdfModal] = useState({ isOpen: false, pdfUrl: '', title: '' });
   const cardRefs = useRef({});
+  const { t, dir } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -48,7 +50,7 @@ const FeaturedProjects = () => {
       />
 
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-        <div className="text-center mb-20" dir="rtl">
+        <div className="text-center mb-20" dir={dir}>
           <div
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-6"
             style={{ background: 'rgba(192, 80, 26, 0.1)', border: '1px solid rgba(192, 80, 26, 0.2)' }}
@@ -59,25 +61,25 @@ const FeaturedProjects = () => {
             >
               apartment
             </span>
-            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              مشاريعنا
+            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'var(--font-current)' }}>
+              {t('projects.badge')}
             </span>
           </div>
 
           <h2
             className="text-4xl md:text-5xl font-black mb-4 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
           >
-            مشاريع{' '}
+            {t('projects.titlePrefix')}{' '}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
             >
-              مميزة
+              {t('projects.titleHighlight')}
             </span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-            روائع معمارية تجسد الفخامة والعصرية في أفخم المواقع
+          <p className="text-lg max-w-xl mx-auto" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -86,6 +88,14 @@ const FeaturedProjects = () => {
             const isVisible = visibleCards.has(String(project.id));
             const isEven = index % 2 === 0;
             const hasPdfs = project.pdfs && project.pdfs.length > 0;
+            const projectI18n = t(`projects.items.${project.id}`) || {};
+            const localizedName = projectI18n.nameAr || project.nameAr;
+            const localizedLocation = projectI18n.locationDetail || project.locationDetail;
+
+            const primaryButtonLabel = project.id === 2 ? t('projects.ctaExplore') : t('projects.ctaPreview');
+            const secondaryButtonLabel = project.id === 2 ? t('projects.ctaEntrance') : t('projects.ctaAnotherDesign');
+            const primaryModalTitle = project.id === 2 ? t('projects.modalTitleProject') : t('projects.modalTitleDesign');
+            const secondaryModalTitle = project.id === 2 ? t('projects.modalTitleEntrance') : t('projects.modalTitleDesign');
 
             return (
               <div
@@ -121,12 +131,12 @@ const FeaturedProjects = () => {
                       className={`md:w-[50%] relative overflow-hidden ${isEven ? 'md:order-1' : 'md:order-2'}`}
                       style={{ background: '#132036' }}
                     >
-                      <ProjectCarousel images={project.images} alt={project.nameAr} />
+                      <ProjectCarousel images={project.images} alt={localizedName} />
                     </div>
 
                     <div
                       className={`md:w-[50%] p-6 md:p-8 flex flex-col justify-center ${isEven ? 'md:order-2' : 'md:order-1'}`}
-                      dir="rtl"
+                      dir={dir}
                     >
                       <div className="mb-1">
                         <p
@@ -137,9 +147,9 @@ const FeaturedProjects = () => {
                         </p>
                         <h3
                           className="text-2xl md:text-3xl font-black leading-tight"
-                          style={{ color: '#FFFFFF', fontFamily: 'Cairo, sans-serif' }}
+                          style={{ color: '#FFFFFF', fontFamily: 'var(--font-current)' }}
                         >
-                          {project.nameAr}
+                          {localizedName}
                         </h3>
                       </div>
 
@@ -150,8 +160,8 @@ const FeaturedProjects = () => {
                         >
                           location_on
                         </span>
-                        <span className="text-sm font-semibold leading-relaxed" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                          {project.locationDetail}
+                        <span className="text-sm font-semibold leading-relaxed" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
+                          {localizedLocation}
                         </span>
                       </div>
 
@@ -163,8 +173,8 @@ const FeaturedProjects = () => {
                           >
                             photo_library
                           </span>
-                          <span className="text-xs" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                            {project.images.length} صورة
+                          <span className="text-xs" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+                            {project.images.length} {t('projects.imagesLabel')}
                           </span>
                         </div>
                       )}
@@ -172,13 +182,13 @@ const FeaturedProjects = () => {
                       <div className="flex flex-wrap gap-3">
                         {hasPdfs && (
                           <button
-                            onClick={() => handleExplore(project.pdfs[0], project.id === 2 ? 'المشروع' : 'التصميم')}
+                            onClick={() => handleExplore(project.pdfs[0], primaryModalTitle)}
                             className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
                             style={{
                               background: 'linear-gradient(135deg, #C0501A, #8C3A12)',
                               color: '#FFFFFF',
                               boxShadow: '0 4px 16px rgba(192, 80, 26, 0.25)',
-                              fontFamily: 'Cairo, sans-serif',
+                              fontFamily: 'var(--font-current)',
                               transition: 'all 0.3s ease',
                             }}
                             onMouseEnter={(e) => {
@@ -190,7 +200,7 @@ const FeaturedProjects = () => {
                               e.currentTarget.style.boxShadow = '0 4px 16px rgba(192, 80, 26, 0.25)';
                             }}
                           >
-                            <span className="text-sm">{project.id === 2 ? 'استكشف المشروع' : 'معاينة التصميم'}</span>
+                            <span className="text-sm">{primaryButtonLabel}</span>
                             <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
                               {project.id === 2 ? 'explore' : 'picture_as_pdf'}
                             </span>
@@ -199,13 +209,13 @@ const FeaturedProjects = () => {
 
                         {hasPdfs && project.pdfs.length > 1 && (
                           <button
-                            onClick={() => handleExplore(project.pdfs[1], project.id === 2 ? 'مدخل الفيلا' : 'تصميم آخر')}
+                            onClick={() => handleExplore(project.pdfs[1], secondaryModalTitle)}
                             className="flex items-center gap-2 px-5 py-2.5 font-bold rounded-xl cursor-pointer"
                             style={{
                               background: 'transparent',
                               color: '#C0501A',
                               border: '1px solid rgba(192, 80, 26, 0.4)',
-                              fontFamily: 'Cairo, sans-serif',
+                              fontFamily: 'var(--font-current)',
                               transition: 'all 0.3s ease',
                             }}
                             onMouseEnter={(e) => {
@@ -217,7 +227,7 @@ const FeaturedProjects = () => {
                               e.currentTarget.style.borderColor = 'rgba(192, 80, 26, 0.4)';
                             }}
                           >
-                            <span className="text-sm">{project.id === 2 ? 'استكشف مدخل الفيلا' : 'تصميم آخر'}</span>
+                            <span className="text-sm">{secondaryButtonLabel}</span>
                             <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400" }}>
                               {project.id === 2 ? 'door_front' : 'description'}
                             </span>
@@ -233,13 +243,12 @@ const FeaturedProjects = () => {
         </div>
       </div>
 
-      {/* PDF Viewer Modal */}
       {pdfModal.isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.9)' }}
           onClick={closePdfModal}
-          dir="rtl"
+          dir={dir}
         >
           <div
             className="relative w-full max-w-4xl h-[80vh] rounded-2xl overflow-hidden"
@@ -252,12 +261,13 @@ const FeaturedProjects = () => {
             >
               <span
                 className="text-lg font-bold"
-                style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+                style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
               >
                 {pdfModal.title}
               </span>
               <button
                 onClick={closePdfModal}
+                aria-label="Close"
                 className="w-8 h-8 flex items-center justify-center rounded-full hover:opacity-80"
                 style={{ backgroundColor: 'rgba(192, 80, 26, 0.9)', color: '#fff' }}
               >

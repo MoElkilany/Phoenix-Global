@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const FEATURE_ICONS = ['dual_screen', 'verified', 'insights', 'precision_manufacturing', 'handshake', 'hub'];
 
 const WhyChooseUs = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,38 +26,10 @@ const WhyChooseUs = () => {
     return () => observer.disconnect();
   }, []);
 
-  const features = [
-    {
-      icon: 'dual_screen',
-      title: 'خبرة مزدوجة قوية',
-      description: 'ناتجون عن كيانين لهما سجل أعمال في السوقين السعودي والمصري، بخبرة تمتد لأكثر من عقد.',
-    },
-    {
-      icon: 'verified',
-      title: 'سجل مشاريع موثوق',
-      description: 'مشاركات فعلية في مشاريع كبرى والتعاون مع شركات رائدة، مما يعكس قدرتنا على التنفيذ في بيئات مختلفة وبمعايير عالية.',
-    },
-    {
-      icon: 'insights',
-      title: 'فهم عميق للسوق',
-      description: 'نجمع بين الخبرة الإقليمية في السعودية والمعرفة العملية بتفاصيل السوق المصري.',
-    },
-    {
-      icon: 'precision_manufacturing',
-      title: 'تنفيذ يعتمد عليه',
-      description: 'نركز على الدقة، الالتزام، وتسليم المشاريع بنفس الجودة المتفق عليها — بدون تنازلات.',
-    },
-    {
-      icon: 'handshake',
-      title: 'شراكة طويلة المدى',
-      description: 'لا ننفذ فقط… بل نبني علاقات قائمة على الثقة والاستمرارية.',
-    },
-    {
-      icon: 'hub',
-      title: 'حلول متكاملة من البداية للنهاية',
-      description: 'نقدّم منظومة عمل متكاملة تشمل التخطيط، التنفيذ، والإشراف، لضمان تجربة سلسة دون الحاجة لتعدد الأطراف أو تعقيد الإجراءات.',
-    },
-  ];
+  const features = (t('why.features') || []).map((f, i) => ({
+    ...f,
+    icon: FEATURE_ICONS[i],
+  }));
 
   return (
     <section
@@ -87,22 +63,22 @@ const WhyChooseUs = () => {
             >
               verified
             </span>
-            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              لماذا فينيكس؟
+            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'var(--font-current)' }}>
+              {t('why.badge')}
             </span>
           </div>
 
           <h2
             className="text-4xl md:text-5xl font-black mb-4 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
           >
-            لأننا لا نبدأ من الصفر…
+            {t('why.headlineLine1')}
             <br />
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
             >
-              بل ننطلق من خبرة حقيقية.
+              {t('why.headlineLine2')}
             </span>
           </h2>
         </div>
@@ -138,13 +114,13 @@ const WhyChooseUs = () => {
 
               <h3
                 className="text-lg font-bold mb-3"
-                style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+                style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
               >
                 {feature.title}
               </h3>
               <p
                 className="text-base leading-relaxed"
-                style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
+                style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)', lineHeight: 2 }}
               >
                 {feature.description}
               </p>

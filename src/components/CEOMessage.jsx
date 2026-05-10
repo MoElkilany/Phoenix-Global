@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const CEOMessage = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { t, dir } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +29,7 @@ const CEOMessage = () => {
       id="ceo-message"
       ref={sectionRef}
       className="py-28 relative overflow-hidden"
-      dir="rtl"
+      dir={dir}
       style={{
         background: 'linear-gradient(160deg, #0A1220 0%, #132036 50%, #0A1220 100%)',
       }}
@@ -83,21 +85,21 @@ const CEOMessage = () => {
             >
               format_quote
             </span>
-            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              رسالة قيادية
+            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'var(--font-current)' }}>
+              {t('ceo.badge')}
             </span>
           </div>
 
           <h2
             className="text-4xl md:text-5xl font-black mb-4 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
           >
-            كلمة{' '}
+            {t('ceo.titlePrefix')}{' '}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
             >
-              المدير التنفيذي
+              {t('ceo.titleHighlight')}
             </span>
           </h2>
         </div>
@@ -136,53 +138,55 @@ const CEOMessage = () => {
                 className="text-xl md:text-2xl font-bold mb-6 relative z-10"
                 style={{
                   color: '#F0F4FA',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'var(--font-current)',
                   lineHeight: 2,
                 }}
               >
-                فينيكس جلوبال{' '}
+                {t('ceo.brandName')}{' '}
                 <span
                   className="bg-clip-text text-transparent"
                   style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
                 >
-                  لم تُبنَ من فراغ
+                  {t('ceo.brandHighlight')}
                 </span>
-                {' '}بل وُلدت قوية.
+                {' '}{t('ceo.brandSuffix')}
               </p>
 
               <p
                 className="text-lg md:text-xl mb-6 relative z-10"
                 style={{
                   color: 'rgba(240, 244, 250, 0.85)',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'var(--font-current)',
                   lineHeight: 2,
                 }}
               >
-                إنها امتداد وثمرة خبرات عملية تراكمت عبر بلدينج ستون في السوق السعودي وماتريكس في السوق المصري، خبرات صُنعت داخل مشاريع كبرى وشراكات مع مؤسسات راسخة.
+                {t('ceo.paragraph2')}
               </p>
 
               <p
                 className="text-lg md:text-xl mb-6 relative z-10"
                 style={{
                   color: 'rgba(240, 244, 250, 0.85)',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'var(--font-current)',
                   lineHeight: 2,
                 }}
               >
-                أثبتت حضورها في السوق السعودي منذ عام 2013، وشاركت في تنفيذ أعمال داخل مشاريع كبرى، من بينها مشروعات في جامعة جازان، جامعه الملك سعود، إلى جانب التعاون مع كيانات بحجم مجموعة بن لادن السعودية — أحد أكبر الأسماء في قطاع المقاولات بالمنطقة.
+                {t('ceo.paragraph3')}
               </p>
 
               <p
                 className="text-lg md:text-xl mb-6 relative z-10"
                 style={{
                   color: 'rgba(240, 244, 250, 0.85)',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'var(--font-current)',
                   lineHeight: 2,
                 }}
               >
-                نحن لا نكتفي بتقديم{' '}
-                <span style={{ color: '#C0501A', fontWeight: 600 }}>وعود</span>، بل نمتلك{' '}
-                <span style={{ color: '#C0501A', fontWeight: 600 }}>سجلًا حافلًا بالإنجازات</span>. لا نبحث عن المشاريع، بل نصنع قيمة مضافة في كل مشروع نشارك فيه.
+                {t('ceo.paragraph4Prefix')}{' '}
+                <span style={{ color: '#C0501A', fontWeight: 600 }}>{t('ceo.paragraph4Highlight1')}</span>
+                {t('ceo.paragraph4Middle')}{' '}
+                <span style={{ color: '#C0501A', fontWeight: 600 }}>{t('ceo.paragraph4Highlight2')}</span>
+                {t('ceo.paragraph4Suffix')}
               </p>
             </div>
 
@@ -197,40 +201,39 @@ const CEOMessage = () => {
                 className="text-lg md:text-xl font-semibold"
                 style={{
                   color: '#F0F4FA',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'var(--font-current)',
                   lineHeight: 2,
                 }}
               >
-                رؤيتنا واضحة: أن نكون الخيار الأول لكل من لا يقبل إلا بالجودة، والسرعة، والالتزام.
+                {t('ceo.vision')}
               </p>
             </div>
 
-<div
+            <div
               className="flex items-center gap-5 pt-8"
               style={{ borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}
             >
               <img
                 src="/src/assets/Ceo-Image.jpeg"
-                alt="المدير التنفيذي"
+                alt={t('ceo.ceoAlt')}
                 className="w-16 h-16 rounded-2xl object-cover"
                 style={{
                   boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
                 }}
               />
 
-
               <div className="flex-1">
                 <h5
                   className="text-xl font-bold mb-1"
-                  style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+                  style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
                 >
-                  مهندس محمد نبيه
+                  {t('ceo.ceoName')}
                 </h5>
                 <span
                   className="text-sm"
-                  style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}
+                  style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}
                 >
-                  المدير التنفيذي - فينيكس جلوبال
+                  {t('ceo.ceoTitle')}
                 </span>
               </div>
 
@@ -258,8 +261,6 @@ const CEOMessage = () => {
             format_quote
           </span>
         </div>
-
-        
       </div>
 
       <style>{`

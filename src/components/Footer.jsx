@@ -1,14 +1,17 @@
 import redWhiteLogo from '../assets/redWhiteLogo.png';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const footerLinks = [
-    { href: '#hero', label: 'الرئيسية' },
-    { href: '#about', label: 'من نحن' },
-    { href: '#ceo-message', label: 'رسالة المدير' },
-    { href: '#services', label: 'خدماتنا' },
-    { href: '#projects', label: 'مشاريعنا' },
-    { href: '#investment', label: 'الاستثمار' },
-    { href: '#contact', label: 'اتصل بنا' },
+    { href: '#hero', label: t('nav.home') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#ceo-message', label: t('nav.ceoMessage') },
+    { href: '#services', label: t('nav.services') },
+    { href: '#projects', label: t('nav.projects') },
+    { href: '#investment', label: t('nav.investment') },
+    { href: '#contact', label: t('nav.contact') },
   ];
 
   return (
@@ -24,7 +27,7 @@ const Footer = () => {
               <a
                 key={index}
                 className="relative px-4 py-2 text-base font-medium transition-all duration-300 rounded-lg group cursor-pointer"
-                style={{ color: 'rgba(240, 244, 250, 0.7)', fontFamily: 'Cairo, sans-serif' }}
+                style={{ color: 'rgba(240, 244, 250, 0.7)', fontFamily: 'var(--font-current)' }}
                 href={link.href}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -51,11 +54,11 @@ const Footer = () => {
           </div>
         </div>
 
-       <div className="flex flex-col md:flex-row justify-center items-center pt-8 gap-4" style={{ borderTop: '1px solid rgba(240,244,250,0.06)' }}>
-   <p className="text-sm text-center" style={{ color: '#5E6F8A', fontFamily: 'Cairo, sans-serif' }}>
-     © 2026 فينيكس جلوبال للتطوير. جميع الحقوق محفوظة.
-   </p>
-</div>
+        <div className="flex flex-col md:flex-row justify-center items-center pt-8 gap-4" style={{ borderTop: '1px solid rgba(240,244,250,0.06)' }}>
+          <p className="text-sm text-center" style={{ color: '#5E6F8A', fontFamily: 'var(--font-current)' }}>
+            {t('footer.copyright')}
+          </p>
+        </div>
       </div>
     </footer>
   );

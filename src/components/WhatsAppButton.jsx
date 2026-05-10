@@ -1,11 +1,15 @@
+import { useLanguage } from '../i18n/LanguageContext';
+
 const WhatsAppButton = () => {
+  const { t } = useLanguage();
+
   return (
     <a
       className="fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center z-50 transition-all duration-300 hover:scale-110 cursor-pointer"
       href="https://wa.me/201116566604"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="تواصل عبر واتساب"
+      aria-label={t('whatsapp.ariaLabel')}
       style={{
         background: 'linear-gradient(135deg, #25D366, #128C7E)',
         boxShadow: '0 8px 32px rgba(37, 211, 102, 0.3)',

@@ -1,8 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const ORIGIN_ICONS = ['domain', 'engineering'];
+const ORIGIN_FLAGS = ['🇸🇦', '🇪🇬'];
+const ORIGIN_SINCE = ['2013', '2018'];
+const PILLAR_ICONS = ['precision_manufacturing', 'verified', 'handshake'];
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const { t, isRTL } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,33 +29,19 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const origins = [
-    {
-      name: 'Building Stone',
-      nameAr: 'بلدنج ستون',
-      flag: '🇸🇦',
-      since: '2013',
-      region: 'السوق السعودي',
-      description: 'أثبتت حضورها في السوق السعودي منذ عام 2013، وشاركت في تنفيذ أعمال داخل مشاريع كبرى، من بينها مشروعات في جامعة جازان، جامعه الملك سعود، إلى جانب التعاون مع كيانات بحجم مجموعة بن لادن السعودية — أحد أكبر الأسماء في قطاع المقاولات بالمنطقة.',
-      additionalText: 'استطاعت الشركة ان تخطو خطوات واسعة وذلك بتنمية قدراتنا عبر تسخير الموارد البشرية والإمكانات والقدرات الضخمة، وخدمة المشاريع علي أعلى المعايير المطلوبة، من حيث السعر، والجودة، وخدمة ما بعد البيع لخدمة المشاريع التعليمية والمنشآت الصحية والمشاريع الاستثمارية والصناعية.',
-      icon: 'domain',
-    },
-    {
-      name: 'Matrix',
-      nameAr: 'ماتريكس',
-      flag: '🇪🇬',
-      since: '2018',
-      region: 'السوق المصري',
-      description: 'عملت داخل السوق المصري جنبًا إلى جنب مع كبرى شركات المقاولات، على سبيل المثال لا الحصر: شركة Innovo (الشعفار سابقًا)، وشركة Alexandria Construction Company، وشركة Orascom Construction، مما أكسبها خبرة واسعة في التعامل مع مختلف أنواع المشاريع والتحديات التنفيذية داخل السوق المصري.',
-      icon: 'engineering',
-    },
-  ];
+  const origins = (t('about.origins') || []).map((o, i) => ({
+    ...o,
+    icon: ORIGIN_ICONS[i],
+    flag: ORIGIN_FLAGS[i],
+    since: ORIGIN_SINCE[i],
+  }));
 
-  const pillars = [
-    { title: 'تنفيذ دقيق', icon: 'precision_manufacturing' },
-    { title: 'جودة لا تقبل التنازل', icon: 'verified' },
-    { title: 'شراكات مبنية على الثقة', icon: 'handshake' },
-  ];
+  const pillars = (t('about.pillars') || []).map((title, i) => ({
+    title,
+    icon: PILLAR_ICONS[i],
+  }));
+
+  const arrowIcon = isRTL ? 'arrow_back' : 'arrow_forward';
 
   return (
     <section
@@ -82,30 +75,30 @@ const About = () => {
             >
               info
             </span>
-            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              من نحن
+            <span className="text-sm font-semibold" style={{ color: '#C0501A', fontFamily: 'var(--font-current)' }}>
+              {t('about.badge')}
             </span>
           </div>
 
           <h2
             className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
           >
-            فينيكس جلوبال ليست بداية…
+            {t('about.headlineLine1')}
             <br />
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
             >
-              بل هي نتيجة.
+              {t('about.headlineLine2')}
             </span>
           </h2>
 
           <p
             className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-            style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
+            style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)', lineHeight: 2 }}
           >
-            نتيجة سنوات من العمل الحقيقي على الأرض، وخلاصة خبرات تراكمت عبر شركتين صنعتا اسمًا وثقة في سوق المقاولات والتوريدات.
+            {t('about.lead')}
           </p>
         </div>
 
@@ -116,9 +109,9 @@ const About = () => {
         >
           <p
             className="text-2xl md:text-3xl font-bold max-w-3xl mx-auto leading-relaxed"
-            style={{ color: 'rgba(240, 244, 250, 0.9)', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+            style={{ color: 'rgba(240, 244, 250, 0.9)', fontFamily: 'var(--font-current)', lineHeight: 1.8 }}
           >
-            انبثقت فينيكس جلوبال من كيانين قويين
+            {t('about.emergedFrom')}
           </p>
         </div>
 
@@ -162,7 +155,7 @@ const About = () => {
                   <div className="flex items-center gap-2">
                     <h3
                       className="text-xl font-bold"
-                      style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+                      style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
                     >
                       {origin.nameAr}
                     </h3>
@@ -170,16 +163,16 @@ const About = () => {
                   </div>
                   <span
                     className="text-xs font-medium"
-                    style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}
+                    style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}
                   >
-                    {origin.name} — منذ {origin.since} — {origin.region}
+                    {origin.name} — {t('about.since')} {origin.since} — {origin.region}
                   </span>
                 </div>
               </div>
 
               <p
                 className="text-lg leading-loose mb-4"
-                style={{ color: 'rgba(142, 155, 181, 0.9)', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
+                style={{ color: 'rgba(142, 155, 181, 0.9)', fontFamily: 'var(--font-current)', lineHeight: 2 }}
               >
                 {origin.description}
               </p>
@@ -191,7 +184,7 @@ const About = () => {
                   />
                   <p
                     className="text-lg leading-loose mb-4"
-                    style={{ color: 'rgba(142, 155, 181, 0.9)', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
+                    style={{ color: 'rgba(142, 155, 181, 0.9)', fontFamily: 'var(--font-current)', lineHeight: 2 }}
                   >
                     {origin.additionalText}
                   </p>
@@ -209,24 +202,17 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <p
               className="text-2xl md:text-3xl font-bold mb-6 leading-relaxed"
-              style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+              style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)', lineHeight: 1.8 }}
             >
-              في فينيكس جلوبال، نحن لا نبيع وعودًا — نحن نبني على
+              {t('about.promiseLine1')}
               <br />
-               تاريخ من الالتزام، الجودة، والقدرة على التنفيذ تحت أصعب الظروف.{' '}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
-              >
-              
-              </span>
+              {t('about.promiseLine2')}
             </p>
 
             <div
               className="w-16 h-px mx-auto my-8"
               style={{ background: 'linear-gradient(90deg, transparent, #C0501A, transparent)' }}
             />
-
           </div>
         </div>
 
@@ -237,8 +223,9 @@ const About = () => {
         >
           <p
             className="text-lg md:text-xl max-w-3xl mx-auto mb-10"
-            style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
-          > نجمع بين قوة الخبرة الإقليمية في السوق السعودي، وعمق الفهم العملي للسوق المصري، لنقدّم خدمات قائمة على:
+            style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)', lineHeight: 2 }}
+          >
+            {t('about.pillarsIntro')}
           </p>
         </div>
 
@@ -272,7 +259,7 @@ const About = () => {
               </div>
               <h4
                 className="text-lg font-bold"
-                style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+                style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
               >
                 {pillar.title}
               </h4>
@@ -294,15 +281,15 @@ const About = () => {
           >
             <p
               className="text-xl md:text-2xl font-bold"
-              style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+              style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)', lineHeight: 1.8 }}
             >
-              هدفنا ليس فقط تنفيذ المشاريع…
+              {t('about.goalLine1')}
               <br />
               <span
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}
               >
-                بل أن نكون جزءًا من نجاحها.
+                {t('about.goalLine2')}
               </span>
             </p>
           </div>
@@ -310,9 +297,9 @@ const About = () => {
           <div className="mt-14 text-center">
             <p
               className="text-lg mb-6"
-              style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 2 }}
+              style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)', lineHeight: 2 }}
             >
-              لأن الثقة تُبنى على الأدلة… يمكنك الاطلاع على سجل أعمالنا ومشاريعنا السابقة.
+              {t('about.trustNote')}
             </p>
             <a
               href="#projects"
@@ -321,13 +308,13 @@ const About = () => {
               style={{
                 background: 'linear-gradient(135deg, #C0501A, #A54215)',
                 color: '#FFFFFF',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'var(--font-current)',
                 boxShadow: '0 4px 20px rgba(192, 80, 26, 0.3)',
               }}
             >
-              <span>استكشف خبراتنا</span>
+              <span>{t('about.ctaExplore')}</span>
               <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
-                arrow_back
+                {arrowIcon}
               </span>
             </a>
           </div>

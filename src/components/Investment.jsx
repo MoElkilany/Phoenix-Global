@@ -1,25 +1,18 @@
 import { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const BENEFIT_ICONS = ['trending_up', 'key', 'savings'];
 
 const Investment = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const { t, isRTL } = useLanguage();
 
-  const benefits = [
-    {
-      icon: 'trending_up',
-      title: 'نمو سنوي مستمر',
-      description: 'زيادة في قيمة العقار مدعومة بالبنية التحتية المتطورة.',
-    },
-    {
-      icon: 'key',
-      title: 'حلول تمليك مرنة',
-      description: 'خطط سداد ميسرة تتناسب مع أهدافك المالية.',
-    },
-    {
-      icon: 'savings',
-      title: 'حماية من التضخم',
-      description: 'استثمار يحافظ على قيمته ويحقق عوائد حقيقية.',
-    },
-  ];
+  const benefits = (t('investment.benefits') || []).map((b, i) => ({
+    ...b,
+    icon: BENEFIT_ICONS[i],
+  }));
+
+  const arrowIcon = isRTL ? 'arrow_back' : 'arrow_forward';
 
   return (
     <section
@@ -64,29 +57,30 @@ const Investment = () => {
             >
               diamond
             </span>
-            <span className="text-gold text-sm font-semibold tracking-wide" style={{ fontFamily: 'Cairo, sans-serif' }}>
-              فرص استثمارية حصرية
+            <span className="text-gold text-sm font-semibold tracking-wide" style={{ fontFamily: 'var(--font-current)' }}>
+              {t('investment.badge')}
             </span>
           </div>
 
           <h2
             className="text-4xl md:text-6xl font-black mb-6 leading-tight"
-            style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}
+            style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}
           >
-            استثمر بذكاء،{' '}
+            {t('investment.titlePrefix')}{' '}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: 'linear-gradient(135deg, #d44000, #E8845A, #d44000)' }}
             >
-              احصد بعناية
+              {t('investment.titleHighlight')}
             </span>
           </h2>
 
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-            style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif', lineHeight: 1.8 }}
+            style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)', lineHeight: 1.8 }}
           >
-نقدم لك فرصاً استثمارية مميزة من خلال مشاريعنا المختارة بعناية في أكثر المناطق نمواً، مع دعم فريقنا الاستشاري لمساعدتك في بناء محفظة عقارية قوية ومستقرة.          </p>
+            {t('investment.subtitle')}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -123,23 +117,23 @@ const Investment = () => {
                 <div
                   className="inline-flex items-center justify-center w-14 h-14 rounded-xl mb-5 transition-transform duration-500 group-hover:scale-110"
                   style={{
-background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.15), rgba(212, 64, 0, 0.05))',
-                     border: '1px solid rgba(212, 64, 0, 0.2)',
+                    background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.15), rgba(212, 64, 0, 0.05))',
+                    border: '1px solid rgba(212, 64, 0, 0.2)',
                   }}
                 >
                   <span
                     className="material-symbols-outlined text-2xl"
-style={{ color: '#d44000', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
+                    style={{ color: '#d44000', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
                   >
                     {benefit.icon}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+                <h3 className="text-xl font-bold mb-3" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
                   {benefit.title}
                 </h3>
 
-                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: 1.8, fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#8E9BB5', lineHeight: 1.8, fontFamily: 'var(--font-current)' }}>
                   {benefit.description}
                 </p>
               </div>
@@ -154,19 +148,19 @@ style={{ color: '#d44000', fontVariationSettings: "'FILL' 1, 'wght' 500" }}
           <div
             className="absolute inset-0"
             style={{
-background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.08), rgba(212, 64, 0, 0.03))',
-               backdropFilter: 'blur(10px)',
-               border: '1px solid rgba(212, 64, 0, 0.15)',
+              background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.08), rgba(212, 64, 0, 0.03))',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(212, 64, 0, 0.15)',
             }}
           />
 
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-10">
             <div>
-              <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-                ابدأ رحلتك الاستثمارية
+              <h4 className="text-xl md:text-2xl font-bold" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
+                {t('investment.ctaTitle')}
               </h4>
-              <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-                تواصل معنا اليوم للحصول على استشارة مجانية
+              <p className="text-sm" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+                {t('investment.ctaSubtitle')}
               </p>
             </div>
 
@@ -177,12 +171,12 @@ background: 'linear-gradient(135deg, rgba(212, 64, 0, 0.08), rgba(212, 64, 0, 0.
                 background: 'linear-gradient(135deg, #d44000, #A54215)',
                 color: '#FFFFFF',
                 boxShadow: '0 4px 20px rgba(212, 64, 0, 0.3)',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'var(--font-current)',
               }}
             >
-              <span>تواصل معنا الآن</span>
+              <span>{t('investment.ctaButton')}</span>
               <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
-                arrow_back
+                {arrowIcon}
               </span>
             </a>
           </div>

@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
 import redWhiteLogo from '../assets/redWhiteLogo.png';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t, dir } = useLanguage();
 
   const navLinks = [
-    { href: '#hero', label: 'الرئيسية' },
-    { href: '#about', label: 'من نحن' },
-    { href: '#ceo-message', label: 'رسالة المدير' },
-    { href: '#services', label: 'خدماتنا' },
-    { href: '#projects', label: 'مشاريعنا' },
-    { href: '#investment', label: 'الاستثمار' },
-    { href: '#contact', label: 'اتصل بنا' },
+    { href: '#hero', label: t('nav.home') },
+    { href: '#about', label: t('nav.about') },
+    { href: '#ceo-message', label: t('nav.ceoMessage') },
+    { href: '#services', label: t('nav.services') },
+    { href: '#projects', label: t('nav.projects') },
+    { href: '#investment', label: t('nav.investment') },
+    { href: '#contact', label: t('nav.contact') },
   ];
 
   useEffect(() => {
@@ -33,7 +36,7 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex items-center justify-between" dir="rtl">
+        <div className="flex items-center justify-between" dir={dir}>
           <a href="#hero" className="flex items-center flex-shrink-0">
             <img src={redWhiteLogo} alt="Phoenix Global logo" className="h-10 w-auto object-contain" />
           </a>
@@ -43,8 +46,8 @@ const Navbar = () => {
               <a
                 key={index}
                 href={link.href}
-                className="relative px-5 py-3 text-base font-medium transition-all duration-300 rounded-lg group cursor-pointer"
-                style={{ color: 'rgba(240, 244, 250, 0.7)', fontFamily: 'Cairo, sans-serif' }}
+                className="relative px-5 py-3 text-base font-medium transition-all duration-300 rounded-lg group cursor-pointer whitespace-nowrap"
+                style={{ color: 'rgba(240, 244, 250, 0.7)', fontFamily: 'var(--font-current)' }}
               >
                 <span className="relative z-10">{link.label}</span>
                 <span
@@ -55,49 +58,46 @@ const Navbar = () => {
             ))}
           </div>
 
-          <a href="#contact" className="hidden lg:inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-base font-bold transition-all duration-300 hover:scale-105 cursor-pointer" style={{
-            background: 'linear-gradient(135deg, #d44000, #A54215)',
-            color: '#FFFFFF',
-            fontFamily: 'Cairo, sans-serif',
-          }}>
-            <span className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1, 'wght' 500" }}>
-              call
-            </span>
-            <span>تواصل معنا</span>
-          </a>
+          <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
+          </div>
 
-          <button
-            className="lg:hidden relative w-10 h-10 flex items-center justify-center cursor-pointer"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <div className="relative w-6 h-5">
-              <span
-                className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
-                style={{
-                  top: mobileMenuOpen ? '50%' : '0',
-                  transform: mobileMenuOpen ? 'translateY(-50%) rotate(45deg)' : 'translateY(0)',
-                  background: '#d44000',
-                }}
-              />
-              <span
-                className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
-                style={{
-                  top: '50%',
-                  opacity: mobileMenuOpen ? 0 : 1,
-                  transform: 'translateY(-50%)',
-                  background: '#d44000',
-                }}
-              />
-              <span
-                className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
-                style={{
-                  top: mobileMenuOpen ? '50%' : '100%',
-                  transform: mobileMenuOpen ? 'translateY(-50%) rotate(-45deg)' : 'translateY(0)',
-                  background: '#d44000',
-                }}
-              />
-            </div>
-          </button>
+          <div className="flex lg:hidden items-center gap-2">
+            <LanguageSwitcher compact />
+            <button
+              className="relative w-10 h-10 flex items-center justify-center cursor-pointer"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <div className="relative w-6 h-5">
+                <span
+                  className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
+                  style={{
+                    top: mobileMenuOpen ? '50%' : '0',
+                    transform: mobileMenuOpen ? 'translateY(-50%) rotate(45deg)' : 'translateY(0)',
+                    background: '#d44000',
+                  }}
+                />
+                <span
+                  className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
+                  style={{
+                    top: '50%',
+                    opacity: mobileMenuOpen ? 0 : 1,
+                    transform: 'translateY(-50%)',
+                    background: '#d44000',
+                  }}
+                />
+                <span
+                  className="absolute left-0 w-6 h-0.5 transition-all duration-300 rounded-full"
+                  style={{
+                    top: mobileMenuOpen ? '50%' : '100%',
+                    transform: mobileMenuOpen ? 'translateY(-50%) rotate(-45deg)' : 'translateY(0)',
+                    background: '#d44000',
+                  }}
+                />
+              </div>
+            </button>
+          </div>
         </div>
 
         <div
@@ -111,7 +111,7 @@ const Navbar = () => {
                 key={index}
                 href={link.href}
                 className="px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 cursor-pointer"
-                style={{ color: 'rgba(240, 244, 250, 0.85)', fontFamily: 'Cairo, sans-serif' }}
+                style={{ color: 'rgba(240, 244, 250, 0.85)', fontFamily: 'var(--font-current)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
@@ -123,11 +123,11 @@ const Navbar = () => {
               style={{
                 background: 'linear-gradient(135deg, #d44000, #A54215)',
                 color: '#FFFFFF',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'var(--font-current)',
               }}
               onClick={() => setMobileMenuOpen(false)}
             >
-              تواصل معنا
+              {t('nav.contactUs')}
             </a>
           </div>
         </div>

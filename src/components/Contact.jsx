@@ -1,6 +1,10 @@
+import { useLanguage } from '../i18n/LanguageContext';
+
 const Contact = () => {
+  const { t } = useLanguage();
+
   const phones = [
-    { label: 'خط أرضي', number: '+20 2 20322217' },
+    { label: t('contact.landline'), number: '+20 2 20322217' },
     { label: '', number: '+20 1116566604' },
     { label: '', number: '+20 1119031117' },
   ];
@@ -34,17 +38,17 @@ const Contact = () => {
             <span className="material-symbols-outlined text-gold text-sm" style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}>
               call
             </span>
-            <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'Cairo, sans-serif' }}>تواصل معنا</span>
+            <span className="text-gold text-sm font-semibold" style={{ fontFamily: 'var(--font-current)' }}>{t('contact.badge')}</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-            نحن هنا{' '}
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
+            {t('contact.titlePrefix')}{' '}
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #C0501A, #E8845A)' }}>
-              لمساعدتك
+              {t('contact.titleHighlight')}
             </span>
           </h2>
-          <p className="text-lg" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-            فريقنا متاح للرد على استفساراتك على مدار الساعة
+          <p className="text-lg" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -62,18 +66,18 @@ const Contact = () => {
               <div
                 className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                 style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
+                  background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+                  border: '1px solid rgba(192, 80, 26, 0.3)',
                 }}
               >
                 <span className="material-symbols-outlined text-gold">call</span>
               </div>
               {phone.label && (
-                <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
+                <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
                   {phone.label}
                 </p>
               )}
-              <p className="text-lg font-bold" dir="ltr" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+              <p className="text-lg font-bold" dir="ltr" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
                 {phone.number}
               </p>
             </button>
@@ -92,16 +96,16 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
             <div
               className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
               style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
+                background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+                border: '1px solid rgba(192, 80, 26, 0.3)',
               }}
             >
               <span className="material-symbols-outlined text-gold">mail</span>
             </div>
-            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-              البريد الإلكتروني
+            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+              {t('contact.email')}
             </p>
-            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
+            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
               info@phonixglobal-eg.com
             </p>
           </button>
@@ -117,20 +121,20 @@ background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0
             <div
               className="w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"
               style={{
-background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
-                 border: '1px solid rgba(192, 80, 26, 0.3)',
+                background: 'linear-gradient(135deg, rgba(192, 80, 26, 0.2), rgba(192, 80, 26, 0.05))',
+                border: '1px solid rgba(192, 80, 26, 0.3)',
               }}
             >
               <span className="material-symbols-outlined text-gold">location_on</span>
             </div>
-            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'Cairo, sans-serif' }}>
-              الموقع
+            <p className="text-sm mb-1" style={{ color: '#8E9BB5', fontFamily: 'var(--font-current)' }}>
+              {t('contact.location')}
             </p>
-            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'Cairo, sans-serif' }}>
-              78 شارع الفارابي - الشروق - القاهرة
+            <p className="text-lg font-bold" style={{ color: '#F0F4FA', fontFamily: 'var(--font-current)' }}>
+              {t('contact.address')}
             </p>
-            <p className="text-sm mt-2" style={{ color: '#C0501A', fontFamily: 'Cairo, sans-serif' }}>
-              انقر للعرض على الخريطة
+            <p className="text-sm mt-2" style={{ color: '#C0501A', fontFamily: 'var(--font-current)' }}>
+              {t('contact.mapHint')}
             </p>
           </button>
         </div>
